@@ -42,7 +42,7 @@ if ($langId == 1) {
         <section class="pur-menu">
             <div class="content-main">
                 <div class="head">
-                    <span>Our Menu</span>
+                    <span>Our Menufewfew</span>
                 </div>
                 <div class="">
                     <div class="owl-carousel carousel-one owl-theme">

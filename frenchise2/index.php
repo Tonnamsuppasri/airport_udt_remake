@@ -98,6 +98,9 @@ if ($langId == 1) {
                             </div>
                         </a>
                     </div>
+
+                    <?php include 'teestmicro.php'; ?>
+
                 </div>
             </div>
         </div>
