@@ -147,6 +147,7 @@ a:active {
 .logout-btn:hover{
     background: #be0000;
     color: #fff;
+<<<<<<< HEAD
 }
 .language-select .nav-item{
     max-width: fit-content;
@@ -154,4 +155,6 @@ a:active {
 .language-option img{
     max-height: 22px;
     width: auto;
+=======
+>>>>>>> 92aa8d87de1494b5742c8bb098cd3533692abcdc
 }
