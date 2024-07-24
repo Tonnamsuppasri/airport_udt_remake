@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ระบบจัดการ DSST</title>
     
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -28,8 +29,5 @@
     <link rel="stylesheet" href="assets/owlcarousel/dist/assets/owl.theme.default.min.css">
     <script src="assets\owlcarousel\docs\assets\vendors\jquery.min.js"></script>
     <script src="assets\owlcarousel\dist\owl.carousel.min.js"></script>
-
-    <!-- Swiper Carousel  -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
 </head>

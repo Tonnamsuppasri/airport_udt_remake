@@ -69,7 +69,7 @@ a:active {
 .carousel-image{
     width: 100%;
     height: auto;
-    max-height: 250px;
+    max-height: 280px;
 }
 
 .grow{
@@ -109,7 +109,6 @@ a:active {
 .view-btn{
     background: #333;
     color: #fff;
-    border-radius: 60px;
     border: none;
     display: flex;
     align-items: center;
@@ -120,12 +119,11 @@ a:active {
 .view-icon{
     background: #ff0000;
     border: none;
-    border-radius: 100%;
     padding: 1px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 4px
+    margin-left: 5px
 }
 
 .card-footer-custom{
@@ -147,7 +145,6 @@ a:active {
 .logout-btn:hover{
     background: #be0000;
     color: #fff;
-<<<<<<< HEAD
 }
 .language-select .nav-item{
     max-width: fit-content;
@@ -155,6 +152,4 @@ a:active {
 .language-option img{
     max-height: 22px;
     width: auto;
-=======
->>>>>>> 92aa8d87de1494b5742c8bb098cd3533692abcdc
 }
