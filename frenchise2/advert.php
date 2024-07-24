@@ -28,7 +28,6 @@ if ($langId == 1) {
 
 
 
-
 </body>
 
 <?php include 'include/footer.php'; ?>
