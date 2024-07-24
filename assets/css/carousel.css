@@ -1,0 +1,8 @@
+.owl-carousel{
+    position: relative;
+}
+
+.owl-nav{
+    position: absolute !important;
+    top: 50%;
+}
