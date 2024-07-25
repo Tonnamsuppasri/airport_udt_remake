@@ -29,11 +29,16 @@
             <div class="nav-item dropdown nav-dropdown p-2 me-2">
                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="language-option">
-                    <img src="assets/images/17062024105346_lang.png" alt="TH lang"/>
-                        TH
+                        <img src="assets/images/17062024105346_lang.png" alt="TH lang"/>
                     </span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end" style="max-width: fit-content !important;">
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <span class="dropdown-item language-option">
+                            <img src="assets/images/17062024105346_lang.png" alt="TH lang"/>
+                            TH
+                        </span>
+                    </li>
                     <li>
                         <span class="dropdown-item language-option">
                             <img src="assets/images/17062024105202_lang.png" alt="EN lang"/>
