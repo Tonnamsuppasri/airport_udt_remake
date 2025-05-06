@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <style>
     .info-container {
-        max-width: 960px;
+        max-width: 1214px;
         margin: 0 auto;
         padding: 20px;
     }
@@ -68,6 +68,44 @@
         font-size: 16px;
         margin-left: 40px;
     }
+
+    .back-container {
+        text-decoration: none;
+        max-width: 1214px;
+        margin: 0 auto;
+    }
+    
+    .policy-header {
+        display: flex;
+        align-items: center;
+    }
+
+    .home {
+        display: flex; 
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .home a {
+        text-decoration: none;
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    .arrow {
+        color: #0d6efd;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 2;
+    }
+
+    .back-text {
+        font-size: 16px;
+        position: static;
+        margin: 0;
+        display: flex;
+    }
+
 </style>
 
 <body>
@@ -79,11 +117,22 @@
           <img src="assets/images/policy-pic.jpg" class="img-fluid" alt="Policy Image">
           <div class="blue-box">นโยบายการคุ้มครองข้อมูลส่วนบุคคล</div>
     </div>
-    <div class="policy-header">
-    
+
+    <div class="back-container">
+        <div class="policy-header">
+            <a href="javascript:history.back()" class="btn">
+                <span class="arrow">&lt;</span>
+            </a>
+            <div class="back-text">
+                ย้อนกลับ
+            </div>
+            <div class="home">
+                <a href="#"><i class="bi bi-house-door"></i></a> > นโยบายการคุ้มครองข้อมูลส่วนบุคคล
+            </div>
+        </div>
     </div>
 
-    <hr class="mb-4">
+    <hr class="mt-0 mb-4">
 
     <div class="info-container">
         <h1><span class="highlight-bar"></span>นโยบายการคุ้มครองข้อมูลส่วนบุคคล</h1>
@@ -95,7 +144,7 @@
         <h1><span class="highlight-bar"></span>การเก็บรวบรวมข้อมูลส่วนบุคคล</h1>
         <div class="textinfo">
             <ol>
-                <li>เพื่อความสะดวกในการให้บริการ แก่ผู้ใช้บริการทุกท่านที่เข้ามาใช้บริการเว็บไซต์ของกรมท่าอากาศยานทางเว็บไซต์ จึงได้จัดเก็บรวบรว มข้อมูลส่วนบุคคล ของท่านไว้ เช่น อีเมล์แอดเดรส (Email Address) ชื่อ (Name) ที่อยู่หรือที่ทำงาน (Home or Work Address) เขตไปรษณีย์ (ZIP Code) หรือหมายเลขโทรศัพท์ (Telephone Number) เป็นต้น</li>
+                <li>เพื่อความสะดวกในการให้บริการ แก่ผู้ใช้บริการทุกท่านที่เข้ามาใช้บริการเว็บไซต์ของกรมท่าอากาศยานทางเว็บไซต์ จึงได้จัดเก็บรวบรวมข้อมูลส่วนบุคคล ของท่านไว้ เช่น อีเมล์แอดเดรส (Email Address) ชื่อ (Name) ที่อยู่หรือที่ทำงาน (Home or Work Address) เขตไปรษณีย์ (ZIP Code) หรือหมายเลขโทรศัพท์ (Telephone Number) เป็นต้น</li>
                 <li>ในกรณีที่ท่านสมัคร (Sign Up) เพื่อสมัครสมาชิก หรือเพื่อใช้บริการอย่างใดอย่างหนึ่ง กรมท่าอากาศยานจะเก็บ รวบรวมข้อมูลส่วนบุคคลของท่านเพิ่มเติม ได้แก่ เพศ (Sex) อายุ (Gender) สิ่งที่โปรดปราน/ความชอบ (Preferences/Favorites) ความสนใจ (Interests) หรือหมายเลขบัตรเครดิต (Credit Card Number) และที่อยู่ในการแจ้งค่าใช้จ่าย (Billing Address)
                 </li>
                 <li>นอกจากนั้น เพื่อสำรวจความนิยมในการใช้บริการอันจะเป็นประโยชน์ในการนำสถิติไปใช้ในการปรับปรุง คุณภาพในการให้บริการ ของกรมท่าอากาศยาน จึงจำเป็น ต้องจัดเก็บรวบรวมข้อมูล ของท่านบางอย่าง เพิ่มเติม ได้แก่ หมายเลขไอพี (IP Address) ชนิดของโปรแกรมค้นผ่าน (Browser Type) โดเมนเนม (Domain Name) บันทึกหน้าเว็บ (web page) ของเว็บไซต์ ที่ผู้ใช้เยี่ยมชม เวลาที่เยี่ยมชมเว็บไซต์ (Access Times) และเว็บไซต์ที่ผู้ใช้บริการเข้าถึงก่อนหน้านั้น (Referring Website Addresses)
@@ -109,7 +158,7 @@
         <h1><span class="highlight-bar"></span>การใช้ข้อมูลส่วนบุคคล</h1>
         <div class="textinfo">
             <ol>
-                <li>กรมท่าอากาศยาน จะใช้ข้อมูลส่วนบุคคล ของท่านเพียงเท่าที่จำเป็น เช่น ชื่อ และ ที่อยู่ เพื่อใช้ในการติดต่อ ให้บริการประชาสัมพันธ์ หรือให้ข้อมูลข่าวสารต่าง ๆ รวมทั้งสำรวจความคิดเห็น ของท่านในกิจการ หรือกิจกรรม ของกรมท่าอากาศยานเท่านั้น
+                <li>กรมท่าอากาศยาน จะใช้ข้อมูลส่วนบุคคล ของท่านเพียงเท่าที่จำเป็น เช่น ชื่อ และ ที่อยู่ เพื่อใช้ในการติดต่อ ให้บริการประชาสัมพันธ์ หรือให้ข้อมูลข่าวสารต่างๆ รวมทั้งสำรวจความคิดเห็น ของท่านในกิจการ หรือกิจกรรม ของกรมท่าอากาศยานเท่านั้น
                 </li>
                 <li>กรมท่าอากาศยาน ขอรับรอง ว่าจะไม่นำข้อมูล ส่วนบุคคลของท่านที่กรมท่าอากาศยานได้เก็บรวบรวมไว้ ไปขาย หรือเผยแพร่ให้กับบุคคลภายนอกโดยเด็ดขาดเว้นแต่จะได้รับอนุญาตจากท่านเท่านั้น
                 </li>

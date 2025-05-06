@@ -20,7 +20,7 @@
         }
     }
     .faq-container {
-        max-width: 960px;
+        max-width: 1214px;
         margin: 0 auto;
         padding: 20px;
     }
@@ -128,7 +128,7 @@
     </div>
     <main>
     <div class="image-container">
-          <img src="assets/images/faq-pic.jpg" class="img-fluid" alt="FAQ Image">
+          <img src="assets/images/airport-pic.jpg" class="img-fluid" alt="FAQ Image">
           <div class="blue-box">คำถามที่พบบ่อย</div>
     </div>
 
@@ -150,12 +150,12 @@
     <hr class="mb-4">
 
     <div class="faq-container">
-    <div class="faq-header">
-    <h1><span class="highlight-bar"></span>FAQ ยอดนิยม</h1>
-    <div class="home">
+      <div class="faq-header">
+        <h1><span class="highlight-bar"></span>FAQ ยอดนิยม</h1>
+      <div class="home">
         <a href="#"><i class="bi bi-house-door"></i></a> > คำถามที่พบบ่อย
+      </div>
     </div>
-</div>
     <div class="accordion" id="accordion">
         <div class="accordion-item">
           <h2 class="accordion-header">

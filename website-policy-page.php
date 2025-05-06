@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <style>
     .info-container {
-        max-width: 960px;
+        max-width: 1214px;
         margin: 0 auto;
         padding: 20px;
     }
@@ -69,6 +69,43 @@
         margin-left: 40px;
     }
 
+    .back-container {
+        text-decoration: none;
+        max-width: 1214px;
+        margin: 0 auto;
+    }
+
+    .policy-header {
+        display: flex;
+        align-items: center;
+    }
+
+    .home {
+        display: flex; 
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .home a {
+        text-decoration: none;
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    .arrow {
+        color: #0d6efd;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 2;
+    }
+
+    .back-text {
+        font-size: 16px;
+        position: static;
+        margin: 0;
+        display: flex;
+    }
+
 </style>
 
 <body>
@@ -80,11 +117,21 @@
           <img src="assets/images/policy-pic.jpg" class="img-fluid" alt="Policy Image">
           <div class="blue-box">นโยบายเว็ปไซต์</div>
     </div>
-    <div class="policy-header">
-    
+    <div class="back-container">
+        <div class="policy-header">
+            <a href="javascript:history.back()" class="btn">
+                <span class="arrow">&lt;</span>
+            </a>
+            <div class="back-text">
+                ย้อนกลับ
+            </div>
+            <div class="home">
+                <a href="#"><i class="bi bi-house-door"></i></a> > นโยบายการคุ้มครองข้อมูลส่วนบุคคล
+            </div>
+        </div>
     </div>
 
-    <hr class="mb-4">
+    <hr class="mt-0 mb-4">
 
     <div class="info-container">
         <h1><span class="highlight-bar"></span>นโยบายเว็บไซต์</h1>
