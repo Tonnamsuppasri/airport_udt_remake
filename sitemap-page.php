@@ -86,7 +86,13 @@
         margin-right: 5px;
     }
 
+    ul {
+        list-style-type: none;
+    }
 
+    li {
+
+    }
     
 </style>
 
@@ -108,71 +114,53 @@
         </div>
         <h1><span class="highlight-bar"></span>แผนผังเว็ปไซต์</h1>
         <br>
-
-    <div class="container text-center">
+        
+    <div class="sitemap-container">
         <div class="row">
-            <div class="row">
-                <div class="col">
-                <a href="#" class="sitemap-link">หน้าหลัก</a></li>
-                </div>
-                <div class="col">
-                <a href="#" class="sitemap-link">ข่าวประชาสัมพันธ์</a></li>
-                </div>
-                <div class="col">
-                <a href="#" class="sitemap-link">คำแนะนำผู้โดยสาร</a></li>
-                </div>
-                <div class="col">
-                <a href="#" class="sitemap-link">สิ่งอำนวยความสะดวก</a></li>
-                </div>
+            <div class="col">
+                <a href="#" class="sitemap-link">หน้าหลัก</a>
             </div>
-            <div class="row">
-                <div class="col">
-                <a href="#" class="sitemap-link">เที่ยวบิน</a></li>
-                </div>
-                <div class="col">
-                Column
-                </div>
-                <div class="col">
-                Column
-                </div>
-                <div class="col">
-                Column
-                </div>
+            <div class="col">
+                <ul>
+                    <li><a href="#" class="sitemap-link">ข่าวประชาสัมพันธ์</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <a href="#" class="sitemap-link">หน้าหลัก</a>
+            </div>
+            <div class="col">
+                <a href="#" class="sitemap-link">หน้าหลัก</a>
             </div>
         </div>
         <div class="row">
-            <div class="row">
-                <div class="col">
-                
-                </div>
-                <div class="col">
-                Column
-                </div>
-                <div class="col">
-                Column
-                </div>
-                <div class="col">
-                Column
-                </div>
+            <div class="col">
+                <a href="#" class="sitemap-link">หน้าหลัก</a>
             </div>
-            <div class="row">
-                <div class="col">
+            <div class="col">
+                <ul>
+                    <li>ข่าวประชาสัมพันธ์</li>
+                    <li>จัดซื้อจัดจ้าง</li>
+                    <li>รับสมัครบุคลากร</li>
+                </ul>
+            </div>
+            <div class="col">
                 Column
-                </div>
-                <div class="col">
+            </div>
+            <div class="col">
                 Column
-                </div>
-                <div class="col">
-                Column
-                </div>
-                <div class="col">
-                Column
-                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="#" class="sitemap-link">หน้าหลัก</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="#" class="sitemap-link">หน้าหลัก</a>
             </div>
         </div>
     </div>
-    </div>
-
     </main>
     <div>
         <?php include 'include/footer.php'; ?>
