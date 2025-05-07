@@ -86,12 +86,12 @@
         margin-right: 5px;
     }
 
-    ul {
-        list-style-type: none;
+    .row {
+        margin-bottom: 22px
     }
 
-    li {
-
+    .col ul {
+        list-style-type: none;
     }
     
 </style>
@@ -117,50 +117,107 @@
         
     <div class="sitemap-container">
         <div class="row">
+            
             <div class="col">
-                <a href="#" class="sitemap-link">หน้าหลัก</a>
+                <div class="row">
+                    <a href="#" class="sitemap-link">หน้าหลัก</a>
+                </div>
+                <div class="row">
+                    <a href="#" class="sitemap-link">เที่ยวบิน</a>
+                </div>
+                <div class="row">
+                    <a href="#" class="sitemap-link">คำถามที่พบบ่อย</a>
+                </div>
+                <div class="row">
+                    <a href="#" class="sitemap-link">ติดต่อเรา</a>
+                </div>
+                <div class="row">
+                    <a href="#" class="sitemap-link">เกี่ยวกับเรา</a>
+                    <div class="col">
+                    <ul>
+                        <li>ข่าวประชาสัมพันธ์</li>
+                        <li>จัดซื้อจัดจ้าง</li>
+                        <li>รับสมัครบุคลากร</li>
+                        <li>รับสมัครบุคลากร</li>
+                    </ul>
+                </div>
+                </div>
+                
+
+            </div>
+            
+            <div class="col">
+                
+                <a href="#" class="sitemap-link">ข่าวประชาสัมพันธ์</a>
+                <div class="col">
+                    <ul>
+                        <li>ข่าวประชาสัมพันธ์</li>
+                        <li>จัดซื้อจัดจ้าง</li>
+                        <li>รับสมัครบุคลากร</li>
+                    </ul>
+                </div>
+                    <br>
+                    <br>
+                    <br>
+                <div class="row">
+                    <a href="#" class="sitemap-link">เว็บไซต์ท่าอากาศยาน</a>
+                    
+                </div>
             </div>
             <div class="col">
-                <ul>
-                    <li><a href="#" class="sitemap-link">ข่าวประชาสัมพันธ์</a></li>
-                </ul>
+                <a href="#" class="sitemap-link">คำแนะนำผู้โดยสาร</a>
+                <div class="col">
+                    <ul>
+                        <li>การเดินทางไปสนามบิน</li>
+                        <li>คู่มือผู้โดยสาร</li>
+                        <li>แผนที่สนามบิน</li>
+                        <li>มาตรการช่วยเหลือ Covid-19</li>
+                        <li>คู่มือประชาชน</li>
+                    </ul>
+                    <br>
+                    <a href="#" class="sitemap-link">สถานที่น่าสนใจ</a>
+                    <div class="col">
+                    <ul>
+                        <li>ข่าวประชาสัมพันธ์</li>
+                        <li>จัดซื้อจัดจ้าง</li>
+                        <li>รับสมัครบุคลากร</li>
+                    </ul>
+                </div>
+                </div>
             </div>
+            
             <div class="col">
-                <a href="#" class="sitemap-link">หน้าหลัก</a>
-            </div>
-            <div class="col">
-                <a href="#" class="sitemap-link">หน้าหลัก</a>
+                <a href="#" class="sitemap-link">สิ่งอำนวยความสะดวก</a>
+                <div class="col">
+                    <ul>
+                        <li>ห้องผู้โดยสารขาเข้า</li>
+                        <li>ห้องผู้โดยสารขาออก</li>
+                        <li>จุดบริการรถเข็นสัมภาระ</li>
+                        <li>ที่จอดรดสนามบิน</li>
+                        <li>รถบัสรับส่งสนามบิน</li>
+                        <li>รถ TAXI</li>
+                        <li>รถเช่า</li>
+                        <li>เคาน์เตอร์ประชาสัมพันธ์</li>
+                        <li>WIFI</li>
+                        <li>ตู้ไปรษณีย์อัตโนมัติ</li>
+                        <li>ที่ทำการไปรษณีย์</li>
+                        <li>จุดบริการโทรศัพท์</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <a href="#" class="sitemap-link">หน้าหลัก</a>
+            <div class="col-3">
+                <a href="#" class="sitemap-link">นโยบายเว็บไซต์</a>
             </div>
-            <div class="col">
-                <ul>
-                    <li>ข่าวประชาสัมพันธ์</li>
-                    <li>จัดซื้อจัดจ้าง</li>
-                    <li>รับสมัครบุคลากร</li>
-                </ul>
-            </div>
-            <div class="col">
-                Column
-            </div>
-            <div class="col">
-                Column
+            <div class="col-8">
+                <a href="#" class="sitemap-link">นโยบายการคุ้มครองข้อมูลส่วนบุคคล</a>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <a href="#" class="sitemap-link">หน้าหลัก</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <a href="#" class="sitemap-link">หน้าหลัก</a>
-            </div>
-        </div>
-    </div>
+        
+
+</div>
+
     </main>
     <div>
         <?php include 'include/footer.php'; ?>
