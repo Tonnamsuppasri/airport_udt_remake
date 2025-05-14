@@ -102,6 +102,9 @@
             margin-right: 10px;
         }
 
+        .navbar-nav .nav-link:hover {
+            border-bottom: 3px solid #FECD22;
+        }
 </style>
 
 <div class="header-top separator-bottom">

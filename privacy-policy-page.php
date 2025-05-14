@@ -14,6 +14,7 @@
         width: 100%;
         object-fit: contain;
         object-position: center top;
+        filter: brightness(50%);
     }
 
     .blue-box {
