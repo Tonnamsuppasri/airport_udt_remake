@@ -104,7 +104,6 @@
     
     .contact-form {
         max-width: 640px;
-        max-height: 571px;
         margin: auto;
         background: #F8F8F8;
         padding-top: 30px;
@@ -112,7 +111,6 @@
 
     form {
         max-width: 640px;
-        max-height: 550px;
         margin: auto;
         padding: 30px;
         background: #F8F8F8;
