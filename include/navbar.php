@@ -96,7 +96,7 @@
             }
         }
 
-        img {
+        .header-top .airport-center img {
             height: 60px;
             width: 60px;
             margin-right: 10px;
