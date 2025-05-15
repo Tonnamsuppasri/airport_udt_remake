@@ -1,10 +1,12 @@
 <style>
         .navbar {
             background-color: #155B99;
+            padding-bottom: 0; 
         }
         .navbar-nav .nav-link {
             font-size: 16px;
             color: white !important;
+            border-bottom: 3px solid transparent; 
         }
         .navbar-brand {
             color: white;
