@@ -1,5 +1,5 @@
 <style>
-    .navbar {
+        .navbar {
             background-color: #155B99;
         }
         .navbar-nav .nav-link {
@@ -14,7 +14,7 @@
 
         .header-top {
             background-color: #155B99;
-            padding: 20px 0;
+            padding: 20px 20px;
             color: white;
         }
 
@@ -108,7 +108,7 @@
 </style>
 
 <div class="header-top separator-bottom">
-    <div class="container header-container d-flex justify-content-between align-items-center">
+    <div class="container-fluid header-container d-flex justify-content-between align-items-center">
         <!-- Left buttons -->
         <div class="header-btn-group d-flex">
             <!-- ท่าอากาศยาน dropdown -->

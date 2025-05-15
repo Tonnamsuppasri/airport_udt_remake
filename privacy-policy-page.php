@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php include 'include/head.php'; ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
 <style>
     .info-container {
         max-width: 1214px;

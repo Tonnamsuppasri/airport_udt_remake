@@ -2,7 +2,6 @@
 <html lang="en">
 
 <?php include 'include/head.php'; ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
 <style>
      @media (max-width: 768px) {
@@ -62,7 +61,7 @@
         max-height: 250px;
     }
 
-    .sitemap-container {
+    .contact-container {
         max-width: 1214px;
         margin: 0 auto;
         padding: 20px;
@@ -179,7 +178,7 @@
           <div class="blue-box">ติดต่อเรา</div>
     </div>
 
-    <div class="sitemap-container">
+    <div class="contact-container">
         <div class="header">
             <div class="home">
                 <a href="#"><i class="bi bi-house-door"></i></a> > ติดต่อเรา
