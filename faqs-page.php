@@ -126,6 +126,7 @@
     <div>
         <?php include './include/navbar.php'; ?>
     </div>
+    
     <main>
     <div class="image-container">
           <img src="assets/images/airport-pic.jpg" class="img-fluid" alt="FAQ Image">

@@ -119,11 +119,11 @@
         }
 
         .dropdown-menu::-webkit-scrollbar-thumb {
-            background-color:rgb(32, 4, 58); /* สีของตัว scrollbar */
+            background-color:rgb(32, 4, 58);
             border-radius: 3px;
         }
         .dropdown-menu::-webkit-scrollbar-track {
-            background-color:rgb(126, 126, 126); /* สีของ track */
+            background-color:rgb(126, 126, 126);
         }
 
         .dropdown-menu h1 {
@@ -140,6 +140,10 @@
             background-color: #f4c900;
             left: 0;
             top: 1px;
+        }
+
+        .lang-login .dropdown-menu{
+            width: 20px;
         }
 </style>
 
