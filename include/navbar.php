@@ -107,6 +107,40 @@
         .navbar-nav .nav-link:hover {
             border-bottom: 3px solid #FECD22;
         }
+
+        .dropdown-menu {
+            width: 300px;
+            border-radius: 2px;
+            max-height: 475px;
+            overflow-y: auto;
+        }
+        .dropdown-menu::-webkit-scrollbar {
+            width: 4px; 
+        }
+
+        .dropdown-menu::-webkit-scrollbar-thumb {
+            background-color:rgb(32, 4, 58); /* สีของตัว scrollbar */
+            border-radius: 3px;
+        }
+        .dropdown-menu::-webkit-scrollbar-track {
+            background-color:rgb(126, 126, 126); /* สีของ track */
+        }
+
+        .dropdown-menu h1 {
+            font-size: 20px;
+            color:rgb(136, 136, 136);
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .dropdown-menu h1 .highlight-bar {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background-color: #f4c900;
+            left: 0;
+            top: 1px;
+        }
 </style>
 
 <div class="header-top separator-bottom">
@@ -119,8 +153,24 @@
                     <i class="bi bi-airplane-engines me-2"></i> ท่าอากาศยาน
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">...</a></li>
-                    <li><a class="dropdown-item" href="#">...</a></li>
+                    <h1><span class="highlight-bar"></span>ภาคเหนือ</h1>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                    <hr>
+                    <h1><span class="highlight-bar"></span>ภาคตะวันออกเฉียงเหนือ</h1>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                    <hr>
+                    <h1><span class="highlight-bar"></span>ภาคใต้</h1>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                    <hr>
                 </ul>
             </div>
 

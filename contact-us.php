@@ -21,11 +21,11 @@
 
     .map-container {
         display: flex;
-        justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
-        align-items: center;     /* จัดให้อยู่ตรงกลางแนวตั้ง */
+        justify-content: center; 
+        align-items: center; 
         position: relative;
-        max-width: 100%;         /* ให้ขยายตามหน้าจอ (ถ้าต้องการ responsive) */
-        padding: 20px 0;         /* เพิ่ม padding เผื่อเว้นระยะจากเนื้อหาอื่น */
+        max-width: 100%; 
+        padding: 20px 0;      
     }
 
     .map-container iframe {
