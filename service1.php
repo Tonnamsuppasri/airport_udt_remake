@@ -130,7 +130,7 @@
 
     .card {
         background: white;
-        border-radius: 10px;
+        border-radius: 0;
         width: 100%;
         aspect-ratio: 1 / 1;
         display: flex;
@@ -249,8 +249,8 @@
                 <div class="card-title">ที่จอดรถสนามบิน</div>
             </a>
             <a href="shuttle.php" class="card">
-                <img src="assets/images/shuttle.png" alt="รถรับส่งสนามบิน">
-                <div class="card-title">รถรับส่งสนามบิน</div>
+                <img src="assets/images/shuttle.png" alt="รถบัสรับส่งสนามบิน">
+                <div class="card-title">รถบัสรับส่งสนามบิน</div>
             </a>
             <a href="taxi.php" class="card">
                 <img src="assets/images/taxi.png" alt="รถ TAXI">

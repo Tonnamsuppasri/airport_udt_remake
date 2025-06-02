@@ -28,7 +28,7 @@
     }
 
     .second-container {
-        max-width: 1214px;
+        max-width: 1600px;
         margin: 0 auto;
         padding: 20px;
         padding-bottom: 40px;
@@ -129,10 +129,16 @@
         margin-bottom: 20px;
     }
 
+    .list-group-item {
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid #dee2e6 !important;
+        border-radius: 0 !important;
+    }
     .news-item {
         display: flex;
-        border-bottom: 1px solid #ddd;
-        padding: 15px 0;
+        padding: 5px 0;
     }
 
     .news-date {
@@ -161,6 +167,9 @@
     .more-button {
         text-align: right;
         margin-top: 20px;
+    }
+    .more-button a span:hover {
+        background-color:rgb(252, 226, 113);
     }
 
     .more-button a {
@@ -203,6 +212,94 @@
     .custom-nav .nav-item {
         font-size: 16px;
     }
+
+    .third-container {
+        background-color: #F7F5F5;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 0;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    .card:hover {
+        transform: translateY(-3px);
+    }
+
+    .card img {
+        width: 60%;
+        height: auto;
+        max-height: 80px;
+        object-fit: contain;
+        margin-bottom: 12px;
+    }
+
+    .card-title {
+        font-size: clamp(12px, 1.2vw, 16px);
+        color: #333;
+    }
+    .card-plus {
+        background-color: #00589B;
+    }
+    .card-plus:hover{
+        background-color:rgb(36, 121, 187);
+    }
+    .card-plus .plus-sign {
+        font-size: 100px;
+        line-height: 0.8;
+    }
+    .overlay {
+        background-color: rgba(0,0,0,0.3); 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%;
+    }
+
+    .third-pic {
+        position: relative; 
+        background-image: url('assets/images/third-left.png'); 
+        background-size: cover; 
+        background-position: center; 
+        z-index: 0;
+    }
+    .third-pic::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('assets/images/third-left2.png');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.6;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .third-pic .highlight-bar {
+        height: 100%;
+        top: 0;
+    }
 </style>
 
 <body>
@@ -212,11 +309,13 @@
     <main>
         <div class="index-container">
             <div class="first-container">
-                <div class="row"></div>
+                <div class="row">
+
+                </div>
             </div>
 
                 <div class="second-container">
-                    <div class="row">
+                    <div class="row gx-5">
                         <div class="col-md-7 col-12 mb-4">
                             <h1><span class="highlight-bar"></span>คำแนะนำผู้โดยสาร</h1>
                             <div id="carouselExampleIndicators" class="carousel slide">
@@ -298,45 +397,54 @@
                                     </li>
                                 </ul>
 
-                                <div class="news-item">
-                                    <div class="news-date">
-                                    <div class="day">05</div>
-                                    <div class="month-year">ต.ค. 2564</div>
-                                    </div>
-                                    <div class="news-content">
-                                    lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
-                                    </div>
-                                </div>
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="news-item">
+                                            <div class="news-date">
+                                            <div class="day">05</div>
+                                            <div class="month-year">ต.ค. 2564</div>
+                                            </div>
+                                            <div class="news-content">
+                                            lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
+                                            </div>
+                                        </div>
+                                    </a>
 
-                                <div class="news-item">
-                                    <div class="news-date">
-                                    <div class="day">30</div>
-                                    <div class="month-year">ก.ย. 2564</div>
-                                    </div>
-                                    <div class="news-content">
-                                    lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
-                                    </div>
-                                </div>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="news-item">
+                                            <div class="news-date">
+                                            <div class="day">30</div>
+                                            <div class="month-year">ก.ย. 2564</div>
+                                            </div>
+                                            <div class="news-content">
+                                            lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
+                                            </div>
+                                        </div>
+                                    </a>
 
-                                <div class="news-item">
-                                    <div class="news-date">
-                                    <div class="day">25</div>
-                                    <div class="month-year">ก.ย. 2564</div>
-                                    </div>
-                                    <div class="news-content">
-                                    lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
-                                    </div>
-                                </div>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="news-item">
+                                            <div class="news-date">
+                                            <div class="day">25</div>
+                                            <div class="month-year">ก.ย. 2564</div>
+                                            </div>
+                                            <div class="news-content">
+                                            lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
+                                            </div>
+                                        </div>
+                                    </a>
 
-                                <div class="news-item">
-                                    <div class="news-date">
-                                    <div class="day">20</div>
-                                    <div class="month-year">ก.ย. 2564</div>
-                                    </div>
-                                    <div class="news-content">
-                                    lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
-                                    </div>
-                                </div>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="news-item">
+                                            <div class="news-date">
+                                            <div class="day">20</div>
+                                            <div class="month-year">ก.ย. 2564</div>
+                                            </div>
+                                            <div class="news-content">
+                                            lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
+                                            </div>
+                                        </div>
+                                    </a>
 
                                 <div class="more-button">
                                     <a href="#">
@@ -345,25 +453,83 @@
                                     </a>
                                 </div>
                             </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
             </div>
+            
+            <!-- Third Container -->
             <div class="third-container">
-                <div class="row">
+                <div class="row g-0">
+                <!-- Left Section -->
+                <div class="col-md-6 d-flex align-items-center third-pic">
+                <div class="text-white p-5">
+                <h1>
+                <span class="highlight-bar"></span>
+                สิ่งอำนวยความสะดวกและบริการ
+                <p style="font-size: 16px;">โปรดเลือกคำสำคัญบริการที่คุณต้องการค้นหา</p>
+                </h1>
+                <div class="row row-cols-3">
                     <div class="col">
-                        <div class="third-left">
-                            <h1><span class="highlight-bar"></span>คำแนะนำผู้โดยสาร</h1>
-                        </div>
+                        <button class="btn btn-outline-light">การเดินทาง</button>
                     </div>
                     <div class="col">
-                        <div class="third-right">
-                            
-                        </div>
+                        <button class="btn btn-outline-light">บริการลูกค้า</button>
                     </div>
+                    <div class="col">
+                        <button class="btn btn-outline-light">ห้องรับรอง</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-light">อื่นๆ</button>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="ovarlay"></div>
                 </div>
-            </div>
+
+
+    <!-- Right Section -->
+    <div class="col-md-6 p-5">
+        <div class="grid">
+            <a href="#" class="card">
+                <img src="assets/images/parking.png" alt="ที่จอดรถสนามบิน">
+                <div class="card-title">ที่จอดรถสนามบิน</div>
+            </a>
+            <a href="#" class="card">
+                <img src="assets/images/shuttle.png" alt="รถบัสรับส่งสนามบิน">
+                <div class="card-title">รถบัสรับส่งสนามบิน</div>
+            </a>
+            <a href="#" class="card">
+                <img src="assets/images/taxi.png" alt="รถ TAXI">
+                <div class="card-title">รถ TAXI</div>
+            </a>
+            <a href="#" class="card">
+                <img src="assets/images/rentcar.png" alt="รถเช่า">
+                <div class="card-title">รถเช่า</div>
+            </a>
+            <a href="#" class="card">
+                <img src="assets/images/lounge.png" alt="ห้องรับรอง">
+                <div class="card-title">ห้องรับรอง</div>
+            </a>
+            <a href="#" class="card">
+                <img src="assets/images/counter.png" alt="เคาน์เตอร์ประชาสัมพันธ์">
+                <div class="card-title">เคาน์เตอร์ประชาสัมพันธ์</div>
+            </a>
+            <a href="#" class="card">
+                <img src="assets/images/wifi.png" alt="WIFI">
+                <div class="card-title">WIFI</div>
+            </a>
+            <a href="#" class="card text-white card-plus">
+                <div class="plus-sign">+</div>
+                <div>ทั้งหมด</div>
+            </a>
+        </div>
+    </div>
+  </div>
+</div>
         </div>
     </main>
     <div>
