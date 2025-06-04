@@ -266,15 +266,6 @@
         font-size: 100px;
         line-height: 0.8;
     }
-    .overlay {
-        background-color: rgba(0,0,0,0.3); 
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%;
-    }
-
     .third-pic {
         position: relative; 
         background-image: url('assets/images/third-left.png'); 
@@ -299,7 +290,128 @@
     .third-pic .highlight-bar {
         height: 100%;
         top: 0;
+        font-size: 26px
     }
+    .grid-responsive {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0px;
+    }
+    
+    .service-search-header { 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+        z-index: 2; 
+        margin-left: 120px;
+        top: 100px;
+    }
+    .service-search-desc {
+        font-size: 16px;
+    }
+    .service-search-row {
+        gap: 20px;
+        margin-top: 70px;
+        
+    }
+    .service-search-btn-group {
+        gap: 20px;
+        font-size: 14px;
+    }
+    .service-search-btn {
+        width: 30px;
+    }
+    @media (max-width: 1200px) {
+        .grid-responsive {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .service-search-header {
+            margin-left: 50px;
+            top: 30px;
+        }
+    }
+    @media (max-width: 992px) {
+        .grid-responsive {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .service-search-header{
+            margin-left: 40px;
+            top: 20px;
+        }
+        .service-search-btn-group {
+            flex-direction: column;
+        }
+        .service-search-btn {
+            min-width: 80%;
+            padding: 6px 16px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+    }
+    @media (max-width: 767px) {
+        .third-pic {
+            height: 530px;
+        }
+        .service-search-header{
+            margin-left: 60px;
+            top: 20px;
+        }
+        .service-search-btn-group {
+            flex-direction: row;
+        }
+        .service-search-btn {
+            min-width: unset;
+        }
+    }
+    @media (max-width: 576px) {
+        .grid-responsive {
+            grid-template-columns: 1fr;
+        }
+        .col-md-6.p-5 {
+            padding: 1rem !important;
+        }
+        .service-search-header{
+            margin-left: 20px;
+            top: 10px;
+        }
+    }
+    .second-third-pic-left{
+        position: relative; 
+        background-image: url('assets/images/third-second-left.jpg');
+        background-size: cover; 
+        background-position: center; 
+        height: 600px;
+        z-index: 0;
+    }
+    .second-third-pic-right {
+        position: relative; 
+        background-image: url('assets/images/third-second-right.jpg');
+        background-size: cover; 
+        background-position: center; 
+        height: 600px;
+        z-index: 0;
+    }
+    .second-third-pic-left::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, #00589B, transparent);
+        z-index: 1;
+    }
+    .second-third-pic-right::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, #00589B, transparent);
+        z-index: 1;
+    }
+    .second-third-container h1 {
+        z-index: 2;
+        position: absolute;
+        left: 30px;
+        bottom: 30px;
+    }
+
 </style>
 
 <body>
@@ -464,72 +576,88 @@
             <!-- Third Container -->
             <div class="third-container">
                 <div class="row g-0">
-                <!-- Left Section -->
-                <div class="col-md-6 d-flex align-items-center third-pic">
-                <div class="text-white p-5">
-                <h1>
-                <span class="highlight-bar"></span>
-                สิ่งอำนวยความสะดวกและบริการ
-                <p style="font-size: 16px;">โปรดเลือกคำสำคัญบริการที่คุณต้องการค้นหา</p>
-                </h1>
-                <div class="row row-cols-3">
-                    <div class="col">
-                        <button class="btn btn-outline-light">การเดินทาง</button>
+                    <!-- First Left Section -->
+                    <div class="col-md-6 d-flex third-pic">
+                        <div class="text-white service-search-header">
+                            <h1>
+                                <span class="highlight-bar"></span>
+                                สิ่งอำนวยความสะดวกและบริการ
+                                <p style="font-size: 16px;" class="service-search-desc">โปรดเลือกคำสำคัญบริการที่คุณต้องการค้นหา</p>
+                            </h1>
+                            <div class="row service-search-row">
+                                <div class="col-12 mb-2 d-flex flex-wrap service-search-btn-group">
+                                    <button class="btn btn-outline-light flex-fill service-search-btn">การเดินทาง</button>
+                                    <button class="btn btn-outline-light flex-fill service-search-btn">บริการลูกค้า</button>
+                                    <button class="btn btn-outline-light flex-fill service-search-btn">ห้องรับรอง</button>
+                                </div>
+                                <div class="col-4 d-flex flex-wrap service-search-btn-group">
+                                    <button class="btn btn-outline-light flex-fill service-search-btn">อื่นๆ</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ovarlay"></div>
                     </div>
-                    <div class="col">
-                        <button class="btn btn-outline-light">บริการลูกค้า</button>
+
+                    <!-- First Right Section -->  
+                    <div class="col-md-6 p-5">
+                        <div class="grid-responsive">
+                            <a href="#" class="card">
+                                <img src="assets/images/parking.png" alt="ที่จอดรถสนามบิน">
+                                <div class="card-title">ที่จอดรถสนามบิน</div>
+                            </a>
+                            <a href="#" class="card">
+                                <img src="assets/images/shuttle.png" alt="รถบัสรับส่งสนามบิน">
+                                <div class="card-title">รถบัสรับส่งสนามบิน</div>
+                            </a>
+                            <a href="#" class="card">
+                                <img src="assets/images/taxi.png" alt="รถ TAXI">
+                                <div class="card-title">รถ TAXI</div>
+                            </a>
+                            <a href="#" class="card">
+                                <img src="assets/images/rentcar.png" alt="รถเช่า">
+                                <div class="card-title">รถเช่า</div>
+                            </a>
+                            <a href="#" class="card">
+                                <img src="assets/images/lounge.png" alt="ห้องรับรอง">
+                                <div class="card-title">ห้องรับรอง</div>
+                            </a>
+                            <a href="#" class="card">
+                                <img src="assets/images/counter.png" alt="เคาน์เตอร์ประชาสัมพันธ์">
+                                <div class="card-title">เคาน์เตอร์ประชาสัมพันธ์</div>
+                            </a>
+                            <a href="#" class="card">
+                                <img src="assets/images/wifi.png" alt="WIFI">
+                                <div class="card-title">WIFI</div>
+                            </a>
+                            <a href="#" class="card text-white card-plus">
+                                <div class="plus-sign">+</div>
+                                <div>ทั้งหมด</div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col">
-                        <button class="btn btn-outline-light">ห้องรับรอง</button>
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-outline-light">อื่นๆ</button>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="ovarlay"></div>
                 </div>
 
+                <!-- Second thrid Container -->
+                <div class="row g-0 second-third-container">
+                    <div class="col-md-6 d-flex align-items-center second-third-pic-left">
+                        <div class="text-white">
+                            <h1>กินข้าวไหม</h1>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 d-flex align-items-center second-third-pic-right">
+                        <div class="text-white">
+                            <h1>กินข้าวไหม</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
 
-    <!-- Right Section -->
-    <div class="col-md-6 p-5">
-        <div class="grid">
-            <a href="#" class="card">
-                <img src="assets/images/parking.png" alt="ที่จอดรถสนามบิน">
-                <div class="card-title">ที่จอดรถสนามบิน</div>
-            </a>
-            <a href="#" class="card">
-                <img src="assets/images/shuttle.png" alt="รถบัสรับส่งสนามบิน">
-                <div class="card-title">รถบัสรับส่งสนามบิน</div>
-            </a>
-            <a href="#" class="card">
-                <img src="assets/images/taxi.png" alt="รถ TAXI">
-                <div class="card-title">รถ TAXI</div>
-            </a>
-            <a href="#" class="card">
-                <img src="assets/images/rentcar.png" alt="รถเช่า">
-                <div class="card-title">รถเช่า</div>
-            </a>
-            <a href="#" class="card">
-                <img src="assets/images/lounge.png" alt="ห้องรับรอง">
-                <div class="card-title">ห้องรับรอง</div>
-            </a>
-            <a href="#" class="card">
-                <img src="assets/images/counter.png" alt="เคาน์เตอร์ประชาสัมพันธ์">
-                <div class="card-title">เคาน์เตอร์ประชาสัมพันธ์</div>
-            </a>
-            <a href="#" class="card">
-                <img src="assets/images/wifi.png" alt="WIFI">
-                <div class="card-title">WIFI</div>
-            </a>
-            <a href="#" class="card text-white card-plus">
-                <div class="plus-sign">+</div>
-                <div>ทั้งหมด</div>
-            </a>
-        </div>
-    </div>
-  </div>
-</div>
+            <!-- Fourth Container -->
+            <div class="Fourth-container">
+                
+            </div>
         </div>
     </main>
     <div>
