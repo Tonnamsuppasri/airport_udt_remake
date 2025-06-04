@@ -1,6 +1,6 @@
 <style>
     .footer-topbar {
-        background-color: #232162;
+        background-color: #052B5D;
         color: white;
         font-family: sans-serif;
         font-size: 14px;

@@ -30,7 +30,7 @@
     .second-container {
         max-width: 1600px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 30px;
         padding-bottom: 40px;
         position: relative;
         margin-top: 20px;
@@ -222,7 +222,7 @@
         gap: 0px;
     }
 
-    .card {
+    .grid-responsive .card {
         background: white;
         border-radius: 0;
         width: 100%;
@@ -240,11 +240,11 @@
         cursor: pointer;
     }
 
-    .card:hover {
+    .grid-responsive .card:hover {
         transform: translateY(-3px);
     }
 
-    .card img {
+    .grid-responsive .card img {
         width: 60%;
         height: auto;
         max-height: 80px;
@@ -252,17 +252,17 @@
         margin-bottom: 12px;
     }
 
-    .card-title {
+    .grid-responsive .card-title {
         font-size: clamp(12px, 1.2vw, 16px);
         color: #333;
     }
-    .card-plus {
+    .grid-responsive .card-plus {
         background-color: #00589B;
     }
-    .card-plus:hover{
+    .grid-responsive .card-plus:hover{
         background-color:rgb(36, 121, 187);
     }
-    .card-plus .plus-sign {
+    .grid-responsive .card-plus .plus-sign {
         font-size: 100px;
         line-height: 0.8;
     }
@@ -364,9 +364,6 @@
         }
     }
     @media (max-width: 576px) {
-        .grid-responsive {
-            grid-template-columns: 1fr;
-        }
         .col-md-6.p-5 {
             padding: 1rem !important;
         }
@@ -375,29 +372,25 @@
             top: 10px;
         }
     }
+
     .second-third-pic-left{
-        position: relative; 
         background-image: url('assets/images/third-second-left.jpg');
-        background-size: cover; 
-        background-position: center; 
-        height: 600px;
-        z-index: 0;
     }
+
+    .second-third-pic-right {
+        background-image: url('assets/images/third-second-right.jpg');
+    }
+    
+    .second-third-pic-left,
     .second-third-pic-right {
         position: relative; 
-        background-image: url('assets/images/third-second-right.jpg');
         background-size: cover; 
         background-position: center; 
-        height: 600px;
+        height: 400px;
         z-index: 0;
     }
-    .second-third-pic-left::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, #00589B, transparent);
-        z-index: 1;
-    }
+
+    .second-third-pic-left::after,
     .second-third-pic-right::after {
         content: "";
         position: absolute;
@@ -405,13 +398,201 @@
         background: linear-gradient(to top, #00589B, transparent);
         z-index: 1;
     }
-    .second-third-container h1 {
-        z-index: 2;
+
+    .second-third-container .text-white {
         position: absolute;
+        z-index: 2;
         left: 30px;
         bottom: 30px;
+        display: flex;
+        align-items: center;
+        width: calc(100% - 60px);
+        justify-content: space-between;
     }
 
+    .second-third-container .text-white h1,
+    .second-third-container .text-white .btn {
+        margin: 0;
+    }
+
+    .second-third-container h1 {
+        z-index: 2;
+        position: static;
+        font-size: 26px;
+    }
+
+    .second-third-container .btn {
+        padding: 5px 15px;
+        font-size: 14px;
+        margin-left: auto;
+    }
+
+    .forth-container {
+        background-color:#052B5D; /* สีพื้นหลังหลัก */
+        padding: 50px 0; /* ช่องว่างด้านบน-ล่าง */
+    }
+
+    .forth-container .scroll-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 2rem;
+        padding: 1rem 0;
+        cursor: grab;
+        user-select: none;
+    }
+
+    .forth-container .scroll-container:active {
+        cursor: grabbing;
+    }
+
+    .forth-container .scroll-container::-webkit-scrollbar {
+        display: none; /* ซ่อน scrollbar */
+    }
+    .forth-container .scroll-container::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 4px;
+    }
+
+    .forth-container .card {
+        min-width: 350px;
+        flex: 0 0 auto;
+        border-radius:0;
+    }
+
+    .forth-container .nav-tabs .nav-link {
+        cursor: pointer;
+    }
+    .forth-container .card-title {
+        font-size: 18;
+    }
+    .forth-container .card-text {
+        font-size: 14px;
+    }
+    .forth-container .btn-outline-primary {
+        float: right;
+    }
+    .forth-container .nav-link {
+        color:white;
+        border-bottom: 3px solid transparent;
+    }
+    .forth-container .nav-link:hover {
+        border-bottom: 3px solid #68B9FF;
+    }
+    .forth-container .nav-link.active {
+        color: #68B9FF;
+        border-bottom: 3px solid #68B9FF;
+    }
+
+
+    .fifth-container {
+        background-color:white;
+        padding: 0;
+    }
+
+    .fifth-container .app-section {
+        display: flex;
+        padding: 20px 0;
+        align-items: center; /* จัดกลางแนวตั้ง */
+        flex-wrap: wrap;
+        border-bottom: 1px solid lightgray;
+        position: relative; /* เพิ่มสำหรับจัด faq */
+    }
+
+    .fifth-container .app-logo {
+        height: 60px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        margin-left: 200px;
+        margin-right: 16px; /* เพิ่มระยะห่างระหว่างโลโก้กับข้อความ */
+    }
+
+    .fifth-container .app-text {
+        font-size: 14px;
+        margin-right: 20px;
+        /* ลบ margin-left ถ้ามี */
+    }
+
+    .fifth-container .store-buttons img {
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .fifth-container .faq {
+        display: flex;
+        align-items: center; /* ตรงกลางแนวตั้งของเนื้อหาในกล่อง */
+        background: linear-gradient(to right, #FFAA01, #FECD22);
+        font-weight: bold;
+        color: #000;
+        padding: 30px 260px 30px 40px; /* เพิ่ม padding-left ให้ icon ไม่ติดขอบ */
+        height: 100%;
+        margin: 0;
+        border-radius: 0 0 0 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .fifth-container .faq:hover{
+        background: linear-gradient(to right,rgb(253, 184, 44),rgb(248, 207, 59));
+    }
+    .fifth-container .faq span {
+        margin-left: 8px;
+        position: static;
+    }
+    .fifth-container .faq i {
+        position: static;
+        left: unset;
+    }
+
+    .fifth-container .faq img {
+        height: 30px;
+        margin-right: 8px;
+    }
+
+    .fifth-container .airline-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+    .fifth-container .airline-logos img {
+    height: 50px;
+    margin: 10px 15px;
+    }
+    .fifth-container .store-buttons img {
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+    }
+    .icon-circle {
+        background-color: #333333;
+        color: white;
+        border-radius: 50%;      /* ทำให้เป็นวงกลม */
+        width: 50px;             /* ขนาดของวงกลม */
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;         /* ขนาดไอคอน */
+    }
+    .fifth-container .airline-logos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px 0;
+        gap: 30px;
+    }
+    .fifth-container .airline-logos img {
+        width: 140px;
+        height: 110px;
+        object-fit: contain;
+        margin: 5px 5px;
+        background: #fff;
+        border-radius: 8px;
+        display: block;
+    }
 </style>
 
 <body>
@@ -570,7 +751,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             
             <!-- Third Container -->
@@ -641,13 +821,19 @@
                 <div class="row g-0 second-third-container">
                     <div class="col-md-6 d-flex align-items-center second-third-pic-left">
                         <div class="text-white">
-                            <h1>กินข้าวไหม</h1>
+                            <h1>
+                                ร้านอาหารภายในสนามบิน
+                            </h1>
+                            <div class="btn btn-outline-light">ดูเพิ่มเติม</div>
                         </div>
                     </div>
                     
                     <div class="col-md-6 d-flex align-items-center second-third-pic-right">
                         <div class="text-white">
-                            <h1>กินข้าวไหม</h1>
+                            <h1>
+                                ร้านค้าภายในสนามบิน
+                            </h1>
+                            <div class="btn btn-outline-light">ดูเพิ่มเติม</div>
                         </div>
                     </div>
                 </div>
@@ -655,8 +841,62 @@
             
 
             <!-- Fourth Container -->
-            <div class="Fourth-container">
-                
+             
+            <div class="forth-container">
+                <div class="container py-4">
+                    <h2 class="text-white text-center mb-3">สถานที่น่าสนใจ</h2>
+
+                    <!-- Tabs -->
+                    <ul class="nav justify-content-center mb-4" id="myTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-type="attraction" href="#">แหล่งท่องเที่ยว</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-type="restaurant" href="#">ร้านอาหาร</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-type="hotel" href="#">โรงแรม</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-type="promotion" href="#">โปรโมชั่น</a>
+                    </li>
+
+                    <!-- Scrollable Cards -->
+                    <div class="scroll-container"  id="cardContainer">
+                    <!-- cards here -->
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-warning fw-bold px-4">ดูทั้งหมด +</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fifth Container -->
+            <div class="fifth-container">
+                <div class="app-section">
+                    <img src="assets/images/thai-flight-info-logo.png" alt="ThaiFlightInfo Logo" class="app-logo">
+                    <div class="app-text">
+                    <strong>Mobile Application</strong><br>
+                    Download ThaiFlightInfo
+                    </div>
+                    <div class="store-buttons">
+                    <img src="assets/images/app-store.png" alt="App Store">
+                    <img src="assets/images/google-play.png" alt="Google Play">
+                    </div>
+                    <a href="faqs-page.php" class="faq" style="text-decoration: none;">
+                        <i class="bi bi-chat-left-text-fill icon-circle"></i>
+                        <span>คำถามที่พบบ่อย</span>
+                    </a>
+                </div>
+
+                <div class="airline-logos">
+                    <img src="assets/images/logo-airport.png" alt="Logo 1">
+                    <img src="assets/images/udonthani-logo.png" alt="Logo 2">
+                    <img src="assets/images/logo-lion-air.png" alt="Lion Air">
+                    <img src="assets/images/nokair-logo.png" alt="Nok Air">
+                    <img src="assets/images/thaismile-logo.png" alt="Thai Smile">
+                    <img src="assets/images/airasia-logo.png" alt="AirAsia">
+                </div>
             </div>
         </div>
     </main>
@@ -664,5 +904,92 @@
         <?php include 'include/footer.php'; ?>
     </div>
 </body>
+<script>
+const data = {
+  attractions: [
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" }
+  ],
+  restaurants: [
+    { title: "ร้านลาบอุบล", desc: "อาหารอีสาน", img: "https://via.placeholder.com/300x200?text=ลาบอุบล" },
+    { title: "ครัวคุณยาย", desc: "อาหารไทยพื้นบ้าน", img: "https://via.placeholder.com/300x200?text=ครัวคุณยาย" }
+  ],
+  hotels: [
+    { title: "โรงแรมริมโขง", desc: "วิวแม่น้ำ", img: "https://via.placeholder.com/300x200?text=ริมโขง" },
+    { title: "บูทีคโฮเทล", desc: "โรงแรมสวยๆ", img: "https://via.placeholder.com/300x200?text=บูทีค" }
+  ],
+  promotions: [
+    { title: "ส่วนลด 50%", desc: "เฉพาะเดือนนี้", img: "https://via.placeholder.com/300x200?text=โปร50" },
+    { title: "พัก 3 คืน", desc: "ราคาพิเศษ", img: "https://via.placeholder.com/300x200?text=แพ็กเกจ" }
+  ]
+};
+
+function loadCards(category) {
+  const container = document.getElementById('cardContainer');
+  container.innerHTML = '';
+
+  data[category].forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card shadow-sm';
+    card.innerHTML = `
+   
+    <img src="${item.img}" class="card-img-top" alt="${item.title}">
+      <div class="card-body">
+        <h6 class="card-title">${item.title}</h6>
+        <p class="card-text text-muted">${item.desc}</p>
+        <a href="#" class="btn btn-outline-primary btn-sm justify-content-end">ดูเพิ่มเติม</a>
+      </div>
+
+    `;
+    container.appendChild(card);
+  });
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', () => {
+  loadCards('attractions');
+
+  document.querySelectorAll('#categoryTabs .nav-link').forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      document.querySelectorAll('#categoryTabs .nav-link').forEach(t => t.classList.remove('active'));
+      e.target.classList.add('active');
+      const category = e.target.getAttribute('data-category');
+      loadCards(category);
+    });
+  });
+
+  // Drag scroll with mouse
+  const scroller = document.getElementById('cardContainer');
+  let isDown = false;
+  let startX, scrollLeft;
+
+  scroller.addEventListener('mousedown', (e) => {
+    isDown = true;
+    scroller.classList.add('active');
+    startX = e.pageX - scroller.offsetLeft;
+    scrollLeft = scroller.scrollLeft;
+  });
+  scroller.addEventListener('mouseleave', () => {
+    isDown = false;
+    scroller.classList.remove('active');
+  });
+  scroller.addEventListener('mouseup', () => {
+    isDown = false;
+    scroller.classList.remove('active');
+  });
+  scroller.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - scroller.offsetLeft;
+    const walk = (x - startX) * 1.5; // scroll speed
+    scroller.scrollLeft = scrollLeft - walk;
+  });
+});
+</script>
+
+
 
 </html>
