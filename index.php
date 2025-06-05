@@ -429,7 +429,7 @@
 
     .forth-container {
         background-color:#052B5D; /* สีพื้นหลังหลัก */
-        padding: 50px 0; /* ช่องว่างด้านบน-ล่าง */
+        padding: 50px 0 10px 0; /* ช่องว่างด้านบน-ล่าง */
     }
 
     .forth-container .scroll-container {
@@ -491,30 +491,37 @@
 
     .fifth-container .app-section {
         display: flex;
-        padding: 20px 0;
-        align-items: center; /* จัดกลางแนวตั้ง */
+        justify-content: space-between; /* เพิ่มเติม */
         flex-wrap: wrap;
+        align-items: center;
+        padding: 20px 0;
         border-bottom: 1px solid lightgray;
-        position: relative; /* เพิ่มสำหรับจัด faq */
+        position: relative;
+        height: 300px;
+        
     }
 
     .fifth-container .app-logo {
-        height: 60px;
+        height: 80px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 15px;
-        margin-left: 200px;
-        margin-right: 16px; /* เพิ่มระยะห่างระหว่างโลโก้กับข้อความ */
+        margin: 0 16px 0 0;
     }
 
-    .fifth-container .app-text {
+    .fifth-container .app-logo {
         font-size: 14px;
-        margin-right: 20px;
-        /* ลบ margin-left ถ้ามี */
+        margin: 0 20px 0 0;
     }
 
     .fifth-container .store-buttons img {
-        height: 40px;
+        height: 50px;
         margin-right: 10px;
+        width: auto;
+    }
+    .fifth-container .app-logo,
+    .fifth-container .app-text,
+    .fifth-container .store-buttons img {
+        position: relative;
     }
 
     .fifth-container .faq {
@@ -523,49 +530,38 @@
         background: linear-gradient(to right, #FFAA01, #FECD22);
         font-weight: bold;
         color: #000;
-        padding: 30px 260px 30px 40px; /* เพิ่ม padding-left ให้ icon ไม่ติดขอบ */
+        padding: 30px 260px 30px 70px; /* เพิ่ม padding-left ให้ icon ไม่ติดขอบ */
         height: 100%;
         margin: 0;
-        border-radius: 0 0 0 0;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        border-radius: 0;
+        position: relative;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        width: 600px; /* เพิ่มความกว้าง */
+        min-width: 320px;
+        max-width: 100%;
+        margin-left: auto;  /* ให้มันไปชิดขวาโดยใช้ flex */
     }
     .fifth-container .faq:hover{
         background: linear-gradient(to right,rgb(253, 184, 44),rgb(248, 207, 59));
     }
     .fifth-container .faq span {
-        margin-left: 8px;
+        margin-left: 20px;
         position: static;
-    }
-    .fifth-container .faq i {
-        position: static;
-        left: unset;
-    }
-
-    .fifth-container .faq img {
-        height: 30px;
-        margin-right: 8px;
-    }
-
-    .fifth-container .airline-logos {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
     }
 
     .fifth-container .airline-logos img {
-    height: 50px;
-    margin: 10px 15px;
+        height: 60px;
+        margin: 5px 15px;
     }
-    .fifth-container .store-buttons img {
-        height: 40px;
-        width: 40px;
-        display: inline-block;
+    .fifth-container .store-buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 20px;
     }
-    .icon-circle {
+    .fifth-container .icon-circle {
         background-color: #333333;
         color: white;
         border-radius: 50%;      /* ทำให้เป็นวงกลม */
@@ -581,8 +577,8 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        padding: 10px 0;
-        gap: 30px;
+        padding: 15px 0;
+        gap: 50px;
     }
     .fifth-container .airline-logos img {
         width: 140px;
@@ -592,6 +588,16 @@
         background: #fff;
         border-radius: 8px;
         display: block;
+    }
+    .fifth-container .icon2 {
+        font-size: 70px;
+        color: rgb(0, 0, 0);
+        opacity: 0.1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: absolute;
+        right: 30px;
     }
 </style>
 
@@ -875,17 +881,22 @@
             <div class="fifth-container">
                 <div class="app-section">
                     <img src="assets/images/thai-flight-info-logo.png" alt="ThaiFlightInfo Logo" class="app-logo">
-                    <div class="app-text">
+                    <div class="app-text" style="">
                     <strong>Mobile Application</strong><br>
                     Download ThaiFlightInfo
                     </div>
                     <div class="store-buttons">
-                    <img src="assets/images/app-store.png" alt="App Store">
-                    <img src="assets/images/google-play.png" alt="Google Play">
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="assets/images/app-store.png" alt="ดาวน์โหลดแอป ThaiFlightInfo บน App Store สำหรับ iOS">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="assets/images/google-play.png" alt="ดาวน์โหลดแอป ThaiFlightInfo บน Google Play สำหรับ Android">
+                    </a>
                     </div>
-                    <a href="faqs-page.php" class="faq" style="text-decoration: none;">
+                    <a href="faqs-page.php" class="faq">
                         <i class="bi bi-chat-left-text-fill icon-circle"></i>
                         <span>คำถามที่พบบ่อย</span>
+                        <i class="bi bi-chat-left-text-fill icon2"></i>
                     </a>
                 </div>
 
