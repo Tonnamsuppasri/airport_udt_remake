@@ -321,57 +321,8 @@
     .service-search-btn {
         width: 30px;
     }
-    @media (max-width: 1200px) {
-        .grid-responsive {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .service-search-header {
-            margin-left: 50px;
-            top: 30px;
-        }
-    }
-    @media (max-width: 992px) {
-        .grid-responsive {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        .service-search-header{
-            margin-left: 40px;
-            top: 20px;
-        }
-        .service-search-btn-group {
-            flex-direction: column;
-        }
-        .service-search-btn {
-            min-width: 80%;
-            padding: 6px 16px;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-    }
-    @media (max-width: 767px) {
-        .third-pic {
-            height: 530px;
-        }
-        .service-search-header{
-            margin-left: 60px;
-            top: 20px;
-        }
-        .service-search-btn-group {
-            flex-direction: row;
-        }
-        .service-search-btn {
-            min-width: unset;
-        }
-    }
-    @media (max-width: 576px) {
-        .col-md-6.p-5 {
-            padding: 1rem !important;
-        }
-        .service-search-header{
-            margin-left: 20px;
-            top: 10px;
-        }
-    }
+
+    
 
     .second-third-pic-left{
         background-image: url('assets/images/third-second-left.jpg');
@@ -448,6 +399,7 @@
     .forth-container .scroll-container::-webkit-scrollbar {
         display: none; /* ซ่อน scrollbar */
     }
+
     .forth-container .scroll-container::-webkit-scrollbar-thumb {
         background-color: #ccc;
         border-radius: 4px;
@@ -462,27 +414,32 @@
     .forth-container .nav-tabs .nav-link {
         cursor: pointer;
     }
+
     .forth-container .card-title {
         font-size: 18;
     }
+
     .forth-container .card-text {
         font-size: 14px;
     }
+
     .forth-container .btn-outline-primary {
         float: right;
     }
+
     .forth-container .nav-link {
         color:white;
         border-bottom: 3px solid transparent;
     }
+
     .forth-container .nav-link:hover {
         border-bottom: 3px solid #68B9FF;
     }
+
     .forth-container .nav-link.active {
         color: #68B9FF;
         border-bottom: 3px solid #68B9FF;
     }
-
 
     .fifth-container {
         background-color:white;
@@ -491,33 +448,29 @@
 
     .fifth-container .app-section {
         display: flex;
-        justify-content: space-between; /* เพิ่มเติม */
+        justify-content: center;
         flex-wrap: wrap;
         align-items: center;
-        padding: 20px 0;
+        padding:0;
         border-bottom: 1px solid lightgray;
         position: relative;
-        height: 300px;
-        
     }
 
     .fifth-container .app-logo {
         height: 80px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 15px;
-        margin: 0 16px 0 0;
-    }
-
-    .fifth-container .app-logo {
         font-size: 14px;
         margin: 0 20px 0 0;
+        margin-left: auto;
     }
 
     .fifth-container .store-buttons img {
         height: 50px;
-        margin-right: 10px;
+        margin-left: 10px;
         width: auto;
     }
+
     .fifth-container .app-logo,
     .fifth-container .app-text,
     .fifth-container .store-buttons img {
@@ -526,26 +479,27 @@
 
     .fifth-container .faq {
         display: flex;
-        align-items: center; /* ตรงกลางแนวตั้งของเนื้อหาในกล่อง */
+        align-items: center;
         background: linear-gradient(to right, #FFAA01, #FECD22);
         font-weight: bold;
         color: #000;
-        padding: 30px 260px 30px 70px; /* เพิ่ม padding-left ให้ icon ไม่ติดขอบ */
+        padding: 30px 260px 30px 70px;
         height: 100%;
-        margin: 0;
         border-radius: 0;
         position: relative;
         right: auto;
         top: 0;
         bottom: 0;
-        width: 600px; /* เพิ่มความกว้าง */
+        width: 600px;
         min-width: 320px;
         max-width: 100%;
-        margin-left: auto;  /* ให้มันไปชิดขวาโดยใช้ flex */
+        margin-left: auto;
     }
+
     .fifth-container .faq:hover{
         background: linear-gradient(to right,rgb(253, 184, 44),rgb(248, 207, 59));
     }
+
     .fifth-container .faq span {
         margin-left: 20px;
         position: static;
@@ -555,12 +509,14 @@
         height: 60px;
         margin: 5px 15px;
     }
+
     .fifth-container .store-buttons {
         display: flex;
         align-items: center;
         gap: 10px;
         margin: 0 20px;
     }
+
     .fifth-container .icon-circle {
         background-color: #333333;
         color: white;
@@ -572,6 +528,7 @@
         justify-content: center;
         font-size: 25px;         /* ขนาดไอคอน */
     }
+
     .fifth-container .airline-logos{
         display: flex;
         justify-content: center;
@@ -580,6 +537,7 @@
         padding: 15px 0;
         gap: 50px;
     }
+
     .fifth-container .airline-logos img {
         width: 140px;
         height: 110px;
@@ -589,6 +547,7 @@
         border-radius: 8px;
         display: block;
     }
+
     .fifth-container .icon2 {
         font-size: 70px;
         color: rgb(0, 0, 0);
@@ -598,6 +557,75 @@
         justify-content: flex-end;
         position: absolute;
         right: 30px;
+    }
+
+    @media (max-width: 1285px) {
+        .fifth-container .app-logo,
+        .fifth-container .store-buttons img{
+            margin: 20px;
+        }
+        .fifth-container .faq {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .fifth-container .app-logo {
+            margin-left: 200px;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .grid-responsive {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .service-search-header {
+            margin-left: 50px;
+            top: 30px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .grid-responsive {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .service-search-header{
+            margin-left: 40px;
+            top: 20px;
+        }
+        .service-search-btn-group {
+            flex-direction: column;
+        }
+        .service-search-btn {
+            min-width: 80%;
+            padding: 6px 16px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .third-pic {
+            height: 530px;
+        }
+        .service-search-header{
+            margin-left: 60px;
+            top: 20px;
+        }
+        .service-search-btn-group {
+            flex-direction: row;
+        }
+        .service-search-btn {
+            min-width: unset;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .col-md-6.p-5 {
+            padding: 1rem !important;
+        }
+        .service-search-header{
+            margin-left: 20px;
+            top: 10px;
+        }
     }
 </style>
 
