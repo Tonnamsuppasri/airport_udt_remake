@@ -4,11 +4,29 @@
 <?php include 'include/head.php'; ?>
 
 <style>
+    .index-navbar {
+        z-index: 1000;
+        position: absolute;
+        width: 100%;
+    }
+
+    .first-container {
+        
+    }
+
+    .notice-box {
+        background-color: #FECD22
+    }
+
     .blue-box {
         background-color: #02407F;
         width: 100%;
         height: 100%;
         position: relative;
+    }
+
+    .btn {
+        border-radius: 0;
     }
 
     h1 {
@@ -91,25 +109,24 @@
     /*  Responsive */
     @media (max-width: 768px) {
         .second-container {
-            padding: 10px;
+            padding: 10px 30px;
             padding-bottom: 80px;
         }
 
         .blue-box h1 {
             font-size: 16px;
-            padding: 10px 20px;
+            padding: 10px 30px;
         }
 
         .second-container .text {
             font-size: 13px;
-            padding: 0px 20px;
+            padding: 0px 30px;
         }
 
         .blue-box .btn {
-            font-size: 12px;
+            font-size: 14px;
             bottom: 10px;
-            right: 15px;
-            padding: 4px 12px;
+            padding: 6px 30px;
         }
 
         .carousel-indicators {
@@ -462,12 +479,13 @@
         border-radius: 15px;
         font-size: 14px;
         margin: 0 20px 0 0;
-        margin-left: auto;
     }
 
+    .fifth-container .store-buttons {
+        margin-right: auto;
+    }
     .fifth-container .store-buttons img {
         height: 50px;
-        margin-left: 10px;
         width: auto;
     }
 
@@ -490,8 +508,7 @@
         right: auto;
         top: 0;
         bottom: 0;
-        width: 600px;
-        min-width: 320px;
+        min-width: 600px;
         max-width: 100%;
         margin-left: auto;
     }
@@ -515,6 +532,12 @@
         align-items: center;
         gap: 10px;
         margin: 0 20px;
+    }
+    .fifth-container .store-buttons img {
+        transition: transform 0.5s ease;
+    }
+    .fifth-container .store-buttons img:hover {
+        transform: scale(1.05);
     }
 
     .fifth-container .icon-circle {
@@ -556,21 +579,35 @@
         align-items: center;
         justify-content: flex-end;
         position: absolute;
-        right: 30px;
+        right: 60px;
+    }
+    .fifth-container .app-section .app{
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        flex-wrap: wrap; 
+        padding-left:300px; 
+        margin-left: auto;
     }
 
-    @media (max-width: 1285px) {
-        .fifth-container .app-logo,
-        .fifth-container .store-buttons img{
+    @media (max-width: 1562px) {
+        .fifth-container .app-section .app {
+            padding-left:0;
+            margin-left: 0;
             margin: 20px;
         }
         .fifth-container .faq {
             width: 100%;
             margin: 0 auto;
         }
-        .fifth-container .app-logo {
-            margin-left: 200px;
+    }
+
+    @media (max-width: 1285px) {
+        .fifth-container .faq {
+            width: 100%;
+            margin: 0 auto;
         }
+
     }
 
     @media (max-width: 1200px) {
@@ -584,6 +621,27 @@
     }
 
     @media (max-width: 992px) {
+        .carousel-item .row {
+            flex-direction: column !important;
+        }
+
+        .carousel-item .col-6,
+        .carousel-item .col-7,
+        .carousel-item .col-5 {
+            width: 100%;
+        }
+
+        .blue-box {
+            height: 220px;
+        }
+
+        .blue-box .highlight-bar {
+            height: 4px;
+            width: 65px;
+            padding-left: 30px;
+            top: -20px;
+            left: 40px;
+        }
         .grid-responsive {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -617,6 +675,11 @@
             min-width: unset;
         }
     }
+     @media (max-width: 702px) {
+        .fifth-container .app-logo {
+            margin-bottom: 20px;
+    }
+     }
 
     @media (max-width: 576px) {
         .col-md-6.p-5 {
@@ -636,7 +699,8 @@
     <main>
         <div class="index-container">
             <div class="first-container">
-                <div class="row">
+                <img src="assets/images/artboard-pic.png" alt="Udon Thani Airport Header" class="img-fluid">
+                <div class="notice-box">
 
                 </div>
             </div>
@@ -673,7 +737,9 @@
                                                 <img src="assets/images/advice-pic.jpg" class="d-block w-100" alt="...">
                                             </div>
                                             <div class="col-6 p-0">
-                                                <div class="blue-box"></div>
+                                                <div class="blue-box"><h1><span class="highlight-bar"></span>ข้อควรรู้ก่อนขึ้นเครื่อง "การนำของเหลว เจล สเปรย์ (Aerosols) ขึ้นไปกับอากาศยาน</h1>
+                                                    <p class="text">เพื่อความสะดวกในการเดินทาง และเตรียมความพร้อมก่อนขึ้นเครื่อง ทางท่าอากาศยานอุดรธานี จึงมีข้อควรรู้มาฝากให้ผู้โดยสารได้ทำความเข้าใจกันค่ะ สำหรับของเหลว</p>
+                                                    <a href="#" class="btn btn-outline-light">ดูเพิ่มเติม</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -710,78 +776,95 @@
                         <div class="col-md-5 col-12">
                             <h1><span class="highlight-bar"></span>ข่าวล่าสุด</h1>
                             <div class="news-container">
-                                <ul class="nav nav-underline custom-nav">
+                                <ul class="nav nav-underline custom-nav" id="newsTabs">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">ข่าวประชาสัมพันธ์</a>
+                                    <a class="nav-link active" data-category="public" >ข่าวประชาสัมพันธ์</a>
                                     </li>
                                     <li class="nav-separator">/</li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">ประกาศจัดซื้อจัดจ้าง</a>
+                                    <a class="nav-link" data-category="procurement">ประกาศจัดซื้อจัดจ้าง</a>
                                     </li>
                                     <li class="nav-separator">/</li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">ข่าวรับสมัครงาน</a>
+                                    <a class="nav-link" data-category="recruitment">ข่าวรับสมัครงาน</a>
                                     </li>
                                 </ul>
 
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item list-group-item-action">
-                                        <div class="news-item">
-                                            <div class="news-date">
-                                            <div class="day">05</div>
-                                            <div class="month-year">ต.ค. 2564</div>
+                                <!-- ข่าวประชาสัมพันธ์ -->
+                                <div class="news-lists">
+                                    <div class="news-content-box" data-category="public">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="news-item">
+                                                <div class="news-date">
+                                                <div class="day">05</div>
+                                                <div class="month-year">ต.ค. 2564</div>
+                                                </div>
+                                                <div class="news-content">
+                                                ข้อความประชาสัมพันธ์
+                                                </div>
                                             </div>
-                                            <div class="news-content">
-                                            lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
-                                            </div>
+                                            </a>
                                         </div>
-                                    </a>
-
-                                    <a href="#" class="list-group-item list-group-item-action">
-                                        <div class="news-item">
-                                            <div class="news-date">
-                                            <div class="day">30</div>
-                                            <div class="month-year">ก.ย. 2564</div>
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="news-item">
+                                                <div class="news-date">
+                                                <div class="day">08</div>
+                                                <div class="month-year">ธ.ค. 2563</div>
+                                                </div>
+                                                <div class="news-content">
+                                                ข้อความประชาสัมพันธ์
+                                                </div>
                                             </div>
-                                            <div class="news-content">
-                                            lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
-                                            </div>
+                                            </a>
                                         </div>
-                                    </a>
+                                    </div>
 
-                                    <a href="#" class="list-group-item list-group-item-action">
-                                        <div class="news-item">
-                                            <div class="news-date">
-                                            <div class="day">25</div>
-                                            <div class="month-year">ก.ย. 2564</div>
+                                    <!-- จัดซื้อจัดจ้าง -->
+                                    <div class="news-content-box d-none" data-category="procurement">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="news-item">
+                                                <div class="news-date">
+                                                <div class="day">12</div>
+                                                <div class="month-year">ก.ย. 2564</div>
+                                                </div>
+                                                <div class="news-content">
+                                                ประกาศจัดซื้อจัดจ้างตัวอย่าง
+                                                </div>
                                             </div>
-                                            <div class="news-content">
-                                            lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
-                                            </div>
+                                            </a>
                                         </div>
-                                    </a>
+                                    </div>
 
-                                    <a href="#" class="list-group-item list-group-item-action">
-                                        <div class="news-item">
-                                            <div class="news-date">
-                                            <div class="day">20</div>
-                                            <div class="month-year">ก.ย. 2564</div>
+                                    <!-- รับสมัครงาน -->
+                                    <div class="news-content-box d-none" data-category="recruitment">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="news-item">
+                                                <div class="news-date">
+                                                <div class="day">01</div>
+                                                <div class="month-year">ก.ย. 2564</div>
+                                                </div>
+                                                <div class="news-content">
+                                                ประกาศรับสมัครงาน
+                                                </div>
                                             </div>
-                                            <div class="news-content">
-                                            lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text
-                                            </div>
+                                            </a>
                                         </div>
-                                    </a>
+                                    </div>
+                                </div>
 
-                                <div class="more-button">
+                                <!-- ปุ่มดูทั้งหมด -->
+                                <div class="more-button mt-3">
                                     <a href="#">
                                     ดูทั้งหมด
                                     <span>+</span>
                                     </a>
                                 </div>
+                                </div>
                             </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -883,24 +966,26 @@
                     <!-- Tabs -->
                     <ul class="nav justify-content-center mb-4" id="myTabs">
                     <li class="nav-item">
-                        <a class="nav-link active" data-type="attraction" href="#">แหล่งท่องเที่ยว</a>
+                        <a class="nav-link active" data-category="attractions" href="#">แหล่งท่องเที่ยว</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-type="restaurant" href="#">ร้านอาหาร</a>
+                        <a class="nav-link" data-category="restaurants" href="#">ร้านอาหาร</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-type="hotel" href="#">โรงแรม</a>
+                        <a class="nav-link" data-category="hotels" href="#">โรงแรม</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-type="promotion" href="#">โปรโมชั่น</a>
+                        <a class="nav-link" data-category="promotions" href="#">โปรโมชั่น</a>
                     </li>
+                    </ul>
 
                     <!-- Scrollable Cards -->
-                    <div class="scroll-container"  id="cardContainer">
-                    <!-- cards here -->
+                    <div class="scroll-container d-flex gap-3 overflow-auto" id="cardContainer">
+                    <!-- Cards will be inserted here -->
                     </div>
+
                     <div class="text-center mt-4">
-                        <button class="btn btn-warning fw-bold px-4">ดูทั้งหมด +</button>
+                    <button class="btn btn-warning fw-bold px-4">ดูทั้งหมด +</button>
                     </div>
                 </div>
             </div>
@@ -908,18 +993,20 @@
             <!-- fifth Container -->
             <div class="fifth-container">
                 <div class="app-section">
-                    <img src="assets/images/thai-flight-info-logo.png" alt="ThaiFlightInfo Logo" class="app-logo">
-                    <div class="app-text" style="">
-                    <strong>Mobile Application</strong><br>
-                    Download ThaiFlightInfo
-                    </div>
-                    <div class="store-buttons">
-                    <a href="#" target="_blank" rel="noopener">
-                        <img src="assets/images/app-store.png" alt="ดาวน์โหลดแอป ThaiFlightInfo บน App Store สำหรับ iOS">
-                    </a>
-                    <a href="#" target="_blank" rel="noopener">
-                        <img src="assets/images/google-play.png" alt="ดาวน์โหลดแอป ThaiFlightInfo บน Google Play สำหรับ Android">
-                    </a>
+                    <div class="app">
+                        <img src="assets/images/thai-flight-info-logo.png" alt="ThaiFlightInfo Logo" class="app-logo">
+                        <div class="app-text">
+                        <strong>Mobile Application</strong><br>
+                        Download ThaiFlightInfo
+                        </div>
+                        <div class="store-buttons">
+                        <a href="#" target="_blank" rel="noopener" class="app-store">
+                            <img src="assets/images/app-store.png" alt="ดาวน์โหลดแอป ThaiFlightInfo บน App Store สำหรับ iOS">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" class="google-play">
+                            <img src="assets/images/google-play.png" alt="ดาวน์โหลดแอป ThaiFlightInfo บน Google Play สำหรับ Android">
+                        </a>
+                        </div>
                     </div>
                     <a href="faqs-page.php" class="faq">
                         <i class="bi bi-chat-left-text-fill icon-circle"></i>
@@ -944,25 +1031,47 @@
     </div>
 </body>
 <script>
+// JavaScript สำหรับการเปลี่ยนแท็บข่าว
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll("#newsTabs .nav-link");
+  const contentBoxes = document.querySelectorAll(".news-content-box");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      navLinks.forEach(link => link.classList.remove("active"));
+
+      contentBoxes.forEach(box => box.classList.add("d-none"));
+
+      this.classList.add("active");
+
+      const category = this.getAttribute("data-category");
+      document.querySelector(`.news-content-box[data-category="${category}"]`).classList.remove("d-none");
+    });
+  });
+});
+
+// JavaScript สถานที่น่าสนใจ
 const data = {
   attractions: [
     { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
     { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
     { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
     { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
-    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" }
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
   ],
   restaurants: [
-    { title: "ร้านลาบอุบล", desc: "อาหารอีสาน", img: "https://via.placeholder.com/300x200?text=ลาบอุบล" },
-    { title: "ครัวคุณยาย", desc: "อาหารไทยพื้นบ้าน", img: "https://via.placeholder.com/300x200?text=ครัวคุณยาย" }
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
   ],
   hotels: [
-    { title: "โรงแรมริมโขง", desc: "วิวแม่น้ำ", img: "https://via.placeholder.com/300x200?text=ริมโขง" },
-    { title: "บูทีคโฮเทล", desc: "โรงแรมสวยๆ", img: "https://via.placeholder.com/300x200?text=บูทีค" }
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
   ],
   promotions: [
-    { title: "ส่วนลด 50%", desc: "เฉพาะเดือนนี้", img: "https://via.placeholder.com/300x200?text=โปร50" },
-    { title: "พัก 3 คืน", desc: "ราคาพิเศษ", img: "https://via.placeholder.com/300x200?text=แพ็กเกจ" }
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
+    { title: "อุทยานประวัติศาสตร์ภูพระบาท", desc: "อุทยานโบราณสถานแห่งแผ่นดินอีสาน", img: "assets/images/ภูพระบาท.png" },
   ]
 };
 
@@ -974,56 +1083,51 @@ function loadCards(category) {
     const card = document.createElement('div');
     card.className = 'card shadow-sm';
     card.innerHTML = `
-   
-    <img src="${item.img}" class="card-img-top" alt="${item.title}">
+      <img src="${item.img}" class="card-img-top" alt="${item.title}">
       <div class="card-body">
         <h6 class="card-title">${item.title}</h6>
         <p class="card-text text-muted">${item.desc}</p>
-        <a href="#" class="btn btn-outline-primary btn-sm justify-content-end">ดูเพิ่มเติม</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">ดูเพิ่มเติม</a>
       </div>
-
     `;
     container.appendChild(card);
   });
 }
 
-// Event listeners
 document.addEventListener('DOMContentLoaded', () => {
   loadCards('attractions');
 
-  document.querySelectorAll('#categoryTabs .nav-link').forEach(tab => {
+  document.querySelectorAll('#myTabs .nav-link').forEach(tab => {
     tab.addEventListener('click', (e) => {
-      document.querySelectorAll('#categoryTabs .nav-link').forEach(t => t.classList.remove('active'));
+      e.preventDefault();
+
+      // Toggle active tab
+      document.querySelectorAll('#myTabs .nav-link').forEach(t => t.classList.remove('active'));
       e.target.classList.add('active');
+
       const category = e.target.getAttribute('data-category');
       loadCards(category);
     });
   });
 
-  // Drag scroll with mouse
+  // Drag scroll
   const scroller = document.getElementById('cardContainer');
-  let isDown = false;
-  let startX, scrollLeft;
+  let isDown = false, startX, scrollLeft;
 
-  scroller.addEventListener('mousedown', (e) => {
+  scroller.addEventListener('mousedown', e => {
     isDown = true;
-    scroller.classList.add('active');
     startX = e.pageX - scroller.offsetLeft;
     scrollLeft = scroller.scrollLeft;
+    scroller.classList.add('active');
   });
-  scroller.addEventListener('mouseleave', () => {
-    isDown = false;
-    scroller.classList.remove('active');
-  });
-  scroller.addEventListener('mouseup', () => {
-    isDown = false;
-    scroller.classList.remove('active');
-  });
-  scroller.addEventListener('mousemove', (e) => {
+
+  scroller.addEventListener('mouseleave', () => isDown = false);
+  scroller.addEventListener('mouseup', () => isDown = false);
+  scroller.addEventListener('mousemove', e => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - scroller.offsetLeft;
-    const walk = (x - startX) * 1.5; // scroll speed
+    const walk = (x - startX) * 1.5;
     scroller.scrollLeft = scrollLeft - walk;
   });
 });
