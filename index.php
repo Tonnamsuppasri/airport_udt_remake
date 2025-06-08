@@ -10,8 +10,76 @@
         width: 100%;
     }
 
-    .first-container {
-        
+    .notice-box {
+      width: 400px;
+      background-color: #ffd700;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 40px;
+    }
+
+    .notice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffd700;
+      padding: 10px 15px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .notice-content {
+      display: flex;
+      background-color: #003366;
+      color: white;
+    }
+
+    .notice-image {
+      background: white;
+      padding: 10px;
+    }
+
+    .notice-image img {
+      width: 140px;
+      height: auto;
+    }
+
+    .notice-text {
+      padding: 15px;
+      flex-grow: 1;
+    }
+
+    .notice-text h3 {
+      margin: 0 0 5px;
+      font-size: 16px;
+    }
+
+    .notice-text p {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #cce6ff;
+    }
+
+    .notice-text button {
+      padding: 5px 10px;
+      background-color: #003366;
+      border: 1px solid #fff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .notice-footer {
+      display: flex;
+      justify-content: flex-end;
+      background-color: #ffd700;
+    }
+
+    .notice-footer button {
+      background: #ffd700;
+      border: none;
+      font-size: 18px;
+      padding: 10px 15px;
+      cursor: pointer;
     }
 
     .notice-box {
@@ -698,11 +766,28 @@
     </div>
     <main>
         <div class="index-container">
-            <div class="first-container">
-                <img src="assets/images/artboard-pic.png" alt="Udon Thani Airport Header" class="img-fluid">
+            <div class="first-container" style="position: relative;">
+                <img src="assets/images/artboard-pic.png" alt="Udon Thani Airport Header" class="img-fluid" style="width:100%;">
                 <div class="notice-box">
-
-                </div>
+    <div class="notice-header">
+      <span>🔔 Notices</span>
+      <span>+</span>
+    </div>
+    <div class="notice-content">
+      <div class="notice-image">
+        <img src="assets/images/artboard-pic.png" alt="Covid-19 Info">
+      </div>
+      <div class="notice-text">
+        <h3>Covid-19 Infomation</h3>
+        <p>มาตรการช่วยเหลือ Covid-19</p>
+        <button>ดูเพิ่มเติม</button>
+      </div>
+    </div>
+    <div class="notice-footer">
+      <button>&lt;</button>
+      <button>&gt;</button>
+    </div>
+  </div>
             </div>
 
                 <div class="second-container">
