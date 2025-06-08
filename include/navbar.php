@@ -270,7 +270,7 @@
                         <a class="nav-link" href="service1.php">สิ่งอำนวยความสะดวก</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ข่าวประชาสัมพันธ์</a>
+                        <a class="nav-link" href="t">ข่าวประชาสัมพันธ์</a>
                     </li>
                 </ul>
             </div>

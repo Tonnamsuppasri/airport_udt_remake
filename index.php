@@ -985,7 +985,7 @@
                     </div>
 
                     <div class="text-center mt-4">
-                    <button class="btn btn-warning fw-bold px-4">ดูทั้งหมด +</button>
+                    <button class="btn btn-warning fw-bold px-4" href="#">ดูทั้งหมด +</button>
                     </div>
                 </div>
             </div>

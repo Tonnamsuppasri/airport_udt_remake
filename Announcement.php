@@ -10,7 +10,7 @@
     box-sizing: border-box;
 }
 
-body {
+.announcement-index body {
     font-family: sans-serif;
     line-height: 1.6;
 }
@@ -26,7 +26,7 @@ body {
     justify-content: center;  
 }
 
-.container {
+.announcement-index .container {
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -174,7 +174,7 @@ body {
                 <h1 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #0d47a1; color: white; padding: 10px; border-radius: 5px; text-align: center;"">ข่าวประกาศจัดซื้อจัดจ้าง</h1>
             </div>
         </section>
-
+    <div class="announcement-index">
         <div class="container-fluid">
             <div class="sidebar">
                 <ul>
@@ -285,7 +285,9 @@ body {
                 </div>
                 </div>
             </div>
-            </div>           
+            </div>        
+            
+</div>
     </main>
     <div>
         <?php include 'include/footer.php'; ?>
