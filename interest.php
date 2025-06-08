@@ -4,68 +4,69 @@
 <?php include 'include/head.php'; ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <style>
-    .card {
+    .interest-container {
+        max-width: 1214px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    .interest-container .card {
+        border-radius: 0px;
         width: 100%;
         height: 100%;
     }
 
-    .card-body {
+    .interest-container .card-body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 
-    .card-grid {
+    .interest-container .card-grid {
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
     }
 
-    .card-wrapper {
+    .interest-container .card-wrapper {
         flex: 0 0 calc(25% - 1.5rem);
     }
 
     @media (max-width: 992px) {
-        .card-wrapper {
+        .interest-container .card-wrapper {
             flex: 0 0 calc(50% - 1.5rem);
         }
     }
 
     @media (max-width: 576px) {
-        .card-wrapper {
+        .interest-container .card-wrapper {
             flex: 0 0 100%;
         }
     }
 
-    .nav-link {
+    .interest-container .nav-link {
         color: #333;
         padding: 0.5rem 1.5rem;
         transition: all 0.2s ease-in-out;
     }
 
-    .nav-link:hover {
+    .interest-container .nav-link:hover {
         color: #0d6efd;
     }
 
-    .nav-link.active {
-        color: #0d6efd;
-        border-bottom: 2px solid #0d6efd;
-        font-weight: 500;
-    }
-
-    .nav .nav-link.active {
+    .interest-container .nav .nav-link.active {
         color: #007bff !important;
         /* ใช้สีน้ำเงินที่ต้องการ */
-        border-bottom: 2px solid #007bff;
+        border-top: 2px solid #007bff;
         font-weight: 500;
+        border-bottom: none;
     }
 
-    .home {
+    .interest-container .home {
         display: flex;
         align-items: center;
     }
 
-    .home a {
+    .interest-container .home a {
         text-decoration: none;
         font-size: 0.9rem;
         margin-right: 5px;
@@ -98,38 +99,41 @@
         max-height: 250px;
     }
 
-    .full-width-hr {
+    .interest-container .full-width-hr {
         width: 99.5vw;
         margin-left: calc(-50vw + 50%);
         border: none;
         border-top: 1px solid #333;
     }
+
 </style>
 
 <body>
     <div>
         <?php include './include/navbar.php'; ?>
     </div>
-    <div class="image-container">
-        <img src="assets/images/สถานที่น่าสนใจ.jpg" class="img-fluid" alt="สถานที่น่าสนใจ">
-        <div class="blue-box">สถานที่น่าสนใจ</div>
-    </div>
-    <main class="container my-4">
-
-        <ul class="nav nav-underline mb-4" style="font-size: 1.1rem;">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">แหล่งท่องเที่ยว</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">ร้านอาหาร</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">โรงแรม</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">โปรโมชั่น</a>
-            </li>
-        </ul>
+    <main>
+        <div class="image-container">
+                <img src="assets/images/สถานที่น่าสนใจ.jpg" class="img-fluid" alt="สถานที่น่าสนใจ">
+                <div class="blue-box">สถานที่น่าสนใจ</div>
+            </div>
+        <div class="interest-container">
+            <div class="nav-box">
+                <ul class="nav nav-underline" style="font-size: 1.1rem;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">แหล่งท่องเที่ยว</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ร้านอาหาร</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">โรงแรม</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">โปรโมชั่น</a>
+                    </li>
+                </ul>
+            </div>
         <hr class="full-width-hr mb-4">
         <!-- Heading -->
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -256,7 +260,7 @@
                 </div>
             </div>
         </div>
-
+        </div>
     </main>
     <div>
         <?php include 'include/footer.php'; ?>
