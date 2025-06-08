@@ -4,20 +4,7 @@
 <?php include 'include/head.php'; ?>
 
 <style>
-     @media (max-width: 768px) {
-        .blue-box {
-            font-size: 1rem;
-            padding: 8px 15px;
-        }
-    }
-
-
-    @media (max-width: 576px) {
-        .blue-box {
-            font-size: 0.9rem;
-            padding: 5px 10px;
-        }
-    }
+     
 
     .map-container {
         display: flex;
@@ -165,6 +152,20 @@
     
     ul {
         list-style-type: none;
+    }
+    @media (max-width: 768px) {
+        .blue-box {
+            font-size: 1rem;
+            padding: 8px 15px;
+        }
+    }
+
+
+    @media (max-width: 576px) {
+        .blue-box {
+            font-size: 0.9rem;
+            padding: 5px 10px;
+        }
     }
 </style>
 

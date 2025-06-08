@@ -4,33 +4,19 @@
 <?php include 'include/head.php'; ?>
 
 <style>
-    @media (max-width: 768px) {
-        .blue-box {
-            font-size: 1rem;
-            padding: 8px 15px;
-        }
-    }
-
-
-    @media (max-width: 576px) {
-        .blue-box {
-            font-size: 0.9rem;
-            padding: 5px 10px;
-        }
-    }
     .faq-container {
         max-width: 1214px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 0 20px 20px 20px;
     }
 
-    h1 {
+    .faq-container h1 {
         font-size: 26px;
         position: relative;
         padding-left: 20px;
     }
 
-    .highlight-bar {
+    .faq-container .highlight-bar {
         position: absolute;
         width: 4px;
         height: 20px;
@@ -39,47 +25,47 @@
         top: 5px;
     }
 
-    .accordion-item {
+    .faq-container .accordion-item {
         border: 1px solidrgb(102, 102, 102);
         border-radius: 4px;
         margin-bottom: 10px;
     }
 
-    .accordion-button {
+    .faq-container .accordion-button {
         background-color: #ffffff;
         color: #333;
         font-weight: 500;
 
     }
 
-    .accordion-button::after {
+    .faq-container .accordion-button::after {
         transform: rotate(0deg);
         transition: transform 0.2s;
     }
 
-    .accordion-button:not(.collapsed)::after {
+    .faq-container .accordion-button:not(.collapsed)::after {
         transform: rotate(180deg);
     }
 
-    .accordion-body {
+    .faq-container .accordion-body {
         background-color: #fff;
         font-size: 0.95rem;
         color: #555;
     }
 
-    .faq-header {
+    .faq-container .faq-header {
         display: flex;
         justify-content: space-between; 
         align-items: center;
         margin-bottom: 1.5rem;
     }
 
-    .home {
+    .faq-container .home {
         display: flex; 
         align-items: center;
     }
 
-    .home a {
+    .faq-container .home a {
         text-decoration: none;
         font-size: 16px;
         margin-right: 5px;
@@ -111,13 +97,37 @@
         overflow: hidden;
         max-height: 250px;
     }
-
-    .nav-underline .nav-link {
+    .faq-container .nav {
+        margin-bottom: 0 !important;
+    }
+    .faq-container .nav-underline {
+        margin-bottom: 0 !important;
+    }
+    .faq-container .nav-underline .nav-link {
+        border-bottom: none;
         color: #000;
     }
+    .faq-container .nav-underline .nav-link:hover {
+        border-bottom: none;
+        border-top: 2px solid #0d6efd;
+    }
 
-    .nav-underline .nav-link.active {
+    .faq-container .nav-underline .nav-link.active {
         color: #0d6efd;
+        border-bottom: none;
+        border-top: 2px solid #0d6efd;
+    }
+    @media (max-width: 768px) {
+        .blue-box {
+            font-size: 1rem;
+            padding: 8px 15px;
+        }
+    }
+    @media (max-width: 576px) {
+        .blue-box {
+            font-size: 0.9rem;
+            padding: 5px 10px;
+        }
     }
 
 </style>
@@ -147,8 +157,7 @@
     </li>
     </ul>
   </div>
-
-    <hr class="mb-4">
+  <hr style="margin-top: -20px; margin-bottom: 20px;">
 
     <div class="faq-container">
       <div class="faq-header">

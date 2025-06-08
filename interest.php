@@ -9,6 +9,7 @@
         margin: 0 auto;
         margin-bottom: 50px;
     }
+
     .interest-container .card {
         border-radius: 0px;
         width: 100%;
@@ -47,9 +48,11 @@
         color: #333;
         padding: 0.5rem 1.5rem;
         transition: all 0.2s ease-in-out;
+        border-bottom: none;
     }
 
     .interest-container .nav-link:hover {
+        border-top: 2px solid #007bff;
         color: #0d6efd;
     }
 
@@ -134,16 +137,18 @@
                     </li>
                 </ul>
             </div>
-        <hr class="full-width-hr mb-4">
-        <!-- Heading -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h5 class="mb-0">
-                <span style="border-left: 5px solid #ffc107; padding-left: 10px;">แหล่งท่องเที่ยว</span>
-            </h5>
-            <div class="home">
-                <a href="#"><i class="bi bi-house-door"></i></a> > สถานที่น่าสนใจ
+
+        <hr class="full-width-hr mb-4" style="margin-top: 0;">
+
+            <!-- Heading -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="mb-0">
+                    <span style="border-left: 5px solid #ffc107; padding-left: 10px;">แหล่งท่องเที่ยว</span>
+                </h5>
+                <div class="home">
+                    <a href="#"><i class="bi bi-house-door"></i></a> > สถานที่น่าสนใจ
+                </div>
             </div>
-        </div>
 
 
         <!-- Cards Grid -->
