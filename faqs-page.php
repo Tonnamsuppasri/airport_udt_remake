@@ -105,6 +105,7 @@
     }
     .faq-container .nav-underline .nav-link {
         border-bottom: none;
+        border-top: 2px solid transparent;
         color: #000;
     }
     .faq-container .nav-underline .nav-link:hover {

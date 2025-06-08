@@ -45,6 +45,7 @@
     }
 
     .interest-container .nav-link {
+        border-top: 2px solid transparent;
         color: #333;
         padding: 0.5rem 1.5rem;
         transition: all 0.2s ease-in-out;
@@ -107,6 +108,13 @@
         margin-left: calc(-50vw + 50%);
         border: none;
         border-top: 1px solid #333;
+    }
+
+    .interest-container .card-img-top {
+        border-radius: 0px;
+    }
+    .interest-container .card .btn {
+        border-radius: 0px;
     }
 
 </style>
