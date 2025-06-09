@@ -2,6 +2,11 @@
         .index-navbar {
             background-color: #014A9B;
         }
+        .index-navbar h1 {
+            font-size: 26px;
+            position: relative;
+            padding-left: 20px;
+        }
         .index-navbar .navbar {
             padding-bottom: 0; 
             padding-top: 0;
@@ -434,6 +439,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        // ✅ ทำให้ลิงก์ navbar active ตรงตามหน้า
         const currentPath = window.location.pathname.split("/").pop();
         const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
@@ -448,40 +454,31 @@
                 link.classList.remove("active");
             }
         });
-    });
-    // Toggle caret icon on dropdown show/hide
-        const dropdowns = document.querySelectorAll('.dropdown');
 
-        // toggle caret icon
+        // ✅ สลับ caret icon (ลง/ขึ้น) สำหรับ dropdown
         const dropdownToggles = document.querySelectorAll('[data-bs-toggle="dropdown"]');
 
         dropdownToggles.forEach(button => {
-            const iconContainer = button.querySelector('[data-toggle-icon]');
-            const caretIcon = iconContainer?.querySelector('.bi-caret-down-fill, .bi-caret-up-fill');
+            const caretIcon = button.querySelector('.bi-caret-down-fill, .bi-caret-up-fill');
 
             if (!caretIcon) return;
 
-            button.addEventListener('click', function (e) {
+            button.addEventListener('click', function () {
                 setTimeout(() => {
-                    const parentDropdown = bootstrap.Dropdown.getInstance(button);
-                    const isShown = button.parentElement.querySelector('.dropdown-menu').classList.contains('show');
+                    const parentDropdown = button.closest('.dropdown');
+                    const isShown = parentDropdown.classList.contains('show');
 
                     if (isShown) {
+                        // เปลี่ยนจาก caret-down → caret-up
                         caretIcon.classList.remove('bi-caret-down-fill');
                         caretIcon.classList.add('bi-caret-up-fill');
                     } else {
-                        caretIcon.classList.add('bi-caret-down-fill');
+                        // เปลี่ยนจาก caret-up → caret-down
                         caretIcon.classList.remove('bi-caret-up-fill');
+                        caretIcon.classList.add('bi-caret-down-fill');
                     }
-                }, 100); // wait for Bootstrap to apply state
-            });
-
-            // Listen globally when dropdown closes
-            document.addEventListener('click', function (event) {
-                if (!button.contains(event.target) && !button.parentElement.querySelector('.dropdown-menu').contains(event.target)) {
-                    caretIcon.classList.add('bi-caret-down-fill');
-                    caretIcon.classList.remove('bi-caret-up-fill');
-                }
+                }, 100); // ให้ Bootstrap มีเวลาดำเนินการ dropdown ก่อน
             });
         });
+    });
 </script>
