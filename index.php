@@ -4,86 +4,121 @@
 <?php include 'include/head.php'; ?>
 
 <style>
+    .index-navbar::before{
+        opacity: 0.8;
+    }
+
     .index-navbar {
         z-index: 1000;
         position: absolute;
         width: 100%;
     }
-
-    .notice-box {
-      width: 400px;
-      background-color: #ffd700;
-      border-radius: 4px;
-      overflow: hidden;
-      margin: 40px;
+    .first-container {
+        position: relative;
+        background-image: url('assets/images/artboard-pic.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 750px; /* หรือความสูงที่เหมาะสมกับภาพ */
     }
 
-    .notice-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #ffd700;
-      padding: 10px 15px;
-      font-weight: bold;
-      color: #000;
+    .first-container .notice-box {
+        width: 550px;
+        background-color: #ffd700;
+        overflow: hidden;
+        position:  relative; /* <-- เปลี่ยนจาก relative เป็น absolute */
+        top: 275px; /* ปรับตำแหน่งตามที่ต้องการ */
+        left: 235px;
+        z-index: 1; /* <-- ให้สูงกว่ารูปที่เป็น -1 */
     }
 
-    .notice-content {
-      display: flex;
-      background-color: #003366;
-      color: white;
+    .first-container .notice-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffd700;
+        padding: 0px 5px 0px 15px;
+        color: #000;
+    }
+    .icon-container {
+        position: relative;
+        display: inline-block;
+        font-size: 20px;
+        top: 3px;
     }
 
-    .notice-image {
-      background: white;
-      padding: 10px;
+    .icon-container .bi-exclamation {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        font-weight: bold;
     }
 
-    .notice-image img {
-      width: 140px;
-      height: auto;
+
+    .first-container .notice-header .plus-btn {
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: 40px;
+        line-height: 1;
+        background: none;
+        vertical-align: middle;
+        color: black;
     }
 
-    .notice-text {
-      padding: 15px;
-      flex-grow: 1;
+    .first-container .notice-content {
+        display: flex;
+        background-color: #003366;
+        color: white;
     }
 
-    .notice-text h3 {
-      margin: 0 0 5px;
-      font-size: 16px;
+    .first-container .notice-image {
+        background: white;
     }
 
-    .notice-text p {
-      margin: 0 0 10px;
-      font-size: 14px;
-      color: #cce6ff;
+    .first-container .notice-image img {
+        width: 275px;
+        height: auto;
     }
 
-    .notice-text button {
-      padding: 5px 10px;
-      background-color: #003366;
-      border: 1px solid #fff;
-      color: #fff;
-      cursor: pointer;
+    .first-container .notice-text {
+        padding: 15px;
+        flex-grow: 1;
     }
 
-    .notice-footer {
-      display: flex;
-      justify-content: flex-end;
-      background-color: #ffd700;
+    .first-container .notice-text h3 {
+        margin: 0 0 5px;
+        font-size: 20px;
     }
 
-    .notice-footer button {
-      background: #ffd700;
-      border: none;
-      font-size: 18px;
-      padding: 10px 15px;
-      cursor: pointer;
+    .first-container .notice-text p {
+        margin: 0 0 10px;
+        font-size: 15px;
+        color: #FECD22;
     }
 
-    .notice-box {
-        background-color: #FECD22
+    .first-container .notice-text .more-btn {
+        padding: 5px 25px;
+        font-size: 14px;
+    }
+    .first-container .notice-text .left-right-btn {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        display: flex;
+        gap: 2px;
+    }
+    .first-container .notice-text .left-right-btn .btn {
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .first-container .highlight-bar {
+        height: 50px;
+        top: 13px;
     }
 
     .blue-box {
@@ -112,6 +147,7 @@
         left: 0;
         top: 5px;
     }
+    
 
     .second-container {
         max-width: 1600px;
@@ -207,6 +243,7 @@
         margin: auto;
         padding: 0px 20px;
         font-family: sans-serif;
+        height: 500px;
     }
 
     .breadcrumb {
@@ -227,18 +264,18 @@
     }
 
     .news-date {
-        width: 60px;
+        width: 65px;
         text-align: center;
         font-weight: bold;
         color: #0056a3;
     }
 
     .news-date .day {
-        font-size: 22px;
+        font-size: 26px;
     }
 
     .news-date .month-year {
-        font-size: 12px;
+        font-size: 14px;
         color: #666;
     }
 
@@ -689,6 +726,10 @@
     }
 
     @media (max-width: 992px) {
+        .first-container .notice-box {
+            margin: auto;
+            left: unset;
+        }
         .carousel-item .row {
             flex-direction: column !important;
         }
@@ -766,28 +807,36 @@
     </div>
     <main>
         <div class="index-container">
-            <div class="first-container" style="position: relative;">
-                <img src="assets/images/artboard-pic.png" alt="Udon Thani Airport Header" class="img-fluid" style="width:100%;">
+            <div class="first-container">
                 <div class="notice-box">
-    <div class="notice-header">
-      <span>🔔 Notices</span>
-      <span>+</span>
+                    <div class="notice-header">
+                    <span>
+                        <div class="icon-container">
+        <i class="bi bi-chat-left"></i>
+        <i class="bi bi-exclamation"></i>
     </div>
-    <div class="notice-content">
-      <div class="notice-image">
-        <img src="assets/images/artboard-pic.png" alt="Covid-19 Info">
-      </div>
-      <div class="notice-text">
-        <h3>Covid-19 Infomation</h3>
-        <p>มาตรการช่วยเหลือ Covid-19</p>
-        <button>ดูเพิ่มเติม</button>
-      </div>
-    </div>
-    <div class="notice-footer">
-      <button>&lt;</button>
-      <button>&gt;</button>
-    </div>
-  </div>
+                        Notices
+                    </span>
+                    <a class="plus-btn" href="#"><i class="bi bi-plus"></i></a>
+                    </div>
+                    <div class="notice-content">
+                    <div class="notice-image">
+                        <img src="assets/images/index-notice-left.png" alt="Covid-19 Info">
+                    </div>
+                    <h1><span class="highlight-bar"></h1>
+                        <div class="notice-text">
+                            <h3>Covid-19 Infomation</h3>
+                            <p>มาตรการช่วยเหลือ Covid-19</p>
+                            <a type="button" href="#" class="btn btn-outline-light more-btn">ดูเพิ่มเติม</a>
+                            <div class="left-right-btn">
+                                <a type="button" class="btn btn-warning"><i class="bi bi-chevron-left"></i></a>
+                                <a type="button" class="btn btn-warning"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
             </div>
 
                 <div class="second-container">
@@ -904,6 +953,33 @@
                                             </div>
                                             </a>
                                         </div>
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="news-item">
+                                                <div class="news-date">
+                                                <div class="day">08</div>
+                                                <div class="month-year">ธ.ค. 2563</div>
+                                                </div>
+                                                <div class="news-content">
+                                                ข้อความประชาสัมพันธ์
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </div>
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="news-item">
+                                                <div class="news-date">
+                                                <div class="day">08</div>
+                                                <div class="month-year">ธ.ค. 2563</div>
+                                                </div>
+                                                <div class="news-content">
+                                                ข้อความประชาสัมพันธ์
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </div>
+                                        
                                     </div>
 
                                     <!-- จัดซื้อจัดจ้าง -->
@@ -942,12 +1018,12 @@
                                 </div>
 
                                 <!-- ปุ่มดูทั้งหมด -->
-                                <div class="more-button mt-3">
-                                    <a href="#">
-                                    ดูทั้งหมด
-                                    <span>+</span>
-                                    </a>
-                                </div>
+                                    <div class="more-button mt-3">
+                                        <a href="#">
+                                        ดูทั้งหมด
+                                        <span>+</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

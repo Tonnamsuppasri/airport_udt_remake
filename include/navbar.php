@@ -59,22 +59,38 @@
         .index-navbar .separator-bottom {
             border-bottom: 1px solid #ffffff4d;
         }
-
+        .index-navbar .lang-login {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 10px;
+            height: 48px;
+            border-radius: 4px;
+        }
         .index-navbar .lang-login a,
         .index-navbar .lang-login .dropdown > a {
             color: white;
             font-size: 20x;
 
         }
+
+        .index-navbar .lang-login .dropdown-item {
+            color: black;
+        }
         .index-navbar .btn {
-            border-radius: 0 !important;
+            border-radius: 0 ;
         }   
 
         .index-navbar .vr {
-            height: 26px;
+            height: 30px;
             width: 2px;    
-            vertical-align: middle; 
-            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 15px;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .index-navbar .header-top .airport-center img {
@@ -147,8 +163,49 @@
             color:rgb(0, 0, 0);
             font-size: 60px;
         }
+        .index-navbar .main-navbar-menu {
+            justify-content: center;
+            width: 100%;
+        }
 
-        @media (max-width: 991px) {
+        .icon-down,
+        .icon-down-2 {
+            position: relative;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-left: 8px;
+        }
+
+        .icon-down .bi-circle,
+        .icon-down-2 .bi-circle {
+            font-size: 20px;
+            position: absolute;
+            top: -1px;
+            left: 0;
+        }
+
+        .icon-down .bi-caret-down-fill,
+        .icon-down-2 .bi-caret-down-fill {
+            position: absolute;
+            top: 64%;
+            left: 42%;
+            transform: translate(-50%, -50%);
+            font-size: 13px;
+        }
+
+        .icon-down  {
+            color: black;
+        }
+
+        .icon-down-2 {
+            color: white;
+        }
+
+        .dropdown .btn:hover .icon-down-2 {
+            color: black;
+        }
+         @media (max-width: 991px) {
             .index-navbar .airport-center {
                 margin: 20px 0;
             }
@@ -160,30 +217,59 @@
                 margin-left: auto;
             }
 
-            .index-navbar .lang-login,
-            .index-navbar .dropdown {
-                display: none;
-            }
 
             .index-navbar .header-top {
                 padding: 0;
                 margin: 0;
             }
+            .index-navbar .header-top .header-dropdown .dropdown {
+                display: none;
+            }
+            .index-navbar .header-top .lang-login {
+                display: none;
+            }
             .index-navbar .separator-bottom {
                 border-bottom: none;
             }
-        }
+            .icon-down .bi-circle,
+            .icon-down-2 .bi-circle {
+                top: 6px;
+            }
 
+            .icon-down .bi-caret-down-fill,
+            .icon-down-2 .bi-caret-down-fill {
+                top: 90%;
+            }
+            .navbar .navbar-collapse .d-lg-none {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 0px;
+            justify-content: center;
+        }
+        .navbar .navbar-collapse .d-lg-none .dropdown.mb-2 {
+            margin-bottom: 0 !important;
+            width: 300px;
+        }
+        
+        .navbar .navbar-collapse .d-lg-none .lang-login {
+            justify-content: center;
+            align-items: center;
+        } 
+        }
 </style>
 <div class="index-navbar">
     <div class="header-top separator-bottom">
         <div class="container-fluid header-container d-flex justify-content-between align-items-center">
             <!-- Left buttons -->
-            <div class="header-btn-group d-flex">
+            <div class="header-btn-group d-flex header-dropdown">
                 <!-- ท่าอากาศยาน dropdown -->
                 <div class="dropdown">
-                    <button class="btn btn-warning d-flex align-items-center px-3 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-airplane-engines me-2"></i> ท่าอากาศยาน
+                    <button class="btn btn-warning d-flex align-items-center px-3 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-airplane-engines me-2"></i> ท่าอากาศยาน 
+                        <div class="icon-down">
+                            <i class="bi bi-circle"></i>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
                     </button>
                     <ul class="dropdown-menu">
                         <h1><span class="highlight-bar"></span>ภาคเหนือ</h1>
@@ -209,8 +295,12 @@
 
                 <!-- เที่ยวกับเรา dropdown -->
                 <div class="dropdown">
-                    <button class="btn btn-outline-light d-flex align-items-center px-3 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        เที่ยวกับเรา
+                    <button class="btn btn-outline-light d-flex align-items-center px-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        เกี่ยวกับเรา
+                        <div class="icon-down-2">
+                            <i class="bi bi-circle"></i>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">...</a></li>
@@ -237,13 +327,15 @@
                 <a href="#"><i class="bi bi-facebook"></i></a>
                 
             
-                <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-globe"></i> TH
-                </a>
-                <ul class="dropdown-menu">
-                    <li><button class="dropdown-item" type="button"><img src="assets/images/17062024105346_lang.png" alt="TH">TH</button>
-                    <li><button class="dropdown-item" type="button"><img src="assets/images/17062024105202_lang.png" alt="EN">EN</button></li>
-                </ul>
+                <div class="dropdown">
+                    <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-globe"></i> TH
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                        <li><a class="dropdown-item" href="#"><img src="assets/images/17062024105346_lang.png" alt="TH"> ไทย</a></li>
+                        <li><a class="dropdown-item" href="#"><img src="assets/images/17062024105202_lang.png" alt="EN"> English</a></li>
+                    </ul>
+                </div>  
 
                 <span class="vr"></span>
         
@@ -253,42 +345,143 @@
         </div>
     </div>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">หน้าแรก</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="flight-info.php">เที่ยวบิน</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="airportguide.php">คำแนะนำผู้โดยสาร</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="service1.php">สิ่งอำนวยความสะดวก</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="t">ข่าวประชาสัมพันธ์</a>
-                    </li>
+<nav class="navbar navbar-expand-lg">
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- ✅ Right buttons: ภาษาและเข้าสู่ระบบ -->
+        <div class="d-lg-none mt-3">
+            <div class="lang-login">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                
+            
+                <div class="dropdown">
+                    <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-globe"></i> TH
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                        <li><a class="dropdown-item" href="#"><img src="assets/images/17062024105346_lang.png" alt="TH"> ไทย</a></li>
+                        <li><a class="dropdown-item" href="#"><img src="assets/images/17062024105202_lang.png" alt="EN"> English</a></li>
+                    </ul>
+                </div>
+
+                <span class="vr"></span>
+        
+
+                <a href="#"><i class="bi bi-person-circle"></i> เข้าสู่ระบบ</a>
+            </div>
+        </div>
+
+        <!-- ✅ Left buttons: แสดงเฉพาะบนมือถือ -->
+        <div class="d-lg-none mt-3">
+            <div class="dropdown mb-2">
+                <button class="btn btn-warning w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-airplane-engines me-2"></i> ท่าอากาศยาน
+                        <div class="icon-down">
+                            <i class="bi bi-circle"></i>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                </button>
+                <ul class="dropdown-menu">
+                        <h1><span class="highlight-bar"></span>ภาคเหนือ</h1>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <hr>
+                        <h1><span class="highlight-bar"></span>ภาคตะวันออกเฉียงเหนือ</h1>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <hr>
+                        <h1><span class="highlight-bar"></span>ภาคใต้</h1>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        <hr>
+                    </ul>
+            </div>
+
+            <div class="dropdown mb-2">
+                <button class="btn btn-outline-light w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    เที่ยวกับเรา
+                    <div class="icon-down-2">
+                        <i class="bi bi-circle"></i>
+                        <i class="bi bi-caret-down-fill"></i>
+                    </div>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">...</a></li>
+                    <li><a class="dropdown-item" href="#">...</a></li>
                 </ul>
             </div>
-    </nav>
+        </div>
+        <!-- เมนูหลัก -->
+        <div class="mx-auto d-flex">
+            <ul class="navbar-nav mb-2 mb-lg-0 main-navbar-menu d-flex justify-content-center">
+                <li class="nav-item"><a class="nav-link" href="index.php">หน้าแรก</a></li>
+                <li class="nav-item"><a class="nav-link" href="flight-info.php">เที่ยวบิน</a></li>
+                <li class="nav-item"><a class="nav-link" href="airportguide.php">คำแนะนำผู้โดยสาร</a></li>
+                <li class="nav-item"><a class="nav-link" href="service1.php">สิ่งอำนวยความสะดวก</a></li>
+                <li class="nav-item"><a class="nav-link" href="t">ข่าวประชาสัมพันธ์</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const currentPath = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPath = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
-    navLinks.forEach(link => {
-      const href = link.getAttribute("href");
-      if (href === currentPath) {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
+        navLinks.forEach(link => {
+            const href = link.getAttribute("href");
+            if (
+                (currentPath === "" && href === "index.php") ||
+                (href === currentPath)
+            ) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
     });
-  });
+    // Toggle caret icon on dropdown show/hide
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        // toggle caret icon
+        const dropdownToggles = document.querySelectorAll('[data-bs-toggle="dropdown"]');
+
+        dropdownToggles.forEach(button => {
+            const iconContainer = button.querySelector('[data-toggle-icon]');
+            const caretIcon = iconContainer?.querySelector('.bi-caret-down-fill, .bi-caret-up-fill');
+
+            if (!caretIcon) return;
+
+            button.addEventListener('click', function (e) {
+                setTimeout(() => {
+                    const parentDropdown = bootstrap.Dropdown.getInstance(button);
+                    const isShown = button.parentElement.querySelector('.dropdown-menu').classList.contains('show');
+
+                    if (isShown) {
+                        caretIcon.classList.remove('bi-caret-down-fill');
+                        caretIcon.classList.add('bi-caret-up-fill');
+                    } else {
+                        caretIcon.classList.add('bi-caret-down-fill');
+                        caretIcon.classList.remove('bi-caret-up-fill');
+                    }
+                }, 100); // wait for Bootstrap to apply state
+            });
+
+            // Listen globally when dropdown closes
+            document.addEventListener('click', function (event) {
+                if (!button.contains(event.target) && !button.parentElement.querySelector('.dropdown-menu').contains(event.target)) {
+                    caretIcon.classList.add('bi-caret-down-fill');
+                    caretIcon.classList.remove('bi-caret-up-fill');
+                }
+            });
+        });
 </script>
