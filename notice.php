@@ -5,12 +5,22 @@
 
 <style>
     
-    body {
-            font-family: sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-        }
-    .hero {
+ * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+.notice-index .container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.hero {
     position: relative;
     height: 300px;
     background-image: url('./assets/images/shophero.jpg'); 
@@ -19,112 +29,120 @@
     display: flex;
     align-items: center;  
     justify-content: center;  
-        }
+    }
 
+.notice-index .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .header a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
+.notice-index .header a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
         
-        .breadcrumb {
-            font-size: 0.9em;
-            color: #6c757d;
-        }
-        .breadcrumb a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .breadcrumb span {
-            margin: 0 5px;
-        }
-        .content-box {
-            padding: 20px;
-            border-left: 5px solid #ffc107;
-            margin-bottom: 30px;
-        }
-        .content-title {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .file-info {
-            display: flex;
-            align-items: center;
-            border: 1px solid #ced4da;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .file-icon {
-            font-size: 2em;
-            margin-right: 15px;
-            color: #007bff;
-        }
-        .file-details {
-            flex-grow: 1;
-        }
-        .file-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .file-size {
-            font-size: 0.9em;
-            color: #6c757d;
-        }
-        .download-button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .download-button:hover {
-            background-color: #0056b3;
-        }
-        .footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 20px;
-            border-top: 1px solid #ced4da;
-            color: #6c757d;
-            font-size: 0.9em;
-        }
-        .footer a {
-            color: black;
-            text-decoration: none;
-        }
-        .left-navigation {
-            text-align: start;
-        }
+.notice-index .breadcrumb {
+    font-size: 0.9em;
+    color: #6c757d;
+}
 
-        /* .left-navigation span {
-            display: flex;
-            align-items: center;
-        } */
+.notice-index .breadcrumb a {
+    color: #007bff;
+    text-decoration: none;
+}
 
-        .center-navigation {
-            text-align: center;
-        }
-        .center-navigation span {
-            margin: 0 10px;
-        }
+.notice-index .breadcrumb span {
+    margin: 0 5px;
+}
 
-        .right-navigation span {
-            size: 1em;
-        }
+.notice-index .content-box {
+    padding: 20px;
+    border-left: 5px solid #ffc107;
+    margin-bottom: 30px;
+}
 
+.notice-index .content-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.notice-index .file-info {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.notice-index .file-icon {
+    font-size: 2em;
+    margin-right: 15px;
+    color: #007bff;
+}
+
+.notice-index .file-details {
+    flex-grow: 1;
+}
+
+.notice-index .file-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.notice-index .file-size {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.notice-index .download-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.notice-index .download-button:hover {
+    background-color: #0056b3;
+}
+
+.notice-index .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #ced4da;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.notice-index .footer a {
+    color: black;
+    text-decoration: none;
+}
+
+.notice-index .left-navigation {
+    text-align: start;
+}
+
+.notice-index .center-navigation {
+    text-align: center;
+}
+
+.notice-index .center-navigation span {
+    margin: 0 10px;
+}
+
+.notice-index .right-navigation span {
+    size: 1em;
+}
 
 
 </style>
@@ -137,58 +155,61 @@
         <?php include './include/navbar.php'; ?>
     </div>
     <main>
-        <section class="hero">
+    <section class="hero">
             <div class="container">
                 <div class="hero-con"></div>
                 <h1 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #0d47a1; color: white; padding: 10px; border-radius: 5px; text-align: center;"">ข่าวประกาศจัดซื้อจัดจ้าง</h1>
             </div>
         </section>
-        <div class="container">
-            <div class="header">
-                    <a href="#"><span class="material-symbols-outlined" style="margin-right: 5px;">chevron_backward</span>ย้อนกลับ</a>
-                <div class="breadcrumb">
-                    <a href="#" class="material-symbols-outlined">home</a>  <span>></span> <a href="#">ข่าวประกาศจัดซื้อจัดจ้าง</a> <span>></span> รายละเอียด
+        <div class="notice-index">
+            <div class="container">
+                <div class="header">
+                        <a href="#"><span class="material-symbols-outlined" style="margin-right: 5px;">chevron_backward</span>ย้อนกลับ</a>
+                    <div class="breadcrumb">
+                        <a href="#" class="material-symbols-outlined">home</a>  <span>></span> <a href="#">ข่าวประกาศจัดซื้อจัดจ้าง</a> <span>></span> รายละเอียด
+                    </div>
                 </div>
+
+            <div class="content-box">
+                <h2 class="content-title">ข่าวประกาศจัดซื้อจัดจ้าง</h2>
+                <p>ประกาศเช่าอาคารอุบัติเหตุ เรื่อง ประกาศผู้ชนะการเสนอราคา</p>
+                <p>จ้างงานจ้างเหมาทำความสะอาดอาคารที่พักผู้โดยสาร รวมถึงอาคารทำการต่างๆ และเก็บขนสิ่งปฏิกูล/มูลฝอยผู้โดยสาร ที่ท่าอากาศยานอุบลราชธานี ประจำปีงบประมาณ 2565 ระยะเวลาจ้าง 6 เดือน ตั้งแต่วันที่ 1 ตุลาคม 2564 ถึงวันที่ 31 มีนาคม 2565 โดยวิธีคัดเลือก</p>
             </div>
 
-    <div class="content-box">
-        <h2 class="content-title">ข่าวประกาศจัดซื้อจัดจ้าง</h2>
-        <p>ประกาศเช่าอาคารอุบัติเหตุ เรื่อง ประกาศผู้ชนะการเสนอราคา</p>
-        <p>จ้างงานจ้างเหมาทำความสะอาดอาคารที่พักผู้โดยสาร รวมถึงอาคารทำการต่างๆ และเก็บขนสิ่งปฏิกูล/มูลฝอยผู้โดยสาร ที่ท่าอากาศยานอุบลราชธานี ประจำปีงบประมาณ 2565 ระยะเวลาจ้าง 6 เดือน ตั้งแต่วันที่ 1 ตุลาคม 2564 ถึงวันที่ 31 มีนาคม 2565 โดยวิธีคัดเลือก</p>
-    </div>
-
-    <div class="file-info">
-        <i class="fas fa-file-pdf file-icon"></i>
-        <div class="file-details">
-            <div class="file-name">ประกาศผู้ชนะจ้างเหมาทำความสะอาด 6 เดือน ปี 2565.pdf</div>
-            <div class="file-size">ไฟล์แนบ</div>
-        </div>
-        <button type="button" class="btn btn-outline-primary">ดาวน์โหลด</button>
-    </div>
-
-    <div class="footer">
-        <div class="left-navigation">
-            <div style="display: flex; align-items: center;">
-            <span class="material-symbols-outlined">arrow_back</span>
-                <a href="#">ข่าวประกาศจัดซื้อจัดจ้าง ก่อนหน้า</a>
+            <div class="file-info">
+                <i class="fas fa-file-pdf file-icon"></i>
+                <div class="file-details">
+                    <div class="file-name">ประกาศผู้ชนะจ้างเหมาทำความสะอาด 6 เดือน ปี 2565.pdf</div>
+                    <div class="file-size">ไฟล์แนบ</div>
+                </div>
+                <button type="button" class="btn btn-outline-primary">ดาวน์โหลด</button>
             </div>
-        </div>
 
-        <div class="center-navigation">
-            <div style="text-align: center;">
-                <span class="material-symbols-outlined" style="display: block; margin-bottom: 5px; font-size: 2em;">apps</span>
-                <a href="#">ข่าวประกาศจัดซื้อจัดจ้างทั้งหมด</a>
-            </div>
-        </div>
+            <div class="footer">
+                <div class="left-navigation">
+                    <div style="display: flex; align-items: center;">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                        <a href="#">ข่าวประกาศจัดซื้อจัดจ้าง ก่อนหน้า</a>
+                    </div>
+                </div>
 
-        <div class="right-navigation">
-            <div style="display: flex; align-item: end;">
-                <a href="#">ข่าวประกาศจัดซื้อจัดจ้าง ถัดไป</a>
-                <span class="material-symbols-outlined">arrow_forward</span>
-            </div>
-        </div>
+                <div class="center-navigation">
+                    <div style="text-align: center;">
+                        <span class="material-symbols-outlined" style="display: block; margin-bottom: 5px; font-size: 2em;">apps</span>
+                        <a href="#">ข่าวประกาศจัดซื้อจัดจ้างทั้งหมด</a>
+                    </div>
+                </div>
 
-    </div>
+                <div class="right-navigation">
+                    <div style="display: flex; align-item: end;">
+                        <a href="#">ข่าวประกาศจัดซื้อจัดจ้าง ถัดไป</a>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </div>
+
+        </div>
+        </div>
+        </div>
 
 
     </main>
