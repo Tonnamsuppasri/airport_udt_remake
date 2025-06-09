@@ -26,32 +26,32 @@ body {
     justify-content: center;  
 }
 
-.container {
+.Press-index .container {
     max-width: 1440px;
     margin: 0 auto;
 }
 
-.container-fluid {
+.Press-index .container-fluid {
     display: flex;
     min-height: 100vh; 
     margin-left: 5%;
     max-width: 1440px;
 }
 
-.sidebar {
+.Press-index .sidebar {
     width: 250px; 
     background-color: #f8f9fa; 
     padding: 20px;
     margin-top: 4rem;
 }
 
-.sidebar ul {
+.Press-index .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar li a {
+.Press-index .sidebar li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,46 +61,46 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-.sidebar li:last-child a {
+.Press-index .sidebar li:last-child a {
     border-bottom: none;
 }
 
-.sidebar li a:hover{
+.Press-index .sidebar li a:hover{
     border-bottom: 3px solid #007bff;
     font-weight: bold;
 }
 
-.sidebar li a.active {
+.Press-index .sidebar li a.active {
     border-bottom: 2px solid #007bff;
     font-weight: bold;
 }
 
-.content {
+.Press-index .content {
     flex-grow: 1;
     padding: 20px;
 }
 
-.breadcrumb {
+.Press-index .breadcrumb {
     margin-bottom: 10px;
     font-size: 0.9em;
     margin-left: 85%;
 }
 
 
-.search-bar {
+.Press-index .search-bar {
     display: inline-flexbox;
     margin-bottom: 20px;
     margin-left: 75%;
 }
 
-.search-bar input[type="text"] {
+.Press-index .search-bar input[type="text"] {
     flex-grow: 1;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px 0 0 4px;
 }
 
-.search-bar button {
+.Press-index .search-bar button {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-left: none;
@@ -110,7 +110,7 @@ body {
 }
 
 
-.news-item {
+.Press-index .news-item {
     display: flex;
     margin-bottom: 15px;
     padding: 15px;
@@ -119,7 +119,7 @@ body {
     align-items: flex-start; /* จัดให้ items เริ่มต้นที่ด้านบน */
 }
 
-.news-item .image-container {
+.Press-index .news-item .image-container {
     margin-right: 10px;
     width: 100px;
     height: 100px;
@@ -127,36 +127,36 @@ body {
     flex-shrink: 0; 
 }
 
-.news-item img {
+.Press-index .news-item img {
     width: 180%;
     height: auto;
     object-fit: cover;
 }
 
-.news-item .details {
+.Press-index .news-item .details {
     flex-grow: 1; /* ให้รายละเอียดขยายเพื่อใช้พื้นที่ */
 }
 
-.news-item .details h6 {
+.Press-index .news-item .details h6 {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 1em;
     margin-left: 90px;
 }
 
-.news-item .details .info {
+.Press-index .news-item .details .info {
     color: #777;
     font-size: 0.8em;
     margin-bottom: 10px;
 }
 
-.news-item .actions {
+.Press-index .news-item .actions {
     display: flex;
     align-items: flex-end; /* จัดปุ่มให้อยู่ด้านล่าง */
     margin-left: auto; 
 }
 
-.news-item .actions .btn {
+.Press-index .news-item .actions .btn {
     font-size: 0.8em;
     margin-top: 85% ; 
 }
@@ -176,6 +176,7 @@ body {
             </div>
         </section>
 
+        <div class="Press-index">
         <div class="container-fluid">
             <div class="sidebar">
                 <ul>
@@ -280,6 +281,7 @@ body {
                     </div>
                 </div>
                 </div>
+            </div>
             </div>
             </div>           
     </main>
