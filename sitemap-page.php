@@ -85,7 +85,7 @@
     }
     
     .sitemap-container .dropdown i {
-        margin-right: 5px;
+        margin-right: 6px;
     }
     @media (max-width: 768px) {
         .blue-box {
@@ -172,9 +172,9 @@
                             <i class="bi bi-chevron-down"></i>ภาคเหนือ
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">...</a></li>
-                            <li><a class="dropdown-item" href="#">...</a></li>
-                            <li><a class="dropdown-item" href="#">...</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
                         </ul>
                     </div>
                     <div class="dropdown">
@@ -182,9 +182,9 @@
                             <i class="bi bi-chevron-down"></i>ภาคใต้
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">...</a></li>
-                            <li><a class="dropdown-item" href="#">...</a></li>
-                            <li><a class="dropdown-item" href="#">...</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
                         </ul>
                     </div>
                     <div class="dropdown">
@@ -192,9 +192,9 @@
                             <i class="bi bi-chevron-down"></i>ภาคตะวันออกเฉียงเหนือ
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">...</a></li>
-                            <li><a class="dropdown-item" href="#">...</a></li>
-                            <li><a class="dropdown-item" href="#">...</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
                         </ul>
                     </div>
                 </div>
