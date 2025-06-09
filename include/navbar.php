@@ -439,7 +439,6 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // ✅ ทำให้ลิงก์ navbar active ตรงตามหน้า
         const currentPath = window.location.pathname.split("/").pop();
         const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
@@ -453,32 +452,6 @@
             } else {
                 link.classList.remove("active");
             }
-        });
-
-        // ✅ สลับ caret icon (ลง/ขึ้น) สำหรับ dropdown
-        const dropdownToggles = document.querySelectorAll('[data-bs-toggle="dropdown"]');
-
-        dropdownToggles.forEach(button => {
-            const caretIcon = button.querySelector('.bi-caret-down-fill, .bi-caret-up-fill');
-
-            if (!caretIcon) return;
-
-            button.addEventListener('click', function () {
-                setTimeout(() => {
-                    const parentDropdown = button.closest('.dropdown');
-                    const isShown = parentDropdown.classList.contains('show');
-
-                    if (isShown) {
-                        // เปลี่ยนจาก caret-down → caret-up
-                        caretIcon.classList.remove('bi-caret-down-fill');
-                        caretIcon.classList.add('bi-caret-up-fill');
-                    } else {
-                        // เปลี่ยนจาก caret-up → caret-down
-                        caretIcon.classList.remove('bi-caret-up-fill');
-                        caretIcon.classList.add('bi-caret-down-fill');
-                    }
-                }, 100); // ให้ Bootstrap มีเวลาดำเนินการ dropdown ก่อน
-            });
         });
     });
 </script>
