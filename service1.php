@@ -114,9 +114,13 @@
     }
 
     .tab-button.active {
-        background-color: #005bac;
-        color: white;
+        background-color: transparent;
+        color: #005bac;
         border-color: #005bac;
+    }
+    .tab-button.active:hover {
+        color: white;
+        background-color: #005bac;
     }
 
     .card-grid {
