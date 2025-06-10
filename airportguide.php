@@ -7,6 +7,14 @@
     .card {
         width: 100%;
         height: 100%;
+        border-radius: 0 !important;
+        overflow: hidden;
+        border: 1px solid #ddd;
+    }
+
+    .card-img-top {
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
     }
 
     .card-body {
@@ -55,7 +63,6 @@
 
     .nav .nav-link.active {
         color: #007bff !important;
-        /* ใช้สีน้ำเงินที่ต้องการ */
         border-bottom: 2px solid #007bff;
         font-weight: 500;
     }
@@ -76,6 +83,7 @@
         object-fit: contain;
         object-position: center top;
         filter: brightness(50%);
+        border-radius: 0 !important;
     }
 
     .blue-box {
@@ -96,6 +104,16 @@
         width: 100%;
         overflow: hidden;
         max-height: 250px;
+        border-radius: 0 !important;
+    }
+
+    .btn-outline-primary {
+        border-radius: 0 !important;
+    }
+
+    .btn-outline-primary:hover,
+    .btn-outline-primary:focus {
+        border-radius: 0 !important;
     }
 </style>
 
@@ -127,8 +145,7 @@
             <!-- Card 1 -->
             <div class="card-wrapper">
                 <div class="card">
-                    <img src="assets/images/1.png" class="card-img-top" alt="อุทยานประวัติศาสตร์ภูพระบาท
-">
+                    <img src="assets/images/1.png" class="card-img-top" alt="อุทยานประวัติศาสตร์ภูพระบาท">
                     <div class="card-body">
                         <p class="card-text">ข้อควรรู้ก่อนขึ้นเครื่อง "การนำของเหลว เจล สเปรย์ (Aerosols) ขึ้นไปกับอากาศยาน
                         </p>

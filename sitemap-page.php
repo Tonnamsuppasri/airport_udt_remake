@@ -4,29 +4,14 @@
 <?php include 'include/head.php'; ?>
 
 <style>
-    @media (max-width: 768px) {
-        .blue-box {
-            font-size: 1rem;
-            padding: 8px 15px;
-        }
-    }
-
-
-    @media (max-width: 576px) {
-        .blue-box {
-            font-size: 0.9rem;
-            padding: 5px 10px;
-        }
-    }
-
-    .img-fluid {
+    .image-container .img-fluid {
         width: 100%;
         object-fit: contain;
         object-position: center top;
         filter: brightness(50%);
     }
 
-    .blue-box {
+    .image-container .blue-box {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -52,13 +37,13 @@
         padding: 20px;
     }
 
-    h1 {
+    .sitemap-container h1 {
         font-size: 26px;
         position: relative;
         padding-left: 20px;
     }
 
-    .highlight-bar {
+    .sitemap-container .highlight-bar {
         position: absolute;
         width: 4px;
         height: 20px;
@@ -67,33 +52,55 @@
         top: 5px;
     }
 
-    .header {
+    .sitemap-container .header {
         display: flex;
         justify-content: space-between; 
         align-items: center;
         margin-bottom: 1.5rem;
     }
 
-    .home {
+    .sitemap-container .home {
         display: flex; 
         align-items: center;
         margin-left: auto;
     }
 
-    .home a {
-        text-decoration: none;
+    .sitemap-container .home a {
         font-size: 16px;
         margin-right: 5px;
     }
 
-    .row {
+    .sitemap-container .row {
         margin-bottom: 22px
     }
 
-    .col ul {
+    .sitemap-container .col ul {
         list-style-type: none;
     }
     
+    .sitemap-container .dropdown {
+        background: none;
+        border: none;
+        color: black;
+    }
+    
+    .sitemap-container .dropdown i {
+        margin-right: 6px;
+    }
+    @media (max-width: 768px) {
+        .blue-box {
+            font-size: 1rem;
+            padding: 8px 15px;
+        }
+    }
+
+
+    @media (max-width: 576px) {
+        .blue-box {
+            font-size: 0.9rem;
+            padding: 5px 10px;
+        }
+    }
 </style>
 
 <body>
@@ -117,7 +124,6 @@
         
     <div class="sitemap-container">
         <div class="row">
-            
             <div class="col">
                 <div class="row">
                     <a href="#" class="sitemap-link">หน้าหลัก</a>
@@ -161,7 +167,36 @@
                     <br>
                 <div class="row">
                     <a href="#" class="sitemap-link">เว็บไซต์ท่าอากาศยาน</a>
-                    
+                    <div class="dropdown" style="background:none;">
+                        <button class="btn dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-chevron-down"></i>ภาคเหนือ
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-chevron-down"></i>ภาคใต้
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-chevron-down"></i>ภาคตะวันออกเฉียงเหนือ
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-geo-alt-fill"> ...</i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="col">
@@ -214,15 +249,11 @@
                 <a href="#" class="sitemap-link">นโยบายการคุ้มครองข้อมูลส่วนบุคคล</a>
             </div>
         </div>
-        
-
-</div>
-
+    </div>
     </main>
     <div>
         <?php include 'include/footer.php'; ?>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
