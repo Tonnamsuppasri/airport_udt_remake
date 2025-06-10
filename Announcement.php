@@ -31,7 +31,7 @@
     margin: 0 auto;
 }
 
-.container-fluid {
+.announcement-index .container-fluid {
     display: flex;
     min-height: 100vh; 
     margin-left: 5%;

@@ -54,7 +54,7 @@ nav-blog span {
     font-size: medium;
 }
 
-h1 {
+.hero-con .h1 {
     font-size: 24px;
     font-weight: bold;
     border-left: 5px solid #f4b400;
