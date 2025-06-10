@@ -4,34 +4,37 @@
 <?php include 'include/head.php'; ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <style>
-    .nav-link {
+    .service1-container {
+        max-width: 1214px;
+        margin: 0 auto 50px;
+        padding: 0 15px;
+    }
+
+    .service1-container .nav-link {
+        border-top: 2px solid transparent;
         color: #333;
         padding: 0.5rem 1.5rem;
         transition: all 0.2s ease-in-out;
+        border-bottom: none;
     }
 
-    .nav-link:hover {
+    .service1-container .nav-link:hover {
+        border-bottom: 2px solid #007bff;
         color: #0d6efd;
     }
 
-    .nav-link.active {
-        color: #007bff;
-        border-bottom: 2px solid #007bff;
-        font-weight: 500;
-    }
-
-    .nav .nav-link.active {
+    .service1-container .nav .nav-link.active {
         color: #007bff !important;
         border-bottom: 2px solid #007bff;
         font-weight: 500;
     }
 
-    .home {
+    .service1-container .home {
         display: flex;
         align-items: center;
     }
 
-    .home a {
+    .service1-container .home a {
         text-decoration: none;
         font-size: 0.9rem;
         margin-right: 5px;
@@ -64,17 +67,11 @@
         max-height: 250px;
     }
 
-    .full-width-hr {
+    .service1-container .full-width-hr {
         width: 99.5vw;
         margin-left: calc(-50vw + 50%);
         border: none;
         border-top: 1px solid #333;
-    }
-
-    .body {
-        font-family: sans-serif;
-        background-color: #f9f9f9;
-        padding: 30px;
     }
 
     .category-section {
@@ -122,10 +119,39 @@
         border-color: #005bac;
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 20px;
+    .card-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .card-wrapper {
+        flex: 0 0 calc(16.66% - 1.5rem);
+        display: flex;
+    }
+
+    @media (max-width: 1200px) {
+        .card-wrapper {
+            flex: 0 0 calc(25% - 1.5rem);
+        }
+    }
+
+    @media (max-width: 992px) {
+        .card-wrapper {
+            flex: 0 0 calc(33.33% - 1.5rem);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .card-wrapper {
+            flex: 0 0 calc(50% - 1.5rem);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .card-wrapper {
+            flex: 0 0 100%;
+        }
     }
 
     .card {
@@ -135,16 +161,14 @@
         aspect-ratio: 1 / 1;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         transition: transform 0.2s;
-        padding: 10px;
+        padding: 16px 10px 12px;
         text-align: center;
         text-decoration: none;
-        /* ป้องกันขีดเส้นใต้ลิงก์ */
         color: inherit;
-        /* ให้สีเหมือนตัวหนังสือปกติ */
         cursor: pointer;
     }
 
@@ -153,40 +177,19 @@
     }
 
     .card img {
-        width: 60%;
+        width: 70%;
+        max-height: 90px;
         height: auto;
-        max-height: 80px;
         object-fit: contain;
-        margin-bottom: 12px;
+        margin-top: 10px;
+        flex-shrink: 0;
     }
 
     .card-title {
-        font-size: clamp(12px, 1.2vw, 16px);
+        font-size: clamp(13px, 1.3vw, 17px);
+        font-weight: 500;
         color: #333;
-    }
-
-    @media (max-width: 1200px) {
-        .grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
-    @media (max-width: 992px) {
-        .grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    @media (max-width: 768px) {
-        .grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 480px) {
-        .grid {
-            grid-template-columns: 1fr;
-        }
+        margin-top: auto;
     }
 </style>
 
@@ -194,99 +197,124 @@
     <div>
         <?php include './include/navbar.php'; ?>
     </div>
-
-    <div class="image-container">
-        <img src="assets/images/ห้างร้านอาหาร.png" class="img-fluid" alt="ห้างร้านอาหาร">
-        <div class="blue-box">สิ่งอำนวยความสะดวก</div>
-    </div>
-
-    <main class="container my-4">
-        <ul class="nav nav-underline mb-4" style="font-size: 1.1rem;">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="service1.php">สิ่งอำนวยความสะดวก</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="service2.php">ร้านอาหาร</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="service3.php">ร้านค้า</a>
-            </li>
-        </ul>
-
-        <hr class="full-width-hr mb-4">
-
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h5 class="mb-0">
-                <span style="border-left: 5px solid #ffc107; padding-left: 10px;">สิ่งอำนวยความสะดวกและบริการ</span>
-            </h5>
-            <div class="home">
-                <a href="#"><i class="bi bi-house-door"></i></a> > สิ่งอำนวยความสะดวกและบริการ
-            </div>
+    <main>
+        <div class="image-container">
+            <img src="assets/images/ห้างร้านอาหาร.png" class="img-fluid" alt="ห้าง">
+            <div class="blue-box">สิ่งอำนวยความสะดวกและบริการ</div>
         </div>
-
-        <div class="category-section">
-            <div class="category-label">หมวดหมู่</div>
-            <div class="tabs-container">
-                <div class="tab-button active">ทั้งหมด</div>
-                <div class="tab-button">ห้องรับรอง</div>
-                <div class="tab-button">บริการลูกค้า</div>
-                <div class="tab-button">การเดินทาง</div>
-                <div class="tab-button">อื่นๆ</div>
+        <div class="service1-container">
+            <div class="nav-box">
+                <ul class="nav nav-underline" style="font-size: 1.1rem;">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="service2.php">สิ่งอำนวยความสะดวก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service1.php">ร้านอาหาร</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service3.php">ร้านค้า</a>
+                    </li>
+                </ul>
             </div>
-        </div>
 
-        <div class="grid">
-            <a href="servicedetail.php" class="card">
-                <img src="assets/images/arrival.png" alt="ห้องผู้โดยสารขาเข้า">
-                <div class="card-title">ห้องผู้โดยสารขาเข้า</div>
-            </a>
-            <a href="departure.php" class="card">
-                <img src="assets/images/departure.png" alt="ห้องผู้โดยสารขาออก">
-                <div class="card-title">ห้องผู้โดยสารขาออก</div>
-            </a>
-            <a href="parking.php" class="card">
-                <img src="assets/images/parking.png" alt="ที่จอดรถสนามบิน">
-                <div class="card-title">ที่จอดรถสนามบิน</div>
-            </a>
-            <a href="shuttle.php" class="card">
-                <img src="assets/images/shuttle.png" alt="รถบัสรับส่งสนามบิน">
-                <div class="card-title">รถบัสรับส่งสนามบิน</div>
-            </a>
-            <a href="taxi.php" class="card">
-                <img src="assets/images/taxi.png" alt="รถ TAXI">
-                <div class="card-title">รถ TAXI</div>
-            </a>
-            <a href="rentcar.php" class="card">
-                <img src="assets/images/rentcar.png" alt="รถเช่า">
-                <div class="card-title">รถเช่า</div>
-            </a>
-            <a href="counter.php" class="card">
-                <img src="assets/images/counter.png" alt="เคาน์เตอร์ประชาสัมพันธ์">
-                <div class="card-title">เคาน์เตอร์ประชาสัมพันธ์</div>
-            </a>
-            <a href="wifi.php" class="card">
-                <img src="assets/images/wifi.png" alt="WIFI">
-                <div class="card-title">WIFI</div>
-            </a>
-            <a href="mailbox.php" class="card">
-                <img src="assets/images/mailbox.png" alt="ตู้ไปรษณีย์อัตโนมัติ">
-                <div class="card-title">ตู้ไปรษณีย์อัตโนมัติ</div>
-            </a>
-            <a href="postoffice.php" class="card">
-                <img src="assets/images/postoffice.png" alt="ที่ทำการไปรษณีย์">
-                <div class="card-title">ที่ทำการไปรษณีย์</div>
-            </a>
-            <a href="phone.php" class="card">
-                <img src="assets/images/phone.png" alt="จุดบริการโทรศัพท์">
-                <div class="card-title">จุดบริการโทรศัพท์</div>
-            </a>
-            <a href="baggage.php" class="card">
-                <img src="assets/images/baggage.png" alt="จุดบริการรถเข็นสัมภาระ">
-                <div class="card-title">จุดบริการรถเข็นสัมภาระ</div>
-            </a>
+            <hr class="full-width-hr mb-4" style="margin-top: 0;">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="mb-0">
+                    <span style="border-left: 5px solid #ffc107; padding-left: 10px;">สิ่งอำนวยความสะดวกและบริการ</span>
+                </h5>
+                <div class="home">
+                    <a href="#"><i class="bi bi-house-door"></i></a> &gt; สิ่งอำนวยความสะดวกและบริการ
+                </div>
+            </div>
+
+            <div class="category-section">
+                <div class="category-label">หมวดหมู่</div>
+                <div class="tabs-container">
+                    <div class="tab-button active">ทั้งหมด</div>
+                    <div class="tab-button">ห้องรับรอง</div>
+                    <div class="tab-button">บริการลูกค้า</div>
+                    <div class="tab-button">การเดินทาง</div>
+                    <div class="tab-button">อื่นๆ</div>
+                </div>
+            </div>
+
+            <div class="card-grid">
+                <a href="servicedetail.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/arrival.png" alt="ห้องผู้โดยสารขาเข้า">
+                        <div class="card-title">ห้องผู้โดยสารขาเข้า</div>
+                    </div>
+                </a>
+                <a href="departure.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/departure.png" alt="ห้องผู้โดยสารขาออก">
+                        <div class="card-title">ห้องผู้โดยสารขาออก</div>
+                    </div>
+                </a>
+                <a href="parking.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/parking.png" alt="ที่จอดรถสนามบิน">
+                        <div class="card-title">ที่จอดรถสนามบิน</div>
+                    </div>
+                </a>
+                <a href="shuttle.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/shuttle.png" alt="รถบัสรับส่งสนามบิน">
+                        <div class="card-title">รถบัสรับส่งสนามบิน</div>
+                    </div>
+                </a>
+                <a href="taxi.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/taxi.png" alt="รถ TAXI">
+                        <div class="card-title">รถ TAXI</div>
+                    </div>
+                </a>
+                <a href="rentcar.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/rentcar.png" alt="รถเช่า">
+                        <div class="card-title">รถเช่า</div>
+                    </div>
+                </a>
+                <a href="counter.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/counter.png" alt="เคาน์เตอร์ประชาสัมพันธ์">
+                        <div class="card-title">เคาน์เตอร์ประชาสัมพันธ์</div>
+                    </div>
+                </a>
+                <a href="wifi.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/wifi.png" alt="WIFI">
+                        <div class="card-title">WIFI</div>
+                    </div>
+                </a>
+                <a href="mailbox.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/mailbox.png" alt="ตู้ไปรษณีย์อัตโนมัติ">
+                        <div class="card-title">ตู้ไปรษณีย์อัตโนมัติ</div>
+                    </div>
+                </a>
+                <a href="postoffice.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/postoffice.png" alt="ที่ทำการไปรษณีย์">
+                        <div class="card-title">ที่ทำการไปรษณีย์</div>
+                    </div>
+                </a>
+                <a href="phone.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/phone.png" alt="จุดบริการโทรศัพท์">
+                        <div class="card-title">จุดบริการโทรศัพท์</div>
+                    </div>
+                </a>
+                <a href="baggage.php" class="card-wrapper">
+                    <div class="card">
+                        <img src="assets/images/baggage.png" alt="จุดบริการรถเข็นสัมภาระ">
+                        <div class="card-title">จุดบริการรถเข็นสัมภาระ</div>
+                    </div>
+                </a>
+            </div>
         </div>
     </main>
-
     <div>
         <?php include 'include/footer.php'; ?>
     </div>
