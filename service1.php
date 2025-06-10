@@ -206,10 +206,10 @@
             <div class="nav-box">
                 <ul class="nav nav-underline" style="font-size: 1.1rem;">
                     <li class="nav-item">
-                        <a class="nav-link active" href="service2.php">สิ่งอำนวยความสะดวก</a>
+                        <a class="nav-link active" href="service1.php">สิ่งอำนวยความสะดวก</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="service1.php">ร้านอาหาร</a>
+                        <a class="nav-link" href="service2.php">ร้านอาหาร</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="service3.php">ร้านค้า</a>
