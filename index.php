@@ -4,32 +4,23 @@
 <?php include 'include/head.php'; ?>
 
 <style>
-    .index-navbar::before{
-        opacity: 0.8;
-    }
-
-    .index-navbar {
-        z-index: 1000;
-        position: absolute;
-        width: 100%;
-    }
     .first-container {
         position: relative;
         background-image: url('assets/images/artboard-pic.png');
         background-size: cover;
         background-position: center;
         width: 100%;
-        height: 750px; /* หรือความสูงที่เหมาะสมกับภาพ */
+        height: 750px;
     }
 
     .first-container .notice-box {
         width: 550px;
         background-color: #ffd700;
         overflow: hidden;
-        position:  relative; /* <-- เปลี่ยนจาก relative เป็น absolute */
-        top: 275px; /* ปรับตำแหน่งตามที่ต้องการ */
+        position:  relative;
+        top: 275px;
         left: 235px;
-        z-index: 1; /* <-- ให้สูงกว่ารูปที่เป็น -1 */
+        z-index: 1;
     }
 
     .first-container .notice-header {
@@ -519,7 +510,7 @@
     }
 
     .forth-container .scroll-container::-webkit-scrollbar {
-        display: none; /* ซ่อน scrollbar */
+        display: none;
     }
 
     .forth-container .scroll-container::-webkit-scrollbar-thumb {
@@ -648,13 +639,13 @@
     .fifth-container .icon-circle {
         background-color: #333333;
         color: white;
-        border-radius: 50%;      /* ทำให้เป็นวงกลม */
-        width: 50px;             /* ขนาดของวงกลม */
+        border-radius: 50%;     
+        width: 50px;
         height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 25px;         /* ขนาดไอคอน */
+        font-size: 25px;
     }
 
     .fifth-container .airline-logos{
@@ -805,6 +796,14 @@
     <div>
         <?php include './include/navbar.php'; ?>
     </div>
+    <style>
+        .index-navbar {
+            z-index: 1000;
+            position: absolute;
+            width: 100%;
+            background-color:rgb(1, 74, 155,0.8);
+        }
+    </style>
     <main>
         <div class="index-container">
             <div class="first-container">

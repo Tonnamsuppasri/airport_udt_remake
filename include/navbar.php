@@ -26,6 +26,15 @@
             color: white;
             display: flex;
         }
+        
+        .index-navbar .header-top .dropdown .dropdown-menu .highlight-bar {
+            position: absolute;
+            width: 5px;
+            height: 20px;
+            background-color: #f4c900;
+            left: 0;
+            top: 3px;
+        }
 
         .index-navbar .lang-login {
             text-align: right;
@@ -67,7 +76,7 @@
         .index-navbar .lang-login {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 5px;
             padding: 0 10px;
             height: 48px;
             border-radius: 4px;
@@ -75,8 +84,7 @@
         .index-navbar .lang-login a,
         .index-navbar .lang-login .dropdown > a {
             color: white;
-            font-size: 20x;
-
+            font-size: 20px;
         }
 
         .index-navbar .lang-login .dropdown-item {
@@ -92,7 +100,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 15px;
+            margin: 0 5px 0 0;
             position: relative;
             top: 50%;
             transform: translateY(-50%);
@@ -260,6 +268,16 @@
             justify-content: center;
             align-items: center;
         } 
+        .navbar .dropdown span {
+           position: relative;
+           top: -3px;
+           margin-right: 5px;   
+        }
+        }
+        .index-navbar .header-top .dropdown span {
+           position: relative;
+           top: -3px;
+           margin-right: 5px;   
         }
 </style>
 <div class="index-navbar">
@@ -269,7 +287,7 @@
             <div class="header-btn-group d-flex header-dropdown">
                 <!-- ท่าอากาศยาน dropdown -->
                 <div class="dropdown">
-                    <button class="btn btn-warning d-flex align-items-center px-3 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-warning d-flex align-items-center px-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span _ngcontent-xyq-c41=""><svg _ngcontent-xyq-c41="" 
                         xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
                         viewBox="0 0 25 25" fill="none"><g _ngcontent-xyq-c41="" 

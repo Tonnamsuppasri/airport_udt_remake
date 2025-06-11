@@ -32,7 +32,7 @@
     }
 
     .sitemap-container {
-        max-width: 1214px;
+        max-width: 1500px;
         margin: 0 auto;
         padding: 20px;
     }
