@@ -52,7 +52,7 @@
     body {
         font-family: sans-serif;
         background-color: #f9f9f9;
-        margin: 20px 0;
+        margin: 0;
     }
 
     .content {
@@ -111,15 +111,21 @@
 
     .back-left .back-link {
         text-decoration: none;
-        color: #0d6efd;
         font-size: 16px;
         display: flex;
         align-items: center;
     }
 
-    .back-left .bi {
+    .back-left .icon-blue {
+        color: #0d6efd;
+        /* สีฟ้า */
         font-size: 18px;
         margin-right: 4px;
+    }
+
+    .back-left .text-black {
+        color: #000;
+        /* สีดำ */
     }
 
     .back-right {
@@ -185,7 +191,6 @@
         border-radius: 50%;
         transition: background 0.2s;
     }
-
 
     .footer-nav .title {
         font-weight: bold;
@@ -298,12 +303,14 @@
         <div class="blue-box">คำแนะนำผู้โดยสาร</div>
     </div>
     <br>
+
     <!-- ✅ BACK NAVIGATION -->
     <div class="back-container">
         <div class="back-row">
             <div class="back-left">
                 <a href="javascript:history.back()" class="back-link">
-                    <i class="bi bi-chevron-left"></i> ย้อนกลับ
+                    <i class="bi bi-chevron-left icon-blue"></i>
+                    <span class="text-black">ย้อนกลับ</span>
                 </a>
             </div>
             <div class="back-right">
