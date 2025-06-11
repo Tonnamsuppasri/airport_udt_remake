@@ -4,8 +4,6 @@
 <?php include 'include/head.php'; ?>
 
 <style>
-     
-
     .map-container {
         display: flex;
         justify-content: center; 
@@ -49,7 +47,7 @@
     }
 
     .contact-container {
-        max-width: 1214px;
+        max-width: 1500px;
         margin: 0 auto;
         padding: 20px;
         margin-bottom: 50px;

@@ -26,12 +26,20 @@
     width: 500%;
 }
 
+.full-width-hr {
+    width: 99.5vw;
+    margin-left: calc(-50vw + 50%);
+    border: none;
+}
+
 .flightinfo-index .flight-title {
     display: flex;
     align-items: center; /* จัดให้ข้อความและแถบอยู่แนวเดียวกันตรงกลาง */
     font-size: 23px;
     margin-top: 1rem;
 }
+
+
 
 .flightinfo-index .yellow-bar {
     width: 5px; /* กำหนดความกว้างของแถบสีเหลือง */
@@ -83,7 +91,7 @@
 </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"> 
 
 <body>
     <div>
@@ -96,15 +104,19 @@
                 <h1 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #0d47a1; color: white; padding: 10px; border-radius: 5px; text-align: center;"">เที่ยวบิน</h1>
             </div>
         </section>
+
+        <hr class="full-width-hr mb-4">
+
+
             <div class="flightinfo-index">
             <div class="container">
-                <div class="breadcrumb">
-                    <a href="#" class="material-symbols-outlined">home</>  <span>></span> 
-                    <span>เที่ยวบิน</span>
-                </div>
-                <div class="flight-title">
-                    <div class="yellow-bar"></div>
-                    <h3>เที่ยวบิน</h3>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="mb-0">
+                        <span style="border-left: 5px solid #ffc107; padding-left: 10px;">เที่ยวบิน</span>
+                    </h3>
+                    <div class="home">
+                        <a href="#"><i class="bi bi-house-door"></i></a> > เที่ยวบิน
+                    </div>
                 </div>
             </div>
 
