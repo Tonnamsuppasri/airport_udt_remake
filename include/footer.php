@@ -111,12 +111,12 @@
 <div class="footer-topbar">
     <div class="footer-topbar-links">
         <div class="footer-links-left">
-            <a href="policy.html">นโยบายเว็บไซต์</a>
-            <a href="privacy.html">นโยบายความเป็นส่วนตัว</a>
-            <a href="contact.html">ติดต่อเรา</a>
+            <a href="website-policy-page.php">นโยบายเว็บไซต์</a>
+            <a href="privacy-policy-page.php">นโยบายความเป็นส่วนตัว</a>
+            <a href="contact-us.php">ติดต่อเรา</a>
         </div>
         <div class="footer-links-right">
-            <a href="sitemap.html">แผนผังเว็บไซต์</a>
+            <a href="sitemap-page.php">แผนผังเว็บไซต์</a>
         </div>
     </div>
 </div>
@@ -138,17 +138,17 @@
         </div>
 
         <div class="footer-section">
-            <p class="section-title">เที่ยวบิน</p>
+            <a href="flight-info.php">เที่ยวบิน</a>
             <a href="airportguide.php">คำแนะนำผู้โดยสาร</a>
             <a href="service1.php">สิ่งอำนวยความสะดวก</a>
             <a href="interest.php">สถานที่น่าสนใจ</a>
         </div>
 
         <div class="footer-section">
-            <p class="section-title">เกี่ยวกับเรา</p>
-            <a href="#">ข่าวสารประชาสัมพันธ์</a>
-            <a href="#">คำถามที่พบบ่อย</a>
-            <a href="#">ติดต่อเรา</a>
+            <a href="about-us.php">เกี่ยวกับเรา</a>
+            <a href="Press-release.php">ข่าวสารประชาสัมพันธ์</a>
+            <a href="faqs-page.php">คำถามที่พบบ่อย</a>
+            <a href="contact-us.php">ติดต่อเรา</a>
         </div>
 
         <div class="footer-section stats">
