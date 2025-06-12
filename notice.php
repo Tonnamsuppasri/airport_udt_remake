@@ -15,21 +15,38 @@ body {
     line-height: 1.6;
 }
 
-.notice-index .container {
-    max-width: 1440px;
+.info-container {
+    max-width: 1214px;
     margin: 0 auto;
+    padding: 20px;
 }
 
-.hero {
+.img-fluid {
+    width: 100%;
+    object-fit: contain;
+    object-position: center top;
+    filter: brightness(50%);
+}
+
+.blue-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 82, 170, 0.7);
+    color: white;
+    padding: 10px 20px;
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.image-container {
     position: relative;
-    height: 300px;
-    background-image: url('./assets/images/shophero.jpg'); 
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;  
-    justify-content: center;  
-    }
+    width: 100%;
+    overflow: hidden;
+    max-height: 250px;
+}
 
 .notice-index .header {
     display: flex;
@@ -155,10 +172,10 @@ body {
         <?php include './include/navbar.php'; ?>
     </div>
     <main>
-    <section class="hero">
-            <div class="container">
-                <div class="hero-con"></div>
-                <h1 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #0d47a1; color: white; padding: 10px; border-radius: 5px; text-align: center;"">ข่าวประกาศจัดซื้อจัดจ้าง</h1>
+        <section class="hero">
+            <div class="image-container">
+                <img src="assets/images/policy-pic.jpg" class="img-fluid" alt="Policy Image">
+            <div class="blue-box">ข่าวประกาศจัดซื้อจัดจ้าง</div>
             </div>
         </section>
         <div class="notice-index">

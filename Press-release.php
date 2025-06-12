@@ -15,15 +15,37 @@ body {
     line-height: 1.6;
 }
 
-.hero {
+..info-container {
+    max-width: 1214px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.img-fluid {
+    width: 100%;
+    object-fit: contain;
+    object-position: center top;
+    filter: brightness(50%);
+}
+
+.blue-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 82, 170, 0.7);
+    color: white;
+    padding: 10px 20px;
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.image-container {
     position: relative;
-    height: 300px;
-    background-image: url('./assets/images/Announcement.png'); 
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;  
-    justify-content: center;  
+    width: 100%;
+    overflow: hidden;
+    max-height: 250px;
 }
 
 .Press-index .container {
@@ -170,9 +192,9 @@ body {
     </div>
     <main>
         <section class="hero">
-            <div class="container">
-                <div class="hero-con"></div>
-                <h1 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #0d47a1; color: white; padding: 10px; border-radius: 5px; text-align: center;"">ข่าวประชาสัมพันธ์</h1>
+            <div class="image-container">
+                <img src="assets/images/Announcement.png" class="img-fluid" alt="Annoucment Image">
+            <div class="blue-box">ข่าวประชาสัมพันธ์</div>
             </div>
         </section>
 
