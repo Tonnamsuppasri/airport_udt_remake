@@ -5,7 +5,7 @@
 
 <style>
     .faq-container {
-        max-width: 1214px;
+        max-width: 1500px;
         margin: 0 auto;
         padding: 0 20px 20px 20px;
     }
