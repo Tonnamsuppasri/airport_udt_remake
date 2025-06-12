@@ -28,6 +28,7 @@
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="assets/owlcarousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/owlcarousel/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <script src="assets\owlcarousel\docs\assets\vendors\jquery.min.js"></script>
     <script src="assets\owlcarousel\dist\owl.carousel.min.js"></script>
 
