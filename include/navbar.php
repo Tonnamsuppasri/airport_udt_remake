@@ -218,6 +218,22 @@
         .dropdown .btn:hover .icon-down-2 {
             color: black;
         }
+        @media (max-width: 1200px) {
+            .index-navbar .lang-login a {
+                font-size: 16.5px;
+            }
+            .index-navbar .airport-name .thai-name {
+                font-size: 21px;
+                font-weight: bold;
+            }
+
+            .index-navbar .airport-name .english-name {
+                font-size: 14.25px;
+            }
+            .index-navbar .header-btn-group .btn {
+                font-size: 16.5px;
+            }
+        }
          @media (max-width: 991px) {
             .index-navbar .airport-center {
                 margin: 20px 0;

@@ -774,8 +774,32 @@
             white-space: nowrap;
         }
     }
+    @media (max-width: 865px) {
+        .second-third-container .text-white {
+            position: absolute;
+            z-index: 2;
+            left: 30px;
+            bottom: 30px;
+            display: block;
+            width: calc(100% - 60px);
+        }
+        .second-third-container .text-white h1,
+        .second-third-container .text-white .btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
 
     @media (max-width: 767px) {
+        .second-third-container .text-white {
+            display: flex;
+
+        }
+        .second-third-container .text-white h1,
+        .second-third-container .text-white .btn {
+            width: unset;
+        }
         .third-pic {
             height: 530px;
         }
