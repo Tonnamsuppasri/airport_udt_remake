@@ -106,6 +106,98 @@
     .footer-section a:hover {
         text-decoration: underline;
     }
+     @media (max-width: 1024px) {
+        .footer-topbar,
+        .footer-content,
+        .footer-copyright {
+            padding: 20px 60px; /* Reduce horizontal padding */
+        }
+
+        .footer-section {
+            flex: 1 1 45%; /* Allow sections to take up more space, two columns */
+        }
+
+        .footer-section.address {
+            flex: 1 1 100%; /* Address section takes full width */
+        }
+    }
+
+    /* For screens smaller than 768px (e.g., larger phones and small tablets) */
+    @media (max-width: 768px) {
+        .footer-topbar-links {
+            gap: 10px; /* Reduce gap between stacked links */
+        }
+
+        .footer-links-left,
+        .footer-links-right {
+            gap: 10px;
+        }
+
+        .footer-topbar,
+        .footer-content,
+        .footer-copyright {
+            padding: 15px 20px; /* Further reduce padding for smaller screens */
+        }
+
+        .footer-content {
+            gap: 20px; /* Adjust gap between stacked sections */
+        }
+
+        .footer-section {
+            flex: 1 1 auto; /* Allow sections to take full width */
+            min-width: unset; /* Remove min-width constraint */
+        }
+
+        .footer-section.address {
+            flex: 1 1 auto;
+            min-width: unset;
+        }
+
+        .logo-container {
+            justify-content: center; /* Center the logo on smaller screens */
+            text-align: center;
+        }
+
+        .logo-text {
+            margin-left: 0; /* Remove left margin for stacked logo text */
+            margin-top: 10px; /* Add some top margin */
+        }
+
+        .title-th, .title-en {
+            text-align: center; /* Center the airport titles */
+        }
+
+        .footer-section p {
+            text-align: center; /* Center text in address and stats */
+        }
+
+        .footer-copyright {
+            text-align: center; /* Center copyright text */
+            margin-top: 15px; /* Adjust top margin for copyright */
+        }
+    }
+
+    /* For screens smaller than 480px (e.g., most mobile phones) */
+    @media (max-width: 480px) {
+        .footer-topbar,
+        .footer-content,
+        .footer-copyright {
+            font-size: 12px; /* Slightly reduce font size for very small screens */
+            padding: 10px 15px; /* Even smaller padding */
+        }
+
+        .logo-container img {
+            width: 50px; /* Smaller logo */
+        }
+
+        .title-th {
+            font-size: 14px; /* Smaller title font */
+        }
+
+        .title-en {
+            font-size: 11px; /* Smaller English title font */
+        }
+    }
 </style>
 
 <div class="footer-topbar">

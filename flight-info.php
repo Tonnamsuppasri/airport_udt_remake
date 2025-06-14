@@ -289,6 +289,114 @@
         user-select: none;
         pointer-events: none;
         }
+    .flight-table-header,
+.flight-table-departures {
+    min-width: 600px; /* This should match the min-width of .flight-table in mobile */
+}
+@media (max-width: 1184px) {
+    .eng-overlay {
+        top: 26%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .flight-table-header,
+    .flight-table-departures {
+        min-width: 700px; /* This should match the min-width of .flight-table for tablets */
+    }
+}
+    @media (max-width: 956px) {
+    .flight-container {
+        padding: 20px 10px 10px 10px;
+    }
+    .eng-overlay {
+        top: 100%;
+    }
+
+    .flight-header h1 {
+        font-size: 20px;
+    }
+    .flight-header .highlight-bar {
+        top: 3px;
+    }
+
+    .flight-header .home {
+        font-size: 14px;
+    }
+
+    /* ทำให้ภาพ header สูงน้อยลงและปรับ object-position */
+    .img-fluid {
+        height: 150px;
+        object-position: center 50%;
+    }
+
+    /* ตารางให้เลื่อนซ้ายขวาได้ */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+    }
+
+    .flight-table {
+        min-width: 600px; /* กำหนดความกว้างขั้นต่ำเพื่อเลื่อน */
+        font-size: 14px;
+    }
+
+    .flight-table th, .flight-table td {
+        font-size: 14px;
+        padding: 4px 6px;
+    }
+
+    /* โลโก้สายการบินเล็กลง */
+    .airline-logo {
+        height: 30px;
+        margin: 2px auto;
+    }
+
+    /* กล่อง blue-box ตัวหนังสือเล็กลง */
+    .blue-box {
+        font-size: 20px;
+        padding: 6px 12px;
+    }
+
+    /* วันที่และเวลาใน header เล็กลง */
+    .flight-table-header .airport-name .thai-name {
+        font-size: 16px;
+    }
+    .flight-table-header .airport-name .english-name {
+        font-size: 12px;
+    }
+
+    .flight-table-header .time-container {
+        font-size: 12px;
+        max-width: 200px;
+    }
+
+    /* ซ้อนภาษาอังกฤษ-ไทยในคอลัมน์ถึง ให้เล็กลง */
+    .flight-table td:nth-child(2) {
+        font-size: 14px;
+    }
+    .eng-overlay {
+        font-size: 18px;
+        top:20%;
+    }
+}
+
+/* ขยายขึ้นสำหรับ tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    .flight-container {
+        padding: 30px 15px 15px 15px;
+    }
+    .flight-table {
+        font-size: 15px;
+        min-width: 700px;
+    }
+    .airline-logo {
+        height: 35px;
+    }
+    .blue-box {
+        font-size: 24px;
+    }
+}
 </style>
 
 <body>

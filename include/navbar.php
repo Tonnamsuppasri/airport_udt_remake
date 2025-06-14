@@ -261,7 +261,8 @@
         }
         .navbar .navbar-collapse .d-lg-none .dropdown.mb-2 {
             margin-bottom: 0 !important;
-            width: 300px;
+            width:100%;
+            max-width: 300px;
         }
         
         .navbar .navbar-collapse .d-lg-none .lang-login {
