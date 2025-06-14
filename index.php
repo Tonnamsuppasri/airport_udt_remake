@@ -14,13 +14,15 @@
     }
 
     .first-container .notice-box {
+        max-width: 100%;
         width: 550px;
         background-color: #ffd700;
         overflow: hidden;
-        position:  relative;
+        position: relative;
         top: 275px;
         left: 235px;
         z-index: 1;
+        transition: all 0.3s ease-in-out;
     }
 
     .first-container .notice-header {
@@ -717,10 +719,23 @@
     }
 
     @media (max-width: 992px) {
-        .first-container .notice-box {
-            margin: auto;
-            left: unset;
+        .first-container {
+        height: auto;
+        padding: 20px;
         }
+
+        .first-container .notice-box {
+            width: 90%;
+            top: 0;
+            left: 0;
+            margin: 200px auto;
+            position: relative;
+        }
+        .first-container .notice-image img {
+            width: 100%;
+            height: auto;
+        }
+
         .carousel-item .row {
             flex-direction: column !important;
         }
@@ -774,6 +789,10 @@
         .service-search-btn {
             min-width: unset;
         }
+        .fifth-container .faq {
+            min-width: unset;
+            padding: 30px 0 30px 10px;
+        }
     }
      @media (max-width: 702px) {
         .fifth-container .app-logo {
@@ -788,6 +807,12 @@
         .service-search-header{
             margin-left: 20px;
             top: 10px;
+        }
+        .first-container .notice-content {
+            flex-direction: column;
+        }
+        .first-container .highlight-bar {
+            top: 35px;
         }
     }
 </style>
@@ -811,9 +836,9 @@
                     <div class="notice-header">
                     <span>
                         <div class="icon-container">
-        <i class="bi bi-chat-left"></i>
-        <i class="bi bi-exclamation"></i>
-    </div>
+                            <i class="bi bi-chat-left"></i>
+                            <i class="bi bi-exclamation"></i>
+                        </div>
                         Notices
                     </span>
                     <a class="plus-btn" href="#"><i class="bi bi-plus"></i></a>
