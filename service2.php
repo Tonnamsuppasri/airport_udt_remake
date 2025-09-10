@@ -3,6 +3,7 @@
 
 <?php include 'include/head.php'; ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
 <style>
     .service2-container {
         max-width: 1214px;
@@ -14,6 +15,12 @@
         border-radius: 0px;
         width: 100%;
         height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service2-container .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
     }
 
     .service2-container .card-body {
@@ -110,10 +117,34 @@
 
     .service2-container .card-img-top {
         border-radius: 0px;
+        width: 100%;
+        height: 200px;
+        /* กำหนดขนาดคงที่ */
+        object-fit: cover;
+        /* ครอบรูปให้อยู่ในกรอบ */
     }
 
     .service2-container .card .btn {
         border-radius: 0px;
+        transition: all 0.3s ease;
+    }
+
+    .service2-container .card .btn:hover {
+        background-color: #0d6efd;
+        color: #fff;
+        transform: scale(1.05);
+    }
+
+    /* fade-in animation */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
     }
 </style>
 
@@ -153,10 +184,9 @@
                 </div>
             </div>
 
-
             <div class="card-grid">
                 <!-- Card 1 -->
-                <div class="card-wrapper">
+                <div class="card-wrapper fade-in">
                     <div class="card">
                         <img src="assets/images/ร้านอาหารภายใน.png" class="card-img-top" alt="ร้านอาหารถายใน">
                         <div class="card-body">
@@ -169,7 +199,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="card-wrapper">
+                <div class="card-wrapper fade-in">
                     <div class="card">
                         <img src="assets/images/coffee shop.png" class="card-img-top" alt="coffee">
                         <div class="card-body">
@@ -185,6 +215,27 @@
     <div>
         <?php include 'include/footer.php'; ?>
     </div>
+
+    <!-- ===== JavaScript ===== -->
+    <script>
+        // Fade-in effect เมื่อเลื่อน scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const appearOnScroll = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    appearOnScroll.unobserve(entry.target); // ทำงานครั้งเดียว
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        fadeElements.forEach(el => {
+            appearOnScroll.observe(el);
+        });
+    </script>
 </body>
 
 </html>

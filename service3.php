@@ -3,6 +3,7 @@
 
 <?php include 'include/head.php'; ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
 <style>
     .service3-container {
         max-width: 1214px;
@@ -14,6 +15,12 @@
         border-radius: 0px;
         width: 100%;
         height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service3-container .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
     }
 
     .service3-container .card-body {
@@ -54,14 +61,12 @@
 
     .service3-container .nav-link:hover {
         border-bottom: 2px solid #007bff;
-        border-top: none;
         color: #0d6efd;
     }
 
     .service3-container .nav .nav-link.active {
         color: #007bff !important;
-        border-top: 2px solid #007bff;
-        border-bottom: none;
+        border-bottom: 2px solid #007bff;
         font-weight: 500;
     }
 
@@ -112,10 +117,34 @@
 
     .service3-container .card-img-top {
         border-radius: 0px;
+        width: 100%;
+        height: 200px;
+        /* ขนาดคงที่ */
+        object-fit: cover;
+        /* รูปพอดีกรอบ */
     }
 
     .service3-container .card .btn {
         border-radius: 0px;
+        transition: all 0.3s ease;
+    }
+
+    .service3-container .card .btn:hover {
+        background-color: #0d6efd;
+        color: #fff;
+        transform: scale(1.05);
+    }
+
+    /* fade-in animation */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
     }
 </style>
 
@@ -157,7 +186,7 @@
 
             <div class="card-grid">
                 <!-- Card 1 -->
-                <div class="card-wrapper">
+                <div class="card-wrapper fade-in">
                     <div class="card">
                         <img src="assets/images/Auntie.png" class="card-img-top" alt="">
                         <div class="card-body">
@@ -170,7 +199,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="card-wrapper">
+                <div class="card-wrapper fade-in">
                     <div class="card">
                         <img src="assets/images/ร้านค้าปลีก.png" class="card-img-top" alt="">
                         <div class="card-body">
@@ -183,7 +212,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="card-wrapper">
+                <div class="card-wrapper fade-in">
                     <div class="card">
                         <img src="assets/images/ร้านของฝาก.png" class="card-img-top" alt="">
                         <div class="card-body">
@@ -199,6 +228,27 @@
     <div>
         <?php include 'include/footer.php'; ?>
     </div>
+
+    <!-- ===== JavaScript ===== -->
+    <script>
+        // Fade-in effect เมื่อเลื่อน scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const appearOnScroll = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    appearOnScroll.unobserve(entry.target); // ทำงานครั้งเดียว
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        fadeElements.forEach(el => {
+            appearOnScroll.observe(el);
+        });
+    </script>
 </body>
 
 </html>
