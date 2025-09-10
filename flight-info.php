@@ -20,16 +20,33 @@
         background-color: rgba(0, 82, 170, 0.7);
         color: white;
         padding: 10px 20px;
-        font-size: 30px;
+        font-size: clamp(24px, 5vw, 40px);
         text-align: center;
         white-space: nowrap;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow);
+        animation: fadeInBox 1.5s ease-out forwards;
+        opacity: 0;
     }
 
-    .image-container {
+    @keyframes fadeInBox {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -60%) scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+     .image-container {
         position: relative;
         width: 100%;
         overflow: hidden;
         max-height: 250px;
+        box-shadow: var(--box-shadow);
     }
     
     .flight-container {
@@ -257,9 +274,10 @@
 }
 
 .time-part {
-  color:rgb(255, 228, 107); /* สีของเวลา เช่น เหลือง */
-  font-weight: bold;
-}
+    color: rgb(255, 228, 107);
+    font-weight: bold;
+    animation: color-swap 1s infinite;
+}   
 .time-word {
     color:rgb(39, 212, 255) ;
 }
@@ -382,21 +400,26 @@
 }
 
 /* ขยายขึ้นสำหรับ tablet */
-@media (min-width: 768px) and (max-width: 991px) {
-    .flight-container {
-        padding: 30px 15px 15px 15px;
+    @media (min-width: 768px) and (max-width: 991px) {
+        .flight-container {
+            padding: 30px 15px 15px 15px;
+        }
+        .flight-table {
+            font-size: 15px;
+            min-width: 700px;
+        }
+        .airline-logo {
+            height: 35px;
+        }
+        .blue-box {
+            font-size: 24px;
+        }
     }
-    .flight-table {
-        font-size: 15px;
-        min-width: 700px;
+    @keyframes color-swap {
+        0% { color: #ffc107; } /* สีเหลือง */
+        50% { color: #ffffff; } /* สีขาว */
+        100% { color: #ffc107; } /* กลับไปสีเหลือง */
     }
-    .airline-logo {
-        height: 35px;
-    }
-    .blue-box {
-        font-size: 24px;
-    }
-}
 </style>
 
 <body>
@@ -412,7 +435,7 @@
             <div class="flight-header">
                 <h1><span class="highlight-bar"></span>เที่ยวบิน</h1>
                 <div class="home">
-                    <a href="#"><i class="bi bi-house-door"></i></a> > เที่ยวบิน
+                    <a href="index.php"><i class="bi bi-house-door"></i></a> > เที่ยวบิน
                 </div>
             </div>
                 
