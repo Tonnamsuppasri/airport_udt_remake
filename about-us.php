@@ -41,7 +41,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: rgba(0, 82, 170, 0.7);
-        color: var(--light-text);
+        color: white;
         padding: 10px 20px;
         font-size: clamp(24px, 5vw, 40px);
         text-align: center;
@@ -100,18 +100,18 @@
 
     .about-us-index .home {
         display: flex;
+        justify-content: flex-end;
         align-items: center;
-        font-size: 0.9rem;
-        transition: transform 0.3s ease;
-    }
-
-    .about-us-index .home:hover {
-        transform: scale(1.05);
+        margin-bottom: 1.5rem;
     }
 
     .about-us-index .home a {
         text-decoration: none;
+        font-size: 16px;
         margin-right: 5px;
+    }
+    .about-us-index .home a:hover {
+        color: var(--secondary-color);
     }
 
     .about-us-index .blog-title {

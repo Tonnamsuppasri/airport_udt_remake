@@ -4,19 +4,57 @@
 <?php include 'include/head.php'; ?>
 
 <style>
-    .map-container {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        position: relative;
-        max-width: 100%; 
-        padding: 20px 0;      
+    :root {
+        --primary-color: #014A9B;
+        --secondary-color: #FECD22;
+        --text-dark: #000000;
+        --text-light: #ffffff;
+        --gray-light: #F8F8F8;
+        --transition-speed: 0.3s;
     }
 
-    .map-container iframe {
-        width: 496px;
-        height: 357px;
-        border: 0;
+    /* General */
+    body {
+        font-family: 'Sarabun', sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: color var(--transition-speed) ease;
+    }
+
+    a:hover {
+        color: var(--secondary-color);
+    }
+
+    h1 {
+        font-size: 26px;
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 1.5rem;
+    }
+
+    .highlight-bar {
+        position: absolute;
+        width: 4px;
+        height: 20px;
+        background-color: var(--secondary-color);
+        left: 0;
+        top: 5px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(50%);
+        transition: transform 10s ease-in-out;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.1);
     }
 
     .img-fluid {
@@ -24,6 +62,7 @@
         object-fit: contain;
         object-position: center top;
         filter: brightness(50%);
+        transition: transform 0.6s ease-out;
     }
 
     .blue-box {
@@ -34,9 +73,25 @@
         background-color: rgba(0, 82, 170, 0.7);
         color: white;
         padding: 10px 20px;
-        font-size: 30px;
+        font-size: clamp(24px, 5vw, 40px);
         text-align: center;
         white-space: nowrap;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow);
+        animation: fadeInBox 1.5s ease-out forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeInBox {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -60%) scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
     }
 
     .image-container {
@@ -44,125 +99,206 @@
         width: 100%;
         overflow: hidden;
         max-height: 250px;
+        box-shadow: var(--box-shadow);
     }
 
+    /* Breadcrumbs and Main Content */
     .contact-container {
-        max-width: 1500px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
         margin-bottom: 50px;
     }
-
-    h1 {
-        font-size: 26px;
-        position: relative;
-        padding-left: 20px;
-    }
-
-    .highlight-bar {
-        position: absolute;
-        width: 4px;
-        height: 20px;
-        background-color: #f4c900;
-        left: 0;
-        top: 5px;
-    }
-
-    .header {
+    
+    .header-info {
         display: flex;
-        justify-content: space-between; 
+        justify-content: flex-end;
         align-items: center;
         margin-bottom: 1.5rem;
     }
-
-    .home {
-        display: flex; 
-        align-items: center;
-        margin-left: auto;
-    }
-
-    .home a {
+    
+    .header-info a {
         text-decoration: none;
         font-size: 16px;
         margin-right: 5px;
     }
+
+    .content-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
     
-    .contact-form {
-        max-width: 640px;
-        margin: auto;
-        background: #F8F8F8;
-        padding-top: 30px;
+    .content-col {
+        flex: 1;
+        min-width: 300px;
     }
 
-    form {
-        max-width: 640px;
-        margin: auto;
+    /* Map and Address Section */
+    .map-info {
+        margin-top: 30px;
+    }
+
+    .map-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        max-width: 100%;
+        padding: 20px 0;
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 357px;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform var(--transition-speed) ease;
+    }
+    
+    .map-container iframe:hover {
+        transform: scale(1.02);
+    }
+
+    .contact-address {
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .contact-address ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    
+    .contact-address ul li {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #555;
+    }
+    
+    .contact-address ul li i {
+        color: var(--primary-color);
+        margin-right: 10px;
+    }
+    
+    /* Contact Form Section */
+    .contact-form {
+        background: var(--gray-light);
         padding: 30px;
-        background: #F8F8F8;
-     }
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h1 {
+        margin-top: 0;
+    }
 
     .contact-form label {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 14px;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #333;
     }
 
     .contact-form select,
     .contact-form input[type="text"],
     .contact-form input[type="email"],
     .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-      box-sizing: border-box;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+        transition: border-color var(--transition-speed) ease;
+    }
+    
+    .contact-form select:focus,
+    .contact-form input[type="text"]:focus,
+    .contact-form input[type="email"]:focus,
+    .contact-form textarea:focus {
+        border-color: var(--primary-color);
+        outline: none;
+        box-shadow: 0 0 5px rgba(1, 74, 155, 0.2);
     }
 
-    .contact-form .row {
-      display: flex;
-      gap: 10px;
+    .contact-form .form-group-row {
+        display: flex;
+        gap: 15px;
     }
 
-    .contact-form .row > div {
-      flex: 1;
+    .contact-form .form-group {
+        flex: 1;
     }
 
     .contact-form button {
-      background-color: #004080;
-      width: 96px;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 3px;
-      font-size: 14px;
-      cursor: pointer;
+        background-color: var(--primary-color);
+        color: var(--text-light);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color var(--transition-speed) ease, transform 0.2s ease;
     }
 
     .contact-form button:hover {
-      background-color: #003366;
+        background-color: #003366;
+        transform: translateY(-2px);
     }
     
-    .map-info {
-        margin-top: 30px;
+    .contact-form button:active {
+        transform: translateY(0);
     }
     
-    ul {
-        list-style-type: none;
-    }
-    @media (max-width: 768px) {
-        .blue-box {
-            font-size: 1rem;
-            padding: 8px 15px;
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -60%);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
         }
     }
 
+    /* Responsive */
+    @media (max-width: 768px) {
+        .blue-box {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+        }
+
+        .content-row {
+            flex-direction: column;
+        }
+        
+        .contact-form .form-group-row {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
 
     @media (max-width: 576px) {
         .blue-box {
-            font-size: 0.9rem;
-            padding: 5px 10px;
+            font-size: 1.2rem;
+            padding: 8px 15px;
+        }
+        
+        h1 {
+            font-size: 22px;
+        }
+        
+        .contact-container {
+            padding: 10px;
         }
     }
 </style>
@@ -171,69 +307,78 @@
     <div>
         <?php include './include/navbar.php'; ?>
     </div>
+
     <main>
-    <div class="image-container">
-          <img src="assets/images/contactus-pic.jpg" class="img-fluid" alt="FAQ Image">
-          <div class="blue-box">ติดต่อเรา</div>
-    </div>
-
-    <div class="contact-container">
-        <div class="header">
-            <div class="home">
-                <a href="#"><i class="bi bi-house-door"></i></a> > ติดต่อเรา
-            </div>
+        <div class="image-container">
+            <img src="assets/images/contactus-pic.jpg" alt="Contact Us Banner">
+            <div class="blue-box">ติดต่อเรา</div>
         </div>
-        <div class="row">
-            <div class="col">
-                <div class="map-info">
-                    <h1><span class="highlight-bar"></span>ที่อยู่</h1>
-                    <br>
-                    <ul>
-                        <li>224 ท่าอากาศยานนานาชาติอุดรธานี ต.หมากแข้ง อ.เมือง จ.อุดรธานี 41000</li>
-                        <li>โทรศัพท์ : +66 (0) 4224-4426 </li>
-                        <li>โทรสาร: +66 (0) 4224-6804</li>
-                    </ul>
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.513719934734!2d102.77295297382908!3d17.387117102815616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31239d88ac386879%3A0x960d0f16cb0ab983!2z4LiX4LmI4Liy4Lit4Liy4LiB4Liy4Lio4Lii4Liy4LiZ4LiZ4Liy4LiZ4Liy4LiK4Liy4LiV4Li04Lit4Li44LiU4Lij4LiY4Liy4LiZ4Li1!5e0!3m2!1sth!2sth!4v1746592815905!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="contact-form">
-                <h1><span class="highlight-bar"></span>แบบฟอร์มติดต่อ</h1>
-                    <form>
-                    <label for="topic">ติดต่อ</label>
-                        <select id="topic" name="topic">
-                            <option value=""></option>
-                            <option value="1">...</option>
-                            <option value="2">...</option>
-                            <option value="3">...</option>
-                        </select>
 
-                    <div class="row">
-                    <div>
-                    <label for="name">ชื่อ</label>
-                        <input type="text" id="name" name="name">
+        <div class="contact-container">
+            <div class="header-info">
+                <a href="index.php"><i class="bi bi-house-door"></i></a> > ติดต่อเรา
+            </div>
+
+            <div class="content-row">
+                <div class="content-col">
+                    <div class="map-info">
+                        <h1><span class="highlight-bar"></span>ที่อยู่</h1>
+                        <div class="contact-address">
+                            <ul>
+                                <li><i class="bi bi-geo-alt-fill"></i> 224 ท่าอากาศยานนานาชาติอุดรธานี ต.หมากแข้ง อ.เมือง จ.อุดรธานี 41000</li>
+                                <li><i class="bi bi-telephone-fill"></i> โทรศัพท์: +66 (0) 4224-4426</li>
+                                <li><i class="bi bi-printer-fill"></i> โทรสาร: +66 (0) 4224-6804</li>
+                            </ul>
                         </div>
-                    <div>
-                    <label for="email">อีเมล</label>
-                     <input type="email" id="email" name="email">
                     </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.773323062325!2d102.7844007!3d17.391673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3124803d1591f861%3A0x6d88f98d451b6a12!2z4Lir4Lit4LiH4Liy4Lih4Lib4Lij4Lix4Liw4LmA4LiB4Liy4Lir4Lin4Li04LiX4Lii4LiH4Liy4LiZ4Lia4Liy4Lir4LiB4Liy4Lij4Lih4LmI!5e0!3m2!1sth!2sth!4v1690000000000!5m2!1sth!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                </div>
 
-                    <label for="subject">หัวข้อ</label>
-                    <input type="text" id="subject" name="subject">
+                <div class="content-col">
+                    <div class="contact-form">
+                        <h1><span class="highlight-bar"></span>แบบฟอร์มติดต่อ</h1>
+                        <form>
+                            <div class="form-group">
+                                <label for="topic">ติดต่อ</label>
+                                <select id="topic" name="topic" required>
+                                    <option value="">เลือกหัวข้อการติดต่อ...</option>
+                                    <option value="1">ข้อเสนอแนะ</option>
+                                    <option value="2">สอบถามข้อมูล</option>
+                                    <option value="3">แจ้งปัญหา</option>
+                                </select>
+                            </div>
 
-                    <label for="message">รายละเอียด</label>
-                    <textarea id="message" name="message" rows="5"></textarea>
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="name">ชื่อ</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">อีเมล</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
 
-                    <button type="submit">ส่ง</button>
-                    </form>
+                            <div class="form-group">
+                                <label for="subject">หัวข้อ</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">รายละเอียด</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit">ส่ง</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </main>
+
     <div>
         <?php include 'include/footer.php'; ?>
     </div>
