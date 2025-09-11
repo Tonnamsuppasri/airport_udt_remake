@@ -154,7 +154,7 @@
                     <span style="border-left: 5px solid #ffc107; padding-left: 10px;">แหล่งท่องเที่ยว</span>
                 </h5>
                 <div class="home">
-                    <a href="#"><i class="bi bi-house-door"></i></a> > สถานที่น่าสนใจ
+                    <a href="index.php"><i class="bi bi-house-door"></i></a> > สถานที่น่าสนใจ
                 </div>
             </div>
 
@@ -164,8 +164,7 @@
             <!-- Card 1 -->
             <div class="card-wrapper">
                 <div class="card">
-                    <img src="assets/images/ภูพระบาท.png" class="card-img-top" alt="อุทยานประวัติศาสตร์ภูพระบาท
-">
+                    <img src="assets/images/ภูพระบาท.png" class="card-img-top" alt="อุทยานประวัติศาสตร์ภูพระบาท">
                     <div class="card-body">
                         <p class="card-text">อุทยานประวัติศาสตร์ภูพระบาท
                         </p>
