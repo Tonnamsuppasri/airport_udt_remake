@@ -77,13 +77,18 @@
     }
 
     .flight-header .home {
-        display: flex; 
+        display: flex;
         align-items: center;
+        font-size: 0.9rem;
+        transition: transform 0.3s ease;
+    }
+
+    .flight-header .home:hover {
+        transform: scale(1.05);
     }
 
     .flight-header .home a {
         text-decoration: none;
-        font-size: 16px;
         margin-right: 5px;
     }
 
@@ -337,9 +342,6 @@
         top: 3px;
     }
 
-    .flight-header .home {
-        font-size: 14px;
-    }
 
     /* ทำให้ภาพ header สูงน้อยลงและปรับ object-position */
     .img-fluid {
@@ -420,6 +422,40 @@
         50% { color: #ffffff; } /* สีขาว */
         100% { color: #ffc107; } /* กลับไปสีเหลือง */
     }
+    @keyframes row-flash {
+    0% { background-color: rgba(255, 255, 255, 0.2); }
+    100% { background-color: transparent; }
+}
+
+
+/* เอฟเฟกต์ Hover และ Transition */
+.flight-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.flight-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ปรับปรุงพื้นหลังของแถวคู่-คี่ให้จางลงเล็กน้อยเพื่อความสม่ำเสมอ */
+.flight-table tbody tr:nth-child(odd) td {
+    background-color: rgb(0, 14, 44) !important;
+}
+
+.flight-table tbody tr:nth-child(even) td {
+    background-color: #011640 !important;
+}
+    @keyframes text-flash {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.02); } /* Slightly scale the text */
+    }
+    .status-departed,
+    .status-boarding,
+    .status-checkin,
+    .status-cancelled {
+        animation: text-flash 1.5s infinite;
+    }
+
 </style>
 
 <body>
@@ -520,6 +556,8 @@ const tbody = document.getElementById("flightData");
 flights.forEach(f => {
     const tr = document.createElement("tr");
 
+    tr.style.animation = "row-flash 0.5s ease"; // กระพริบเมื่อสร้างแถว
+    tr.style.animationFillMode = "backwards"; // ให้เริ่มต้นจากเฟรมแรก
     const statusClass =
         f.status.includes("ยกเลิก") ? "status-cancelled" :
         f.status.includes("เรียก") || f.status.includes("Ck-in") ? "status-boarding" :

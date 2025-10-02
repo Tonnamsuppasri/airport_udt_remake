@@ -200,14 +200,14 @@
         <div class="container-fluid">
             <div class="sidebar">
                 <ul>
-                    <li><a href="#">ข่าวประชาสัมพันธ์ <span class="material-symbols-outlined">chevron_forward</span></a></li>
-                    <li><a href="#" class="active">ข่าวประกาศจัดซื้อจัดจ้าง <span class="material-symbols-outlined">chevron_forward</span></a></li>
+                    <li><a href="Press-release.php">ข่าวประชาสัมพันธ์ <span class="material-symbols-outlined">chevron_forward</span></a></li>
+                    <li><a href="Announcement.php" class="active">ข่าวประกาศจัดซื้อจัดจ้าง <span class="material-symbols-outlined">chevron_forward</span></a></li>
                     <li><a href="#">ข่าวรับสมัครงาน <span class="material-symbols-outlined">chevron_forward</span></a></li>
                 </ul>
             </div>
             <div class="content">
                 <div class="breadcrumb ">
-                    <a href="#" class="material-symbols-outlined">home</a>  <span>></span> <span style="color: #333; margin-left: 1px;">ข่าวประกาศจัดซื้อจัดจ้าง</span>
+                    <a href="index.php" class="material-symbols-outlined">home</a>  <span>></span> <span style="color: #333; margin-left: 1px;">ข่าวประกาศจัดซื้อจัดจ้าง</span>
                 </div> 
 
                 <div class="flex justify-content-between align-items-center mb-3">

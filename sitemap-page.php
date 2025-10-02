@@ -4,10 +4,12 @@
 <?php include 'include/head.php'; ?>
 
 <style>
+    <style>
     .image-container .img-fluid {
         width: 100%;
-        object-fit: contain;
-        object-position: center top;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
         filter: brightness(50%);
     }
 
@@ -16,12 +18,15 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: rgba(0, 82, 170, 0.7);
+        background-color: rgba(0, 82, 170, 0.8);
         color: white;
-        padding: 10px 20px;
+        padding: 15px 40px;
         font-size: 30px;
+        font-weight: 500;
         text-align: center;
         white-space: nowrap;
+        border-radius: 4px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .image-container {
@@ -34,71 +39,251 @@
     .sitemap-container {
         max-width: 1500px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 40px 20px;
     }
 
     .sitemap-container h1 {
         font-size: 26px;
+        font-weight: 600;
         position: relative;
         padding-left: 20px;
+        margin-bottom: 40px;
     }
 
     .sitemap-container .highlight-bar {
         position: absolute;
-        width: 4px;
-        height: 20px;
+        width: 5px;
+        height: 22px;
         background-color: #f4c900;
         left: 0;
-        top: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 2px;
     }
 
     .sitemap-container .header {
         display: flex;
         justify-content: space-between; 
         align-items: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
     }
 
     .sitemap-container .home {
         display: flex; 
         align-items: center;
         margin-left: auto;
+        font-size: 15px;
+        color: #666;
     }
 
     .sitemap-container .home a {
         font-size: 16px;
         margin-right: 5px;
+        color: #0052aa;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .sitemap-container .home a:hover {
+        color: #003d7a;
     }
 
     .sitemap-container .row {
-        margin-bottom: 22px
+        margin-bottom: 32px;
+    }
+
+    .sitemap-container .col {
+        margin-bottom: 35px;
+    }
+
+    .sitemap-container .col a.sitemap-link {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0052aa;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .sitemap-container .col a.sitemap-link:hover {
+        color: #003d7a;
+        text-decoration: underline;
     }
 
     .sitemap-container .col ul {
         list-style-type: none;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .sitemap-container .col ul li {
+        padding: 6px 0;
+        padding-left: 18px;
+        position: relative;
+        color: #333;
+        font-size: 15px;
+        transition: color 0.3s ease;
+    }
+
+    .sitemap-container .col ul li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #f4c900;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .sitemap-container .col ul li:hover {
+        color: #0052aa;
     }
     
     .sitemap-container .dropdown {
         background: none;
         border: none;
-        color: black;
+        color: #333;
+        padding: 8px 0;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .sitemap-container .dropdown:hover {
+        color: #0052aa;
     }
     
     .sitemap-container .dropdown i {
         margin-right: 6px;
+        font-size: 12px;
     }
-    @media (max-width: 768px) {
-        .blue-box {
-            font-size: 1rem;
-            padding: 8px 15px;
+
+    .sitemap-container .dropdown-menu {
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+    }
+
+    .sitemap-container .dropdown-item {
+        padding: 8px 16px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .sitemap-container .dropdown-item:hover {
+        background-color: #f5f5f5;
+    }
+
+    .sitemap-container .dropdown-item i {
+        color: #0052aa;
+        margin-right: 8px;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 992px) {
+        .sitemap-container {
+            padding: 30px 15px;
+        }
+
+        .sitemap-container h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .sitemap-container .col {
+            margin-bottom: 20px;
         }
     }
 
+    @media (max-width: 768px) {
+        .image-container .img-fluid {
+            height: 200px;
+        }
+
+        .blue-box {
+            font-size: 24px !important;
+            padding: 12px 30px !important;
+        }
+
+        .sitemap-container {
+            padding: 25px 15px;
+        }
+
+        .sitemap-container h1 {
+            font-size: 22px;
+        }
+
+        .sitemap-container .header {
+            margin-bottom: 1.5rem;
+        }
+
+        .sitemap-container .col a.sitemap-link {
+            font-size: 17px;
+        }
+
+        .sitemap-container .col ul li {
+            font-size: 14px;
+        }
+
+        .sitemap-container .col {
+            margin-bottom: 25px;
+        }
+
+        .sitemap-container .row {
+            margin-bottom: 20px;
+        }
+    }
 
     @media (max-width: 576px) {
+        .image-container .img-fluid {
+            height: 150px;
+        }
+
         .blue-box {
-            font-size: 0.9rem;
-            padding: 5px 10px;
+            font-size: 20px !important;
+            padding: 10px 20px !important;
+            white-space: normal;
+        }
+
+        .sitemap-container {
+            padding: 20px 15px;
+        }
+
+        .sitemap-container h1 {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .sitemap-container .home {
+            font-size: 13px;
+        }
+
+        .sitemap-container .home a {
+            font-size: 14px;
+        }
+
+        .sitemap-container .col a.sitemap-link {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .sitemap-container .col ul li {
+            font-size: 13px;
+            padding: 5px 0;
+            padding-left: 18px;
+        }
+
+        .sitemap-container .dropdown {
+            font-size: 14px;
+            padding: 6px 0;
+        }
+
+        .sitemap-container .col {
+            margin-bottom: 20px;
+        }
+
+        .sitemap-container .row {
+            margin-bottom: 15px;
         }
     }
 </style>

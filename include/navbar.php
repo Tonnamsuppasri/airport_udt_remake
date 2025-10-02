@@ -296,6 +296,23 @@
            top: -3px;
            margin-right: 5px;   
         }
+    .index-navbar .dropdown-menu {
+        display: block;
+        opacity: 0;
+        transform: translateY(10px);
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .index-navbar .dropdown:hover .dropdown-menu,
+    .dropdown.show .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+    .index-navbar .lang-login a:hover {
+        color: #0d6efd; /* Primary blue on hover */
+    }
 </style>
 <div class="index-navbar">
     <div class="header-top separator-bottom">

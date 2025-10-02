@@ -147,7 +147,7 @@ p {
             <div class="header">
                     <a class="header-link active" aria-current="page" href="#"><span class="material-symbols-outlined" style="margin-right: 5px;">chevron_backward</span>ย้อนกลับ</a>
                 <div class="breadcrumb">
-                    <a href="#" class="material-symbols-outlined">home</a>  <span>></span> <a href="#">ข่าวประชาสัมพันธ์</a> <span>></span> รายละเอียด
+                    <a href="index.php" class="material-symbols-outlined">home</a>  <span>></span> <a href="#">ข่าวประชาสัมพันธ์</a> <span>></span> รายละเอียด
                 </div>
                 
             </div>

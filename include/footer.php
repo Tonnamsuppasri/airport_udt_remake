@@ -1,10 +1,22 @@
 <style>
+    :root {
+        --primary-color: #014A9B;
+        --secondary-color: #FECD22;
+        --dark-blue: #052B5D;
+        --dark-blue-footer: #014A9B;
+        --text-light: #ffffff;
+        --text-dark: #000000;
+        --gray-light-border: #ffffff33;
+        --transition-speed: 0.3s;
+    }
+
     .footer-topbar {
-        background-color: #052B5D;
-        color: white;
-        font-family: sans-serif;
+        background-color: var(--dark-blue);
+        color: var(--text-light);
+        font-family: 'Sarabun', sans-serif;
         font-size: 14px;
         padding: 20px 120px;
+        animation: fadeInBackground 1s ease-out forwards;
     }
 
     .footer-topbar-links {
@@ -12,6 +24,7 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        animation: slideInFromBottom 0.5s ease-out forwards;
     }
 
     .footer-links-left,
@@ -21,15 +34,23 @@
     }
 
     .footer-topbar a {
-        color: white;
+        color: var(--text-light);
         text-decoration: none;
+        transition: color var(--transition-speed) ease;
+    }
+
+    .footer-topbar a:hover {
+        color: var(--secondary-color);
     }
 
     .footer-main {
-        background-color: #014a9b;
-        color: white;
-        font-family: sans-serif;
+        background-color: var(--dark-blue-footer);
+        color: var(--text-light);
+        font-family: 'Sarabun', sans-serif;
         font-size: 14px;
+        animation: fadeInBackground 1s ease-out forwards;
+        position: relative; /* For potential absolute positioning of elements */
+        overflow: hidden; /* To contain animations */
     }
 
     .footer-content {
@@ -43,7 +64,15 @@
     .footer-section {
         flex: 1 1 150px;
         min-width: 150px;
+        opacity: 0; /* Start hidden for animation */
+        transform: translateY(20px); /* Start slightly below */
+        animation: fadeInUp 0.5s ease-out forwards;
     }
+
+    .footer-section:nth-child(1) { animation-delay: 0.2s; }
+    .footer-section:nth-child(2) { animation-delay: 0.4s; }
+    .footer-section:nth-child(3) { animation-delay: 0.6s; }
+    .footer-section:nth-child(4) { animation-delay: 0.8s; }
 
     .footer-section.address {
         flex: 1 1 300px;
@@ -58,6 +87,11 @@
     .logo-container img {
         width: 70px;
         height: auto;
+        transition: transform var(--transition-speed) ease;
+    }
+
+    .logo-container:hover img {
+        transform: scale(1.1);
     }
 
     .logo-text {
@@ -85,15 +119,26 @@
         background-color: #222263;
         padding: 2px 6px;
         border-radius: 4px;
+        display: inline-block; /* Allows padding and margin */
+        transition: background-color var(--transition-speed) ease;
+    }
+
+    .stat-box:hover {
+        background-color: var(--secondary-color);
+        color: var(--text-dark);
     }
 
     .footer-copyright {
         text-align: left;
         padding: 20px 120px;
-        background-color: #014a9b;
+        background-color: var(--dark-blue-footer);
         margin-top: 20px;
         font-size: 14px;
-        border-top: 1px solid #ffffff33;
+        border-top: 1px solid var(--gray-light-border);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.5s ease-out forwards;
+        animation-delay: 1s; /* Delay for the copyright */
     }
 
     .footer-section a {
@@ -101,102 +146,151 @@
         color: white;
         text-decoration: none;
         padding: 6px 0;
+        transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        position: relative; /* For potential underline animation */
+        overflow: hidden;
     }
 
     .footer-section a:hover {
-        text-decoration: underline;
+        color: var(--secondary-color);
+        transform: translateX(5px); /* Slight slide on hover */
     }
-     @media (max-width: 1024px) {
+
+    /* Underline animation */
+    .footer-section a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin-top: 3px;
+        right: 0;
+        background: var(--secondary-color);
+        transition: width 0.3s ease;
+    }
+
+    .footer-section a:hover::after {
+        width: 100%;
+        left: 0;
+        background: var(--secondary-color);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
         .footer-topbar,
         .footer-content,
         .footer-copyright {
-            padding: 20px 60px; /* Reduce horizontal padding */
+            padding: 20px 60px;
         }
 
         .footer-section {
-            flex: 1 1 45%; /* Allow sections to take up more space, two columns */
+            flex: 1 1 45%;
+            min-width: unset; /* Allow flex to dictate width better */
         }
 
         .footer-section.address {
-            flex: 1 1 100%; /* Address section takes full width */
+            flex: 1 1 100%;
         }
     }
 
-    /* For screens smaller than 768px (e.g., larger phones and small tablets) */
     @media (max-width: 768px) {
         .footer-topbar-links {
-            gap: 10px; /* Reduce gap between stacked links */
+            flex-direction: column;
+            gap: 15px;
         }
 
         .footer-links-left,
         .footer-links-right {
-            gap: 10px;
+            gap: 15px;
+            justify-content: center;
+            width: 100%;
         }
 
         .footer-topbar,
         .footer-content,
         .footer-copyright {
-            padding: 15px 20px; /* Further reduce padding for smaller screens */
+            padding: 15px 20px;
         }
 
         .footer-content {
-            gap: 20px; /* Adjust gap between stacked sections */
+            gap: 25px;
+            flex-direction: column; /* Stack sections vertically */
+            align-items: center; /* Center align stacked sections */
         }
 
-        .footer-section {
-            flex: 1 1 auto; /* Allow sections to take full width */
-            min-width: unset; /* Remove min-width constraint */
-        }
-
-        .footer-section.address {
-            flex: 1 1 auto;
-            min-width: unset;
+        .footer-section, .footer-section.address {
+            flex: none; /* Remove flex grow/shrink */
+            width: 100%; /* Take full width */
+            max-width: 350px; /* Limit width for readability */
+            text-align: center; /* Center align content within sections */
         }
 
         .logo-container {
-            justify-content: center; /* Center the logo on smaller screens */
-            text-align: center;
+            justify-content: center;
         }
 
         .logo-text {
-            margin-left: 0; /* Remove left margin for stacked logo text */
-            margin-top: 10px; /* Add some top margin */
+            margin-left: 0;
+            margin-top: 10px;
         }
 
         .title-th, .title-en {
-            text-align: center; /* Center the airport titles */
+            text-align: center;
         }
 
         .footer-section p {
-            text-align: center; /* Center text in address and stats */
+            text-align: center;
         }
 
         .footer-copyright {
-            text-align: center; /* Center copyright text */
-            margin-top: 15px; /* Adjust top margin for copyright */
+            text-align: center;
+            margin-top: 15px;
+        }
+        .footer-section a {
+            display: inline-block; /* Allow links to sit side-by-side if space allows */
+            margin: 5px 10px; /* Add some spacing between links */
         }
     }
 
-    /* For screens smaller than 480px (e.g., most mobile phones) */
     @media (max-width: 480px) {
         .footer-topbar,
         .footer-content,
         .footer-copyright {
-            font-size: 12px; /* Slightly reduce font size for very small screens */
-            padding: 10px 15px; /* Even smaller padding */
+            font-size: 12px;
+            padding: 10px 15px;
         }
 
         .logo-container img {
-            width: 50px; /* Smaller logo */
+            width: 50px;
         }
 
         .title-th {
-            font-size: 14px; /* Smaller title font */
+            font-size: 14px;
         }
 
         .title-en {
-            font-size: 11px; /* Smaller English title font */
+            font-size: 11px;
         }
+
+        .footer-section a {
+            margin: 5px 5px; /* Reduce margin for links on very small screens */
+        }
+    }
+
+    /* Animations */
+    @keyframes fadeInBackground {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideInFromBottom {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
     }
 </style>
 
